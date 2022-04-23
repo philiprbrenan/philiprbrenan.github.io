@@ -222,6 +222,13 @@ this email:
 
 <p><img id=hpe src="http://philiprbrenan.appaapps.com.s3-website-eu-west-1.amazonaws.com/images/HPE.png">
 
+<p>A <a href="http://www.perl.org/">Perl</a> <a href="https://en.wikipedia.org/wiki/One-liner_program">one line program</a> to transpose a two dimensional square <a href="https://en.wikipedia.org/wiki/Dynamic_array">array</a> <b>$a</b>:
+
+<pre>
+{($$a[$$_[1]][$$_[0]], $$a[$$_[0]][$$_[1]]) = ($$a[$$_[0]][$$_[1]], $$a[$$_[1]][$$_[0]]) for <a href="https://en.wikipedia.org/wiki/Grep">grep</a> {$$_[1] > $$_[0]} map {[$_ / @$a, $_ % @$a]} 0..@$a**2-1}
+</pre>
+
+
 <li><h5>Python.</h5>
 
 <p>I have published this <a href="https://www.python.org/">Python</a> <a href="https://en.wikipedia.org/wiki/Modular_programming">module</a>: <a href="https://pypi.org/project/Vector2/">Vectors In Two Dimensions</a>.  I <a href="https://en.wikipedia.org/wiki/Mentorship">mentor</a> new programmers in <a href="https://www.python.org/">Python</a> programming on <a href="https://www.codementor.io/@philiprbrenan">Codementor</a> using my <a href="https://en.wikipedia.org/wiki/Gigabit_Ethernet">gigabit</a> <a href="https://en.wikipedia.org/wiki/Internet">Internet</a> connection. One of my
