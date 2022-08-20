@@ -2,27 +2,74 @@
 Javascript basics
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
-function say()                                                                  // Say something
- {const a = []
-  for(const i of arguments)
-   {if (Array.isArray(i))                                                       // Array
+function dump(i)                                                                // Dump a data structure
+ {const m = new Map()                                                           // Prevent recursion
+
+  function dump2(i, d)                                                          // Dump a data structure
+   {if (i === null)               return "null"                                 // Null
+    if (i === undefined)          return "undefined"                            // Undefined
+    if (typeof(i) === "function") return "function"                             // Function
+    if (typeof(i) !== "object")   return i                                      // Non object
+
+    if (m.get(i))                 return "recurse"                              // Stop attempt to recursion into an object already seen
+    m.set(i, true)                                                              // Print on first pass
+
+    const a = []                                                                // Array of sub prints
+
+    function dumpKey(j, k, t, T)                                                // Dump a key value pair
+     {const s = "   ".repeat(d)                                                 // Current spacing
+      if (!m.get(k))
+       {if (k === null)                                                         // Null
+         {a.push(s+"\""+j+"\" : null\n")
+         }
+        else if (k === undefined)                                               // Undefined
+         {a.push(s+"\""+j+"\" : undefined\n")
+         }
+        else if (typeof(k) === "function")                                      // Function
+         {a.push(s+"\""+j+"\" : function\n")
+         }
+        else if (Array.isArray(k))                                              // Array
+         {a.push(s+"\""+j+"\" :\n"+dump2(k, d+1)+"\n")
+         }
+        else if (typeof(k) !== "object")                                        // Non object
+         {a.push(s+"\""+j+"\" : " + k+"\n")
+         }
+        else
+         {a.push(s+"\""+j+"\" : "+t+"\n"+s+dump2(k, d+1)+"\n"+s+T+"\n")         // Key with object as value
+         }
+       }
+      else
+       {a.push(s+"\""+j+"\" : recurse\n")                                       // Prevent recursion
+       }
+     }
+
+    if (Array.isArray(i))                                                       // Array
      {for(const j of i)
-       {a.push(j)
+       {a.push("  ".repeat(d)+"["+dump2(j)+"]")
        }
      }
     else if (Object.getPrototypeOf(i) === Map.prototype)                        // Map
      {for(const j of i.keys())
-       {a.push(j, "=>", i.get(j))
+       {dumpKey(j, i.get(j), "new Map(", ")")
        }
      }
-    else                                                                        // String | number
-     {a.push(i)
+    else                                                                        // Object in general
+     {for(const j of Object.keys(i).sort())
+       {dumpKey(j, i[j], "{", "}")
+       }
      }
+    return a.join(" ")
    }
-   console.log(a.join(' '))
+  return dump2(i, 0)
  }
 
-function stop()                                                                  // Say something
+function say()                                                                  // Say something
+ {const a = []
+  for(const i of arguments) a.push(dump(i))
+  console.log(a.join(' '))
+ }
+
+function stop()                                                                 // Say something
  {if (typeof(document) === "undefined") say(...arguments)
   else
    {alert(Array.from(arguments).join(' '))
