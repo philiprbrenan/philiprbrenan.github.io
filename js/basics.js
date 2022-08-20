@@ -95,7 +95,7 @@ function is_deeply(got, expected)                                               
   stop("Cannot compare these two types");
  }
 
-if (typeof(document) === "undefined")                                           // Tests
+if (0)                                                                          // Tests
  {say("a", "b", "c");
   const o = new Map([['a', 11], ['b', 22]])
   const p = new Map([['a', 11], ['b', 33]])
