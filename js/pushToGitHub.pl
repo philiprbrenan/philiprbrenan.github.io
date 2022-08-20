@@ -42,6 +42,10 @@ jobs:
       with:
         ref: 'main'
 
+    - name: Nodejs
+      run: |
+        sudo apt install nodejs
+
     - name: Run
       run: |
         cd js/Map
