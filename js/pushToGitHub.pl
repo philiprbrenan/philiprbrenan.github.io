@@ -34,7 +34,7 @@ on:
   push
 
 jobs:
-  test00:
+  test:
     runs-on: ubuntu-latest
 
     steps:
