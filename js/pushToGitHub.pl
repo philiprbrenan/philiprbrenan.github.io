@@ -14,6 +14,7 @@ use feature qw(say current_sub);
 my $home = q(/home/phil/z/js/);                                                 # Local files
 my $user = q(philiprbrenan);                                                    # User
 my $repo = q(philiprbrenan.github.io);                                          # Repo
+my $wf   = q(.github/workflows/main.yml);                                       # Work flow on Ubuntu
 
 push my @files, searchDirectoryTreesForMatchingFiles($home);                    # Files
 
@@ -23,3 +24,28 @@ for my $s(@files)                                                               
   my $w = writeFileUsingSavedToken($user, $repo, $t, $p);                       # Write file to github
   lll "$w $s $t";
  }
+
+my $y = <<'END';
+# Test
+
+name: Test
+
+on:
+  push
+
+jobs:
+  test00:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'main'
+
+    - name: Run
+      run: |
+        cd js/Map
+        nodejs test.js
+END
+
+lll "Ubuntu work flow for $repo ", writeFileUsingSavedToken($user, $repo, $wf, $y);
