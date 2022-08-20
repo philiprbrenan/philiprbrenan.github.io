@@ -29,13 +29,13 @@ function dump(i)                                                                
          {a.push(s+"\""+j+"\" : function\n")
          }
         else if (Array.isArray(k))                                              // Array
-         {a.push(s+"\""+j+"\" :\n"+dump2(k, d+1)+"\n")
+         {a.push(s+"\""+j+"\" :\n"+dump2(k, d+1))
          }
         else if (typeof(k) !== "object")                                        // Non object
          {a.push(s+"\""+j+"\" : " + k+"\n")
          }
         else
-         {a.push(s+"\""+j+"\" : "+t+"\n"+s+dump2(k, d+1)+"\n"+s+T+"\n")         // Key with object as value
+         {a.push(s+"\""+j+"\" : "+t+"\n"+s+dump2(k, d+1)+s+T+"\n")              // Key with object as value
          }
        }
       else
