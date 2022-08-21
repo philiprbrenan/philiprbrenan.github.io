@@ -35,7 +35,18 @@ if (1)                                                                          
 
 function LinkedList()                                                           // Linked list as a function
  {const l = this
-  l.putLast = (value) =>                                                        // Push a value onto the end of the list
+
+  l.putFirst = (value) =>                                                       // Put a value onto the front of the list
+   {const e = new Element(value)
+    if (l.first == null) l.first = l.last = e
+    else
+     {(l.first.prev = e).next = l.first
+      l.first = l.first.prev
+     }
+    return e
+   }
+
+  l.putLast = (value) =>                                                        // Put a value onto the end of the list
    {const e = new Element(value)
     if (l.first == null) l.first = l.last = e
     else
@@ -45,20 +56,9 @@ function LinkedList()                                                           
     return e
    }
 
-  l.push = value => l.putLast(value)                                            // Push a value onto the end of the list
-
-  l.pop = () =>                                                                 // Pop the value off the end of the list
-   {if (l.first == null) return null
-    const p = l.last.value
-    if (l.first == l.last)
-     {l.first = l.last = null
-     }
-    else
-     {l.last = l.last.prev
-      l.last.next = null;
-     }
-    return p;
-   }
+  l.unshift = value => l.putFirst(value)                                        // Push a value onto the front of the list
+  l.push    = value => l.putLast(value)                                         // Push a value onto the end of the list
+  l.pop = () => l.last == null ? null : l.last.remove().value                   // Pop the value off the end of the list
 
   l.print = () =>                                                               // Print the list
    {for(let p = l.first; p != null; p = p.next) say(p.value)
