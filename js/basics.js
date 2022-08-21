@@ -70,11 +70,8 @@ function say()                                                                  
  }
 
 function stop()                                                                 // Say something
- {if (typeof(document) === "undefined") say(...arguments)
-  else
-   {alert(Array.from(arguments).join(' '))
-    debugger
-   }
+ {say(...arguments)
+  console.trace()
  }
 
 var is_deeply_tests_passed = 0;                                                 // The number of is deeply tests passed
@@ -102,7 +99,8 @@ function is_deeply(got, expected)                                               
 
   if (typeof(got) == "string" && typeof(expected) == "string")                  // Compare two strings
    {if (got.length != expected.length)
-     {return stop("Lengths do not match: ", got.length, "versus", expected.length)
+     {console.log("AAAA", got, expected)
+       return stop("Lengths do not match: ", got.length, "versus", expected.length)
      }
     for(var i = 0; i < got.length; ++i)
      {if (got[i] != expected[i])
