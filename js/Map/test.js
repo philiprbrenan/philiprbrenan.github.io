@@ -90,7 +90,7 @@ function LinkedList()                                                           
   function Element(value)                                                       // Element of linked list
    {this.value = value; this.next  = this.prev = null;
     this.remove = () =>                                                         // Remove this element from the list
-     {const e = element, l = e.up
+     {const e = this
       if (e === l.first && e === l.last)
        {l.first = l.last = null
         return e
@@ -143,7 +143,9 @@ if (1)                                                                          
   is_deeply(l.size(), 8)
   is_deeply(l.string(), "0 1 2 3 4 5 6 7")
   const b = l.last
-  b.putPrev(73).putPrev(71).putNext(72)
+  const c = b.putPrev(73).putPrev(71).putNext(72)
   is_deeply(l.string(), "0 1 2 3 4 5 6 71 72 73 7")
+  c.remove()
+  is_deeply(l.string(), "0 1 2 3 4 5 6 71 73 7")
 //  say(l)
  }
