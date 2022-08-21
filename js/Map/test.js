@@ -35,7 +35,7 @@ if (1)                                                                          
 
 function LinkedList()                                                           // Linked list as a function
  {const l = this
-  l.push = (value) =>                                                           // Push a value onto the end of the list
+  l.putLast = (value) =>                                                        // Push a value onto the end of the list
    {const e = new Element(value)
     if (l.first == null) l.first = l.last = e
     else
@@ -44,6 +44,8 @@ function LinkedList()                                                           
      }
     return e
    }
+
+  l.push = value => l.putLast(value)                                            // Push a value onto the end of the list
 
   l.pop = () =>                                                                 // Pop the value off the end of the list
    {if (l.first == null) return null
