@@ -137,7 +137,7 @@ function is_deeply(got, expected)                                               
     return pass()
    }
 
-  stop("Cannot compare these two types");
+  stop("Cannot compare these two types: ", dump(got), dump(expected));
  }
 
 if (0)                                                                          // Tests
