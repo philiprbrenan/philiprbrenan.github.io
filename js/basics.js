@@ -44,9 +44,9 @@ function dump(i)                                                                
      }
 
     if (Array.isArray(i))                                                       // Array
-     {for(const j of i)
-       {a.push("  ".repeat(d)+"["+dump2(j)+"]")
-       }
+     {const s = []
+      for(const j of i) s.push(dump2(j))
+      a.push("  ".repeat(d)+"["+s.join(", ")+"]\n")
      }
     else if (Object.getPrototypeOf(i) === Map.prototype)                        // Map
      {for(const j of i.keys())
@@ -76,7 +76,7 @@ function stop()                                                                 
 
 var is_deeply_tests_passed = 0;                                                 // The number of is deeply tests passed
 
-function is_deeply(got, expected)                                               // Compare whet we got with what we expected
+function is_deeply(got, expected)                                               // Compare what we got with what we expected
  {if (arguments.length != 2) stop("Two arguments required");                    // Must have two parameters
 
   function pass()
@@ -99,8 +99,7 @@ function is_deeply(got, expected)                                               
 
   if (typeof(got) == "string" && typeof(expected) == "string")                  // Compare two strings
    {if (got.length != expected.length)
-     {console.log("AAAA", got, expected)
-       return stop("Lengths do not match: ", got.length, "versus", expected.length)
+     {return stop("Lengths do not match: ", got.length, "versus", expected.length)
      }
     for(var i = 0; i < got.length; ++i)
      {if (got[i] != expected[i])
@@ -311,7 +310,7 @@ function Hash()                                                                 
    }
  }
 
-if (0)                                                                          // Tests for linked list function
+if (0)                                                                          // Tests for hashing
  {const h = new Hash()
   h.put("a",    "A")
   h.put("b",    "B")
@@ -325,6 +324,80 @@ if (0)                                                                          
   is_deeply(h.get("ab"  ), "AB"  )
   is_deeply(h.get("abc" ), "ABC" )
   is_deeply(h.get("abcd"), "ABCD")
+ }
+
+function Tree(N)                                                                // N/2-1 - N way trees with N at least 4
+ {const t = this
+  t.N    = N                                                                    // N is the number of nodes, N-1 is the number of keys, N/2-1 are the left or right hand key set in a split
+  t.root = null                                                                 // The current root node
+  t.size = 0                                                                    // Number of elements in the tree
+
+  this.put = (key, data) =>                                                     // Put a key value pair
+   {t.size++
+    if (t.size == 1)
+     {const e = t.root = new Element()
+      e.leftKey = key; e.rightData = data
+      return
+     }
+
+    const n  = t.root.count()                                                   // Number of keys in
+    if (t.size == 2)
+     {const e = t.root = new Element(value)
+      return
+     }
+    for(let i = 0; i < h.arenaSize; ++i)
+     {const j = n + i
+      if (h.keys[j] === null || h.keys[j] == key)
+       {h.keys[j] = key
+        h.data[j] = data
+        return
+       }
+     }
+   }
+
+  function Element()                                                            // Node of a tree
+   {const e = this
+    e.nodes = []; for (let i = 0; i < t.N;   ++i) e.nodes[i] = null;
+    e.keys  = []; for (let i = 0; i < t.N-1; ++i) e.keys [i] = null;
+    e.data  = []; for (let i = 0; i < t.N-1; ++i) e.data [i] = null;
+    e.count = () =>                                                             // Count the keys in a node
+     {let n = 0
+      for (let i = 0; i < t.N-1; ++i) if (e.keys[i] === null) ++n
+      return n
+     }
+    e.split = () =>                                                             // Split a node
+     {const l = new Element(), r = new Element(), N = t.N, n = N / 2, K = N - 1, k = n - 1;
+      for (let i = 0; i < k; ++i)
+       {if (i < t.N / 2 - 1)
+         {l.keys [i]   = e.keys[i];
+          l.data [i]   = e.data[i];
+          l.nodes[i]   = e.nodes[i];
+          r.keys [i]   = e.keys[k+i];
+          r.data [i]   = e.data[k+i];
+          r.nodes[1+i] = e.nodes[1+n+i];
+         }
+        l.nodes[k] = e.nodes[k];
+        r.nodes[0] = e.nodes[k+1];
+       }
+      e.keys[0]  = e.keys[k]
+      e.data[0]  = e.data[k]
+      for(let i = 1; i < K; ++i) e.keys[i] = e.data[i] = e.nodes[i] = null;                                                             //
+      e.nodes[K] = null
+      e.nodes[0] = l
+      e.nodes[1] = r
+     }
+   }
+  this.Element = Element;
+ }
+
+if (0)                                                                          // Tests for hashing
+ {const t = new Tree(4), e = new t.Element();
+  e.keys  = [1,2,3]
+  e.data  = [11,22,33]
+  e.nodes = [0,1,2,3]
+  say("AAAA", e)
+  e.split()
+  say("BBBB", e)
  }
 
 module.exports = { say, stop, is_deeply, dump, LinkedList, Hash }
