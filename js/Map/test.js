@@ -1,4 +1,4 @@
-const {say, is_deeply, stop, dump} = require("../basics.js")
+const {say, is_deeply, stop, dump, LinkedList, Hash} = require("../basics.js")
 
 class LinkedListClass                                                           // Linked list as a class
  {constructor() {this.first = null; this.last = null;}
@@ -33,92 +33,6 @@ if (1)                                                                          
   is_deeply(l.last.value,       8)
  }
 
-function LinkedList()                                                           // Linked list as a function
- {const l = this
-
-  l.putFirst = (value) =>                                                       // Put a value onto the front of the list
-   {const e = new Element(value)
-    if (l.first == null) l.first = l.last = e
-    else
-     {(l.first.prev = e).next = l.first
-      l.first = l.first.prev
-     }
-    return e
-   }
-
-  l.putLast = (value) =>                                                        // Put a value onto the end of the list
-   {const e = new Element(value)
-    if (l.first == null) l.first = l.last = e
-    else
-     {(l.last.next = e).prev = l.last
-      l.last = l.last.next
-     }
-    return e
-   }
-
-  l.unshift = value => l.putFirst(value)                                        // Push a value onto the front of the list
-  l.push    = value => l.putLast(value)                                         // Push a value onto the end of the list
-  l.pop = () => l.last == null ? null : l.last.remove().value                   // Pop the value off the end of the list
-
-  l.print = () =>                                                               // Print the list
-   {for(let p = l.first; p != null; p = p.next) say(p.value)
-   }
-
-  l.string = () =>                                                              // Stringify the values in the list
-   {const s = []
-    for(let p = l.first; p != null; p = p.next) s.push(dump(p.value))
-    return s.join(" ")
-   }
-
-  l.size = () =>                                                                // Size of the list
-   {let n = 0
-    for(let p = l.first; p != null; p = p.next) ++n
-    return n
-   }
-
-  function Element(value)                                                       // Element of linked list
-   {this.value = value; this.next  = this.prev = null;
-    this.remove = () =>                                                         // Remove this element from the list
-     {const e = this
-      if (e === l.first && e === l.last)
-       {l.first = l.last = null
-        return e
-       }
-      if (e === l.first)
-       {l.first = e.next
-        l.first.prev = null
-        return e
-       }
-      if (e === l.last)
-       {l.last = e.prev
-        l.last.next = null
-        return e
-       }
-      e.prev.next = e.next
-      e.next.prev = e.prev
-      return e
-     }
-
-    this.putNext = (value) =>                                                   // Put a value after the specified value
-     {const e = new Element(value)
-      if (this.next === null) {this.next = e; e.prev = this; l.last = e}
-      else
-       {e.next = this.next; e.prev = this; this.next.prev = e; this.next = e;
-       }
-      return e
-     }
-
-    this.putPrev = (value) =>                                                   // Put a value before the specified value
-     {const e = new Element(value)
-      if (this.prev === null) {this.prev = e; e.next = this; l.first = e}
-      else
-       {e.prev = this.prev; e.next = this; this.prev.next = e; this.prev = e;
-       }
-      return e
-     }
-   }
- }
-
 if (1)                                                                          // Test maps
  {const a = new Map()
 
@@ -151,4 +65,20 @@ if (1)                                                                          
   c.remove()
   is_deeply(l.string(), "0 1 2 3 4 5 6 71 73 7")
 //  say(l)
+ }
+
+if (1)                                                                          // Tests for linked list function
+ {const h = new Hash()
+  h.put("a",    "A")
+  h.put("b",    "B")
+  h.put("ab",   "AB")
+  h.put("abc",  "ABC")
+  h.put("abcd", "ABCD")
+  is_deeply(h.size, 5)
+  is_deeply(h.arenaSize, 16)
+  is_deeply(h.get("a"   ), "A"   )
+  is_deeply(h.get("b"   ), "B"   )
+  is_deeply(h.get("ab"  ), "AB"  )
+  is_deeply(h.get("abc" ), "ABC" )
+  is_deeply(h.get("abcd"), "ABCD")
  }
