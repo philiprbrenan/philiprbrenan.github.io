@@ -1,17 +1,4 @@
 const {say, is_deeply, stop, dump} = require("../basics.js")
-const a = new Map()
-
-a.set("a", 1)
-a.set("b", 2)
-
-is_deeply(a.get("a"), 1)
-is_deeply(a.get("b"), 2)
-is_deeply(a, new Map([["a", 1], ["b", 2]]))
-
-if (1)
- {function a(){}
-  say(a)
- }
 
 class LinkedListClass                                                           // Linked list as a class
  {constructor() {this.first = null; this.last = null;}
@@ -128,6 +115,20 @@ function LinkedList()                                                           
       return e
      }
    }
+ }
+
+if (1)                                                                          // Test maps
+ {const a = new Map()
+
+  a.set("a", 1)
+  a.set("b", 2)
+
+  is_deeply(a.get("a"), 1)
+  is_deeply(a.get("b"), 2)
+  is_deeply(a, new Map([["a", 1], ["b", 2]]))
+
+  function f(){}
+  say(f)
  }
 
 if (1)                                                                          // Tests for linked list function
