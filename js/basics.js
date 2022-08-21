@@ -154,4 +154,4 @@ if (0)                                                                          
  }
 
 
-module.exports = { say, stop, is_deeply }
+module.exports = { say, stop, is_deeply, dump }
