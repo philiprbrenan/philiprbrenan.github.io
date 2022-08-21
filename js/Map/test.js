@@ -1,4 +1,4 @@
-const {say, is_deeply, stop} = require("../basics.js")
+const {say, is_deeply, stop, dump} = require("../basics.js")
 const a = new Map()
 
 a.set("a", 1)
@@ -47,23 +47,39 @@ if (1)                                                                          
  }
 
 function LinkedList()                                                           // Linked list as a function
- {l = this
-  l.push  = (value) =>
-   {const e = new Element(value)
-    if (l.first == null)
-     {l.first = l.last = e;
-      return
+ {this.push = (value) =>                                                        // Push a value onto the end of the list
+   {if (this.first == null) this.first = this.last = new Element(value)
+    else
+     {(this.last.next = new Element(value)).prev = this.last
+       this.last = this.last.next
      }
-    l.last.next = e
-    e.prev = l.last
-    l.last = e
    }
-  l.print = () =>                                                               // Print the list
-   {for(let p = l.first; p != null; p = p.next) say(p.value)
+
+  this.pop = () =>                                                              // Pop the value off the end of the list
+   {if (this.first == null) return null
+    const p = this.last.value
+    if (this.first == this.last)
+     {this.first = this.last = null
+     }
+    else
+     {this.last = this.last.prev
+      this.last.next = null;
+     }
+    return p;
    }
+
+  this.print = () =>                                                            // Print the list
+   {for(let p = this.first; p != null; p = p.next) say(p.value)
+   }
+
+  this.string = () =>                                                           // Stringify the values in the list
+   {const l = []
+    for(let p = this.first; p != null; p = p.next) l.push(dump(p.value))
+    return l.join(" ")
+   }
+
   function Element(value)                                                       // Element of linked list
-   {this.value = value
-    this.next  = this.prev = null
+   {this.value = value; this.next  = this.prev = null
    }
  }
 
@@ -74,5 +90,6 @@ if (1)                                                                          
   is_deeply(l.first.next.value, 1)
   is_deeply(l.last.prev.value,  7)
   is_deeply(l.last.value,       8)
-say(l)
+  is_deeply(l.string(), "0 1 2 3 4 5 6 7 8")
+  say(l)
  }
