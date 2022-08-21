@@ -47,45 +47,86 @@ if (1)                                                                          
  }
 
 function LinkedList()                                                           // Linked list as a function
- {this.push = (value) =>                                                        // Push a value onto the end of the list
-   {if (this.first == null) this.first = this.last = new Element(value)
+ {const l = this
+  l.push = (value) =>                                                           // Push a value onto the end of the list
+   {const e = new Element(value)
+    if (l.first == null) l.first = l.last = e
     else
-     {(this.last.next = new Element(value)).prev = this.last
-       this.last = this.last.next
+     {(l.last.next = e).prev = l.last
+      l.last = l.last.next
      }
+    return e
    }
 
-  this.pop = () =>                                                              // Pop the value off the end of the list
-   {if (this.first == null) return null
-    const p = this.last.value
-    if (this.first == this.last)
-     {this.first = this.last = null
+  l.pop = () =>                                                                 // Pop the value off the end of the list
+   {if (l.first == null) return null
+    const p = l.last.value
+    if (l.first == l.last)
+     {l.first = l.last = null
      }
     else
-     {this.last = this.last.prev
-      this.last.next = null;
+     {l.last = l.last.prev
+      l.last.next = null;
      }
     return p;
    }
 
-  this.print = () =>                                                            // Print the list
-   {for(let p = this.first; p != null; p = p.next) say(p.value)
+  l.print = () =>                                                               // Print the list
+   {for(let p = l.first; p != null; p = p.next) say(p.value)
    }
 
-  this.string = () =>                                                           // Stringify the values in the list
-   {const l = []
-    for(let p = this.first; p != null; p = p.next) l.push(dump(p.value))
-    return l.join(" ")
+  l.string = () =>                                                              // Stringify the values in the list
+   {const s = []
+    for(let p = l.first; p != null; p = p.next) s.push(dump(p.value))
+    return s.join(" ")
    }
 
-  this.size = () =>                                                             // Size of the list
+  l.size = () =>                                                                // Size of the list
    {let n = 0
-    for(let p = this.first; p != null; p = p.next) ++n
+    for(let p = l.first; p != null; p = p.next) ++n
     return n
    }
 
   function Element(value)                                                       // Element of linked list
-   {this.value = value; this.next  = this.prev = null
+   {this.value = value; this.next  = this.prev = null;
+    this.remove = () =>                                                         // Remove this element from the list
+     {const e = element, l = e.up
+      if (e === l.first && e === l.last)
+       {l.first = l.last = null
+        return e
+       }
+      if (e === l.first)
+       {l.first = e.next
+        l.first.prev = null
+        return e
+       }
+      if (e === l.last)
+       {l.last = e.prev
+        l.last.next = null
+        return e
+       }
+      e.prev.next = e.next
+      e.next.prev = e.prev
+      return e
+     }
+
+    this.putNext = (value) =>                                                   // Put a value after the specified value
+     {const e = new Element(value)
+      if (this.next === null) {this.next = e; e.prev = this; l.last = e}
+      else
+       {e.next = this.next; e.prev = this; this.next.prev = e; this.next = e;
+       }
+      return e
+     }
+
+    this.putPrev = (value) =>                                                   // Put a value before the specified value
+     {const e = new Element(value)
+      if (this.prev === null) {this.prev = e; e.next = this; l.first = e}
+      else
+       {e.prev = this.prev; e.next = this; this.prev.next = e; this.prev = e;
+       }
+      return e
+     }
    }
  }
 
@@ -101,5 +142,8 @@ if (1)                                                                          
   is_deeply(l.pop(), 8)
   is_deeply(l.size(), 8)
   is_deeply(l.string(), "0 1 2 3 4 5 6 7")
-  say(l)
+  const b = l.last
+  b.putPrev(73).putPrev(71).putNext(72)
+  is_deeply(l.string(), "0 1 2 3 4 5 6 71 72 73 7")
+//  say(l)
  }
