@@ -78,6 +78,12 @@ function LinkedList()                                                           
     return l.join(" ")
    }
 
+  this.size = () =>                                                             // Size of the list
+   {let n = 0
+    for(let p = this.first; p != null; p = p.next) ++n
+    return n
+   }
+
   function Element(value)                                                       // Element of linked list
    {this.value = value; this.next  = this.prev = null
    }
@@ -90,6 +96,10 @@ if (1)                                                                          
   is_deeply(l.first.next.value, 1)
   is_deeply(l.last.prev.value,  7)
   is_deeply(l.last.value,       8)
+  is_deeply(l.size(), 9)
   is_deeply(l.string(), "0 1 2 3 4 5 6 7 8")
+  is_deeply(l.pop(), 8)
+  is_deeply(l.size(), 8)
+  is_deeply(l.string(), "0 1 2 3 4 5 6 7")
   say(l)
  }
