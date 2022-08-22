@@ -1,7 +1,12 @@
-const {Testing} = require("./basics.js")
+/*------------------------------------------------------------------------------
+Javascript basics: debugging, testing, data structures: lists, hashes, trees.
+Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
+------------------------------------------------------------------------------*/
+
+const {Testing} = require("./basics.js")                                        // Load the testing module
 const {dump, is_deeply, say, stop, LinkedList, Hash, testResults, Tree} = Testing()
 
-class LinkedListClass                                                           // Linked list as a class
+class LinkedListClass                                                           // Linked list as a class rather than a function
  {constructor() {this.first = null; this.last = null;}
 
   push(value)                                                                   // Push a new element onto the end of the list
