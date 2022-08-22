@@ -1,4 +1,4 @@
-const {dump, is_deeply, say, stop, LinkedList, Hash, testResults, Tree} = require("../basics.js")
+const {dump, is_deeply, say, stop, LinkedList, Hash, testResults, Tree} = require("basics.js")
 
 class LinkedListClass                                                           // Linked list as a class
  {constructor() {this.first = null; this.last = null;}
