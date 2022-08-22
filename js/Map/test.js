@@ -1,4 +1,4 @@
-const {say, is_deeply, stop, dump, LinkedList, Hash} = require("../basics.js")
+const {dump, is_deeply, say, stop, LinkedList, Hash, testResults, Tree} = require("../basics.js")
 
 class LinkedListClass                                                           // Linked list as a class
  {constructor() {this.first = null; this.last = null;}
@@ -42,9 +42,6 @@ if (1)                                                                          
   is_deeply(a.get("a"), 1)
   is_deeply(a.get("b"), 2)
   is_deeply(a, new Map([["a", 1], ["b", 2]]))
-
-  function f(){}
-  say(f)
  }
 
 if (1)                                                                          // Tests for linked list function
@@ -82,3 +79,5 @@ if (1)                                                                          
   is_deeply(h.get("abc" ), "ABC" )
   is_deeply(h.get("abcd"), "ABCD")
  }
+
+testResults()
