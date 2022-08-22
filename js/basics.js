@@ -406,6 +406,17 @@ function Tree(N)                                                                
      }
    }
 
+  this.keys = () =>                                                             // Get all the keys in a tree as an array
+   {const k = []
+    function add(element)                                                       // Add all the keys in each node recursively
+     {k.push(...element.keys)
+      for(const n of element.nodes) add(n)                                      // Each sub tree
+     }
+    if (t.root !== null) add(t.root)
+    k.sort()
+    return k
+   }
+
   function Element()                                                            // Node of a tree
    {const e = this
     e.nodes = []
@@ -621,6 +632,7 @@ if (testing)                                                                    
      }
     assert(t.get(i+1) == null)
    }
+  is_deeply(t.keys(), [0, 1, 10, 11, 12, 13, 14, 15, 2, 3, 4, 5, 6, 7, 8, 9])
  }
 
 if (testing) testResults()
