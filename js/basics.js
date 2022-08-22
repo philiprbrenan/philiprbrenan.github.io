@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------------------
-Javascript basics: debugging, testing, data structures: lists, hashes, trees
+Javascript basics: debugging, testing, data structures: lists, hashes, trees.
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
 function Testing(testing=false) {                                               // Testing name space
