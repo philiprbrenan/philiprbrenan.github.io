@@ -49,6 +49,7 @@ jobs:
     - name: Run
       run: |
         cd js/Map
+        nodejs basics.js
         nodejs test.js
 END
 
