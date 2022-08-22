@@ -638,7 +638,7 @@ if (testing)                                                                    
      }
     assert(t.get(i+1) == null)
    }
-  is_deeply(t.keys(), range(0, N).sort())
+  is_deeply(t.keys(), range(0, N).sort())                                       // Sort into character order rather than numeric order
  }
 
 if (testing) testResults()
