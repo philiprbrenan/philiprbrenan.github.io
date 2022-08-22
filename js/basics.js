@@ -163,7 +163,7 @@ let not_deeply_tests_passed = 0;                                                
 function not_deeply(got, expected)                                              // Compare what we got with what we expected
  {const m = equal(got, expected);
   if (m == null) return stop("Unexpectedly equal")
-  ++not_deeply_tests_passed                                                     // The number of not deeply tests passed
+  ++not_deeply_tests_passed
   return m
  }
 
@@ -171,7 +171,7 @@ function testResults( )                                                         
  {say(`Passed ${assert_tests_passed} asserts,  ${is_deeply_tests_passed} is_deeply tests,  ${not_deeply_tests_passed} not_deeply tests`)
  }
 
-function LinkedList()                                                           // Linked list as a function
+function LinkedList()                                                           // Linked lists
  {const l = this
 
   l.putFirst = (value) =>                                                       // Put a value onto the front of the list
@@ -238,7 +238,7 @@ function LinkedList()                                                           
       return e
      }
 
-    this.putNext = (value) =>                                                   // Put a value after the specified value
+    this.putNext = (value) =>                                                   // Put a value after the specified element
      {const e = new Element(value)
       if (this.next === null) {this.next = e; e.prev = this; l.last = e}
       else
@@ -247,7 +247,7 @@ function LinkedList()                                                           
       return e
      }
 
-    this.putPrev = (value) =>                                                   // Put a value before the specified value
+    this.putPrev = (value) =>                                                   // Put a value before the specified element
      {const e = new Element(value)
       if (this.prev === null) {this.prev = e; e.next = this; l.first = e}
       else
@@ -267,7 +267,7 @@ if (testing)                                                                    
   not_deeply([1,2], [1,3])
  }
 
-if (testing)                                                                    // Tests for linked list function
+if (testing)                                                                    // Tests for linked list
  {const l = new LinkedList()
   for(let i = 0; i < 9; ++i) l.push(i)
   is_deeply(l.first.value,      0)
@@ -290,7 +290,7 @@ if (testing)                                                                    
 function Hash()                                                                 // Hash table
  {const h = this
   h.size = 0                                                                    // Number of elements in the hash table
-  h.arenaSize = 1                                                               // Size of arena
+  h.arenaSize = 1                                                               // Size of arenas
   h.keys = [null]                                                               // Keys arena
   h.data = [null]                                                               // Data arena
 
@@ -302,7 +302,7 @@ function Hash()                                                                 
     return n
    }
 
-  this.reallocate = () =>                                                       // Reallocate the arena
+  this.reallocate = () =>                                                       // Reallocate the arena to make it larger
    {const n = h.arenaSize; const N = 2 * n; const k = h.keys; const d = h.data
     h.keys = []; for(let i = 0; i < N; ++i) h.keys[i] = null
     h.data = []; for(let i = 0; i < N; ++i) h.data[i] = null
@@ -311,12 +311,12 @@ function Hash()                                                                 
 
     for(let i = 0; i < n; ++i)
      {if (k[i] !== null)
-       {h.put(k[i], d[i])
+       {h.set(k[i], d[i])
        }
      }
    }
 
-  this.put = (key, data) =>                                                     // Put a key value pair
+  this.set = (key, data) =>                                                     // Set the data associated with a key
    {if (2 * h.size + 1 >= h.arenaSize) h.reallocate()
     h.size++
     const n = h.hash(key)
@@ -342,11 +342,11 @@ function Hash()                                                                 
 
 if (testing)                                                                    // Tests for hashing
  {const h = new Hash()
-  h.put("a",    "A")
-  h.put("b",    "B")
-  h.put("ab",   "AB")
-  h.put("abc",  "ABC")
-  h.put("abcd", "ABCD")
+  h.set("a",    "A")
+  h.set("b",    "B")
+  h.set("ab",   "AB")
+  h.set("abc",  "ABC")
+  h.set("abcd", "ABCD")
   is_deeply(h.size, 5)
   is_deeply(h.arenaSize, 16)
   is_deeply(h.get("a"   ), "A"   )
@@ -587,7 +587,7 @@ if (testing)                                                                    
   is_deeply(p.nodes, [5, 11, 13, 25])
  }
 
-if (testing)                                                                    // Tests for Tree - merge leaf
+if (testing)                                                                    // Tests for Tree - merge leaf - in middle
  {const t = new Tree(4), p = new t.Element();
   p.keys  = [10, 20]
   p.data  = [100, 200]
@@ -599,7 +599,7 @@ if (testing)                                                                    
   is_deeply(p.nodes.length, 0)
  }
 
-if (testing)                                                                    // Tests for Tree - merge leaf
+if (testing)                                                                    // Tests for Tree - merge leaf - at end
  {const t = new Tree(4), p = new t.Element();
   p.keys  = [10, 20]
   p.data  = [100, 200]
