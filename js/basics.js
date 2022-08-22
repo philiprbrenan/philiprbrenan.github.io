@@ -357,7 +357,7 @@ if (testing)                                                                    
  }
 
 function Tree(N)                                                                // N/2-1 - N way trees with N at least 4. When N is 4 we get red-black trees by another name
- {if (N % 2) ++N;                                                               // make N even
+ {if (N % 2) ++N;                                                               // Make N even - it is possible to operate with N odd but it is more work for no gain
   const t = this
   t.N    = N                                                                    // N is the number of nodes, N-1 is the number of keys, N/2-1 are the left or right hand key set in a split
   t.root = null                                                                 // The current root node
