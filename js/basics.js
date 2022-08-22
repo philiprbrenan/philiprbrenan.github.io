@@ -2,6 +2,8 @@
 Javascript basics
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
+const testing = process.argv[1].match(/basics\.js/)                             // Testing if called directly
+
 function dump(i)                                                                // Dump a data structure
  {const m = new Map()                                                           // Prevent recursion
 
@@ -26,7 +28,7 @@ function dump(i)                                                                
          {a.push(s+"\""+j+"\" : undefined\n")
          }
         else if (typeof(k) === "function")                                      // Function
-         {a.push(s+"\""+j+"\" : function\n")
+         {//a.push(s+"\""+j+"\" : function\n")                                  // Reduce clutter
          }
         else if (Array.isArray(k))                                              // Array
          {a.push(s+"\""+j+"\" :\n"+dump2(k, d+1))
@@ -72,26 +74,35 @@ function say()                                                                  
 function stop()                                                                 // Say something
  {say(...arguments)
   console.trace()
+  process.exit()
  }
 
-var is_deeply_tests_passed = 0;                                                 // The number of is deeply tests passed
+let assert_tests_passed = 0                                                     // The number of asserts passed
 
-function is_deeply(got, expected)                                               // Compare what we got with what we expected
- {if (arguments.length != 2) stop("Two arguments required");                    // Must have two parameters
+function assert(condition)                                                      // Assert something
+ {if (!condition)
+   {console.trace()
+    stop()
+   }
+  ++assert_tests_passed
+ }
 
-  function pass()
-   {say("is_deeply", is_deeply_tests_passed, "passed");
-    return true;
+function equal(got, expected)                                                   // Compare what we got with what we expected
+ {function pass()                                                               // Action on pass
+   {return null
    }
 
-  is_deeply_tests_passed++
+  function fail(message)                                                        // Action on fail
+   {return message
+   }
+
   if (Array.isArray(got) && Array.isArray(expected))                            // Compare two arrays
    {if (got.length != expected.length)
-     {return stop("Lengths do not match: ", got.length, "versus", expected.length)
+     {return fail("Lengths do not match: ", got.length, "versus", expected.length)
      }
     for(var i = 0; i < got.length; ++i)
      {if (got[i] != expected[i])
-       {return stop("Mismatch at index", i, "got:", got[i], "expected:", expected[i])
+       {return fail("Mismatch at index", i, "got:", got[i], "expected:", expected[i])
        }
      }
     return pass()
@@ -99,11 +110,11 @@ function is_deeply(got, expected)                                               
 
   if (typeof(got) == "string" && typeof(expected) == "string")                  // Compare two strings
    {if (got.length != expected.length)
-     {return stop("Lengths do not match: ", got.length, "versus", expected.length)
+     {return fail("Lengths do not match: ", got.length, "versus", expected.length)
      }
     for(var i = 0; i < got.length; ++i)
      {if (got[i] != expected[i])
-       {return stop("Mismatch at index", i, "got:", got[i], "expected:", expected[i])
+       {return fail("Mismatch at index", i, "got:", got[i], "expected:", expected[i])
        }
      }
     return pass()
@@ -111,14 +122,14 @@ function is_deeply(got, expected)                                               
 
   if (typeof(got) == "number" && typeof(expected) == "number")                  // Compare two numbers
    {if (got != expected)
-     {return stop("Number ", got, "does not equal", expected)
+     {return fail("Number ", got, "does not equal", expected)
      }
     return pass()
    }
 
   if (typeof(got) == "boolean" && typeof(expected) == "boolean")                // Compare two booleans
    {if (got != expected)
-     {return stop("Boolean ", got, "does not equal", expected)
+     {return fail("Boolean ", got, "does not equal", expected)
      }
     return pass()
    }
@@ -126,17 +137,38 @@ function is_deeply(got, expected)                                               
   if (Object.getPrototypeOf(got)      === Map.prototype &&                      // Compare two maps
       Object.getPrototypeOf(expected) === Map.prototype)
    {if (got.size != expected.size)
-     {return stop("Maps have different sizes:", got.size, "versus", expected.size())
+     {return fail("Maps have different sizes:", got.size, "versus", expected.size())
      }
     for(const g of got.keys())
      {if (got.get(g) != expected.get(g))
-       {return stop("Mismatch at index", g, "got:", got.get(g), "expected:", expected.get(g))
+       {return fail("Mismatch at index", g, "got:", got.get(g), "expected:", expected.get(g))
        }
      }
     return pass()
    }
 
   stop("Cannot compare these two types: ", dump(got), dump(expected));
+ }
+
+let is_deeply_tests_passed = 0;                                                 // The number of is deeply tests passed
+
+function is_deeply(got, expected)                                               // Compare what we got with what we expected
+ {const m = equal(got, expected);
+  if (m == null) return ++is_deeply_tests_passed
+  stop(m)
+ }
+
+let not_deeply_tests_passed = 0;                                                // The number of not deeply tests passed
+
+function not_deeply(got, expected)                                              // Compare what we got with what we expected
+ {const m = equal(got, expected);
+  if (m == null) return stop("Unexpectedly equal")
+  ++not_deeply_tests_passed                                                     // The number of not deeply tests passed
+  return m
+ }
+
+function testResults( )                                                         // Print testing results
+ {say(`Passed ${assert_tests_passed} asserts,  ${is_deeply_tests_passed} is_deeply tests,  ${not_deeply_tests_passed} not_deeply tests`)
  }
 
 function LinkedList()                                                           // Linked list as a function
@@ -226,18 +258,16 @@ function LinkedList()                                                           
    }
  }
 
-if (0)                                                                          // Tests for is_deeply
- {say("a", "b", "c");
-  const o = new Map([['a', 11], ['b', 22]])
+if (testing)                                                                    // Tests for is_deeply
+ {const o = new Map([['a', 11], ['b', 22]])
   const p = new Map([['a', 11], ['b', 33]])
-  say(o)
-  is_deeply(o, p)
-  is_deeply([1,2], [1,3])
-  is_deeply([1,2], [1,2])
-  is_deeply([1,2], [1,3])
+  not_deeply(o, p)
+  not_deeply([1,2], [1,3])
+   is_deeply([1,2], [1,2])
+  not_deeply([1,2], [1,3])
  }
 
-if (0)                                                                          // Tests for linked list function
+if (testing)                                                                    // Tests for linked list function
  {const l = new LinkedList()
   for(let i = 0; i < 9; ++i) l.push(i)
   is_deeply(l.first.value,      0)
@@ -310,7 +340,7 @@ function Hash()                                                                 
    }
  }
 
-if (0)                                                                          // Tests for hashing
+if (testing)                                                                    // Tests for hashing
  {const h = new Hash()
   h.put("a",    "A")
   h.put("b",    "B")
@@ -326,78 +356,271 @@ if (0)                                                                          
   is_deeply(h.get("abcd"), "ABCD")
  }
 
-function Tree(N)                                                                // N/2-1 - N way trees with N at least 4
+function Tree(N)                                                                // N/2-1 - N way trees with N at least 4. When N is 4 we get red-black trees by another name
  {const t = this
   t.N    = N                                                                    // N is the number of nodes, N-1 is the number of keys, N/2-1 are the left or right hand key set in a split
   t.root = null                                                                 // The current root node
   t.size = 0                                                                    // Number of elements in the tree
 
-  this.put = (key, data) =>                                                     // Put a key value pair
-   {t.size++
-    if (t.size == 1)
+  this.set = (key, data) =>                                                     // Put a key value pair
+   {if (t.root == null)                                                         // Empty tree
      {const e = t.root = new Element()
-      e.leftKey = key; e.rightData = data
+      e.keys.push(key); e.data.push(data)
       return
      }
 
-    const n  = t.root.count()                                                   // Number of keys in
-    if (t.size == 2)
-     {const e = t.root = new Element(value)
-      return
-     }
-    for(let i = 0; i < h.arenaSize; ++i)
-     {const j = n + i
-      if (h.keys[j] === null || h.keys[j] == key)
-       {h.keys[j] = key
-        h.data[j] = data
+    let q = null                                                                // Parent to merge into
+    for (var p = t.root; p != null; q = p, p = p.step(key))                     // Non empty tree
+     {if (p.count() >= t.N - 1)                                                 // Split the node if possible
+       {p.split()
+        if (q != null)                                                          // Merge split node back into preceding node
+         {q.merge(p)
+          p = q                                                                 // Restart from parent
+         }
+       }
+
+      const f = p.check(key)
+      if (f != null)                                                            // Located the key
+       {p.data[f] = data
         return
        }
+
+      if (p.leaf())                                                             // On a leaf
+       {const i = new t.Element();
+        i.keys.push(key); i.data.push(data)
+        p.mergeLeaf(key, data)
+        return
+       }
+     }
+    stop("Unreachable")
+   }
+
+  this.get = (key) =>                                                           // Get the data associated with a key or null if the key is not present in the tree
+   {if (t.root == null) return null                                             // Empty tree
+    for(var p = t.root; p != null; p = p.step(key))                             // Non empty tree
+     {const f = p.check(key)
+      if (f != null) return p.data[f]
+      if (p.leaf()) return null                                                 // On a leaf
      }
    }
 
   function Element()                                                            // Node of a tree
    {const e = this
-    e.nodes = []; for (let i = 0; i < t.N;   ++i) e.nodes[i] = null;
-    e.keys  = []; for (let i = 0; i < t.N-1; ++i) e.keys [i] = null;
-    e.data  = []; for (let i = 0; i < t.N-1; ++i) e.data [i] = null;
-    e.count = () =>                                                             // Count the keys in a node
-     {let n = 0
-      for (let i = 0; i < t.N-1; ++i) if (e.keys[i] === null) ++n
-      return n
-     }
+    e.nodes = []
+    e.keys  = []
+    e.data  = []
+
+    e.count = () => e.keys.length                                               // Count the keys in a node
+
+    e.leaf  = () => e.nodes.length == 0                                         // Node is a leaf node
+
     e.split = () =>                                                             // Split a node
-     {const l = new Element(), r = new Element(), N = t.N, n = N / 2, K = N - 1, k = n - 1;
-      for (let i = 0; i < k; ++i)
-       {if (i < t.N / 2 - 1)
-         {l.keys [i]   = e.keys[i];
-          l.data [i]   = e.data[i];
-          l.nodes[i]   = e.nodes[i];
-          r.keys [i]   = e.keys[k+i];
-          r.data [i]   = e.data[k+i];
-          r.nodes[1+i] = e.nodes[1+n+i];
-         }
-        l.nodes[k] = e.nodes[k];
-        r.nodes[0] = e.nodes[k+1];
+     {const l = new Element(), r = new Element(),
+            N = t.N, n = N / 2, K = N - 1, k = n - 1
+      assert(e.count() == K)
+      for (let i = 0; i < k; ++i)                                               // Split keys and data
+       {l.keys[i] = e.keys[i]
+        l.data[i] = e.data[i]
+        r.keys[i] = e.keys[n+i]
+        r.data[i] = e.data[n+i]
        }
-      e.keys[0]  = e.keys[k]
+      if (!e.leaf())                                                            // Split nodes if not a leaf
+       {for (let i = 0; i < n; ++i)
+         {l.nodes[i] = e.nodes[i]
+          r.nodes[i] = e.nodes[n+i]
+         }
+       }
+      e.keys[0]  = e.keys[k]                                                    // Copy middle key and data
       e.data[0]  = e.data[k]
-      for(let i = 1; i < K; ++i) e.keys[i] = e.data[i] = e.nodes[i] = null;                                                             //
-      e.nodes[K] = null
+      e.keys.length = e.data.length = 1; e.nodes.length = 2
       e.nodes[0] = l
       e.nodes[1] = r
+     }
+
+    e.merge = (s) =>                                                            // Merge in a split node at the point at which the split node is referenced
+     {const k = [], d = [], n = [], N = e.count()
+      assert(s.count() == 1)                                                    // The node to be merged in can only have one key
+      assert(N < t.N)                                                           // The node to merge to must have room for the key being merged in
+      for(let i = 0; i < N; ++i)                                                // Each key
+       {if (e.nodes[i] != s)                                                    // We have not yet reached the splitting
+         {k.push(e.keys[i])
+          d.push(e.data[i])
+          n.push(e.nodes[i])
+         }
+        else                                                                    // Replace the referenced node with its sub nodes
+         {k.push(s.keys [0]); k.push(e.keys[i])
+          d.push(s.data [0]); d.push(e.data[i])
+          n.push(s.nodes[0], s.nodes[1])
+         }
+       }
+      if (e.nodes[N] == s)                                                      // The split node was last
+         {k.push(s.keys [0])
+          d.push(s.data [0])
+          n.push(s.nodes[0], s.nodes[1])
+       }
+      else
+       {n.push(e.nodes[N])                                                      // The split node was not last
+       }
+      e.keys = k; e.data = d; e.nodes = n
+     }
+
+    e.mergeLeaf = (key, data) =>                                                // Merge into a leaf
+     {const k = [], d = [], N = e.count()
+      assert(N < t.N)                                                           // The node to merge to must have room for the key being merged in
+      for(let i = 0; i < N; ++i)                                                // Each key
+       {if (e.keys[i] < key)                                                    // We have not yet reached the splitting
+         {k.push(e.keys[i])
+          d.push(e.data[i])
+         }
+        else                                                                    // Replace the referenced node with its sub nodes
+         {k.push(key);  k.push(e.keys[i])
+          d.push(data); d.push(e.data[i])
+         }
+       }
+      if (key > k[N-1])                                                         // Larger than all keys
+       {k.push(key)
+        d.push(data)
+       }
+      e.keys = k; e.data = d;
+     }
+
+    e.check = (key) =>                                                          // Return the index of a key in a node or null if no such key
+     {const N = e.count()
+      for(let i = 0; i < N; ++i)                                                // Each key
+       {if (e.keys[i] == key) return i                                          // Key has been found
+       }
+      return null
+     }
+
+    e.step = (key) =>                                                           // Return the node reached by this key (which is assumed not to be equal to any existing key)
+     {const N = e.count()
+      for(let i = 0; i < N; ++i)                                                // Each key
+       {if (key < e.keys[i]) return e.nodes[i]                                  // Smallest key that the current key is smaller than
+       }
+      return e.nodes[N]                                                         // Larger than all keys
      }
    }
   this.Element = Element;
  }
 
-if (0)                                                                          // Tests for hashing
+if (testing)                                                                    // Tests for Tree - split leaf
+ {const t = new Tree(4), e = new t.Element();
+  e.keys  = [1,2,3]
+  e.data  = [11,22,33]
+
+  e.split()
+
+  is_deeply(e.count(),  1)
+  is_deeply(e.keys[0],  2)
+  is_deeply(e.data[0], 22)
+
+  const f = e.nodes[0]
+  is_deeply(f.count(),   1)
+  is_deeply(f.keys [0],  1)
+  is_deeply(f.data [0], 11)
+  is_deeply(f.nodes.length,  0)
+
+  const g = e.nodes[1]
+  is_deeply(g.count(),   1)
+  is_deeply(g.keys [0],  3)
+  is_deeply(g.data [0], 33)
+  is_deeply(g.nodes.length, 0)
+ }
+
+if (testing)                                                                    // Tests for Tree - split
  {const t = new Tree(4), e = new t.Element();
   e.keys  = [1,2,3]
   e.data  = [11,22,33]
   e.nodes = [0,1,2,3]
-  say("AAAA", e)
+
   e.split()
-  say("BBBB", e)
+
+  is_deeply(e.count(),  1)
+  is_deeply(e.keys[0],  2)
+  is_deeply(e.data[0], 22)
+
+  const f = e.nodes[0]
+  is_deeply(f.count(),   1)
+  is_deeply(f.keys [0],  1)
+  is_deeply(f.data [0], 11)
+  is_deeply(f.nodes[0],  0)
+  is_deeply(f.nodes[1],  1)
+
+  const g = e.nodes[1]
+  is_deeply(g.count(),   1)
+  is_deeply(g.keys [0],  3)
+  is_deeply(g.data [0], 33)
+  is_deeply(g.nodes[0],  2)
+  is_deeply(g.nodes[1],  3)
  }
 
-module.exports = { say, stop, is_deeply, dump, LinkedList, Hash }
+if (testing)                                                                    // Tests for Tree - check, step
+ {const t = new Tree(4), e = new t.Element();
+  e.keys  = [10,20,30]
+  e.data  = [10,20,30]
+  e.nodes = [0,1,2,3]
+
+  is_deeply(e.check(10), 0)
+  is_deeply(e.check(20), 1)
+  is_deeply(e.check(4) == null ? 1 : 0, 1)
+
+  is_deeply(e.step( 5), 0)
+  is_deeply(e.step(15), 1)
+  is_deeply(e.step(25), 2)
+  is_deeply(e.step(35), 3)
+ }
+
+if (testing)                                                                    // Tests for Tree - merge
+ {const t = new Tree(4), p = new t.Element(), c = new t.Element();
+  c.keys  = [12]
+  c.data  = [120]
+  c.nodes = [11,13]
+  p.keys  = [10, 20]
+  p.data  = [100, 200]
+  p.nodes = [5, c, 25]
+
+  p.merge(c)
+
+  is_deeply(p.keys,  [10,  12,  20])
+  is_deeply(p.data,  [100, 120, 200])
+  is_deeply(p.nodes, [5, 11, 13, 25])
+ }
+
+if (testing)                                                                    // Tests for Tree - merge leaf
+ {const t = new Tree(4), p = new t.Element();
+  p.keys  = [10, 20]
+  p.data  = [100, 200]
+
+  p.mergeLeaf(15, 150)
+
+  is_deeply(p.keys,  [10,  15,  20])
+  is_deeply(p.data,  [100, 150, 200])
+  is_deeply(p.nodes.length, 0)
+ }
+
+if (testing)                                                                    // Tests for Tree - merge leaf
+ {const t = new Tree(4), p = new t.Element();
+  p.keys  = [10, 20]
+  p.data  = [100, 200]
+
+  p.mergeLeaf(30, 300)
+
+  is_deeply(p.keys,  [10,  20,  30 ])
+  is_deeply(p.data,  [100, 200, 300])
+  is_deeply(p.nodes.length, 0)
+ }
+
+if (testing)                                                                    // Tests for Tree - put
+ {const t = new Tree(4), N = 16
+  for(let i = 0; i < N; ++i)
+   {t.set(i, 2 * i)
+    for(let j = 0; j < i; ++j)
+     {assert(t.get(j) == 2 * j)
+     }
+    assert(t.get(i+1) == null)
+   }
+ }
+
+if (testing) testResults()
+
+module.exports = {dump, equal, Hash, is_deeply, LinkedList, not_deeply, say, stop, testResults, Tree}
