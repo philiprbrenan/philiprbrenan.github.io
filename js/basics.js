@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------------------
-Javascript basics
+Javascript basics: debugging, testing, data structures: lists, hashes, trees
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
 const testing = process.argv[1].match(/basics\.js/)                             // Testing if called directly
@@ -7,7 +7,7 @@ const testing = process.argv[1].match(/basics\.js/)                             
 function dump(i)                                                                // Dump a data structure
  {const m = new Map()                                                           // Prevent recursion
 
-  function dump2(i, d)                                                          // Dump a data structure
+  function dump2(i, d)                                                          // Dump a sub data structure
    {if (i === null)               return "null"                                 // Null
     if (i === undefined)          return "undefined"                            // Undefined
     if (typeof(i) === "function") return "function"                             // Function
@@ -357,7 +357,8 @@ if (testing)                                                                    
  }
 
 function Tree(N)                                                                // N/2-1 - N way trees with N at least 4. When N is 4 we get red-black trees by another name
- {const t = this
+ {if (N % 2) ++N;                                                               // make N even
+  const t = this
   t.N    = N                                                                    // N is the number of nodes, N-1 is the number of keys, N/2-1 are the left or right hand key set in a split
   t.root = null                                                                 // The current root node
   t.size = 0                                                                    // Number of elements in the tree
