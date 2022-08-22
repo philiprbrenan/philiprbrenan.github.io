@@ -167,8 +167,14 @@ function not_deeply(got, expected)                                              
   return m
  }
 
-function testResults( )                                                         // Print testing results
+function testResults()                                                          // Print testing results
  {say(`Passed ${assert_tests_passed} asserts,  ${is_deeply_tests_passed} is_deeply tests,  ${not_deeply_tests_passed} not_deeply tests`)
+ }
+
+function range(start, end)                                                      // Return a range of numbers as an array starting at 'start' and ending one before 'end'
+ {const n = []
+  for(let i = start; i < end; ++i) n.push(i)
+  return n
  }
 
 function LinkedList()                                                           // Linked lists
@@ -632,12 +638,12 @@ if (testing)                                                                    
      }
     assert(t.get(i+1) == null)
    }
-  is_deeply(t.keys(), [0, 1, 10, 11, 12, 13, 14, 15, 2, 3, 4, 5, 6, 7, 8, 9])
+  is_deeply(t.keys(), range(0, N).sort())
  }
 
 if (testing) testResults()
 
-return {dump, equal, Hash, is_deeply, LinkedList, not_deeply, say, stop, testResults, Tree}
+return {dump, equal, Hash, is_deeply, LinkedList, not_deeply, range, say, stop, testResults, Tree}
 
 }
 
