@@ -2,7 +2,7 @@
 Javascript basics: debugging, testing, data structures: lists, hashes, trees
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
-const testing = process.argv[1].match(/basics\.js/)                             // Testing if called directly
+function Testing(testing=false) {                                               // Testing name space
 
 function dump(i)                                                                // Dump a data structure
  {const m = new Map()                                                           // Prevent recursion
@@ -358,7 +358,7 @@ if (testing)                                                                    
  }
 
 function Tree(N)                                                                // N/2-1 - N way trees with N at least 4. When N is 4 we get red-black trees by another name
- {if (N % 2) ++N;                                                               // Make N even - it is possible to operate with N odd but it is more work for no gain
+ {if (N % 2) ++N;                                                               // Make N even - it is possible to operate with N odd but it is a lot of work for little gain
   const t = this
   t.N    = N                                                                    // N is the number of nodes, N-1 is the number of keys, N/2-1 are the left or right hand key set in a split
   t.root = null                                                                 // The current root node
@@ -625,4 +625,11 @@ if (testing)                                                                    
 
 if (testing) testResults()
 
-module.exports = {dump, equal, Hash, is_deeply, LinkedList, not_deeply, say, stop, testResults, Tree}
+return {dump, equal, Hash, is_deeply, LinkedList, not_deeply, say, stop, testResults, Tree}
+
+}
+
+if(process.argv[1].match(/basics\.js/)) Testing(true)                           // Testing if called directly
+
+//module.exports = {dump, equal, Hash, is_deeply, LinkedList, not_deeply, say, stop, testResults, Tree}
+module.exports = {Testing}
