@@ -21,6 +21,5 @@ jobs:
     - name: Run
       run: |
         nodejs js/basics.js
-        nodejs js/Map/test.js
-        cd js/Map
-        nodejs test.js
+        nodejs js/test.js
+        cd js/; nodejs test.js
