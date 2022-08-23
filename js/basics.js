@@ -412,6 +412,35 @@ function Tree(N)                                                                
      }
    }
 
+  this.getFirst = () =>                                                         // Get the first key in a tree
+   {return t.root == null ? null : t.root.getFirst()
+   }
+
+  this.getLast = () =>                                                          // Get the last key in a tree
+   {return t.root == null ? null : t.root.getLast()
+   }
+
+  this.getGt = (key) =>                                                         // Get the next key after the specified one
+   {if (t.root == null) return null                                             // Empty tree
+    if (key == t.root.getLast()) return null                                    // Last key so no next
+    for(var p = t.root; p != null;)                                             // Non empty tree
+     {const f = p.check(key)
+      if (p.leaf())                                                             // Leaf node
+       {return f < p.keys.length - 1 ? p.keys[f + 1] : null                    // Next from match on leaf as the key must exist in the leaf
+       }
+      if (f != null) return p.nodes[f+1].getFirst()                             // Step through next node and go first - th node must exist because we are not on a leaf
+      const F = p.firstGt(key)                                                  // Next larger key
+      if (F === null)
+       {p = p.nodes[p.nodes.length-1]
+        continue
+       }
+      const q = p.nodes[F]                                                      // Left of next larger key
+      const l = q.getLast()                                                     // Last key after going right
+      if (key == l) return p.keys[F]                                            // Next greater key in this node is th next greter key because the current key is the key previous to the next greater key in this node
+      p = q
+     }
+   }
+
   this.keys = () =>                                                             // Get all the keys in a tree as an array
    {const k = []
     function add(element)                                                       // Add all the keys in each node recursively
@@ -511,12 +540,32 @@ function Tree(N)                                                                
       return null
      }
 
+    e.firstGt = (key) =>                                                        // Return the index of the first key greater than the specified key is such a key exists else null
+     {const N = e.count()
+      for(let i = 0; i < N; ++i)                                                // Each key
+       {if (e.keys[i] > key) return i                                           // Greater key has been found
+       }
+      return null
+     }
+
     e.step = (key) =>                                                           // Return the node reached by this key (which is assumed not to be equal to any existing key)
      {const N = e.count()
       for(let i = 0; i < N; ++i)                                                // Each key
        {if (key < e.keys[i]) return e.nodes[i]                                  // Smallest key that the current key is smaller than
        }
       return e.nodes[N]                                                         // Larger than all keys
+     }
+
+    e.getFirst = () =>                                                          // Get the first key in a tree
+     {for(var p = e; p != null; p = p.nodes[0])                                 // Non empty tree
+       {if (p.leaf()) return p.keys[0]                                          // On a leaf
+       }
+     }
+
+    e.getLast = () =>                                                           // Get the last key in a tree
+     {for(var p = e; p != null; p = p.nodes[p.nodes.length-1])                  // Non empty tree
+       {if (p.leaf()) return p.keys[p.keys.length-1]                            // On a leaf
+       }
      }
    }
   this.Element = Element;
@@ -631,14 +680,28 @@ if (testing)                                                                    
 
 if (testing)                                                                    // Tests for Tree - put
  {const t = new Tree(4), N = 16
-  for(let i = 0; i < N; ++i)
-   {t.set(i, 2 * i)
-    for(let j = 0; j < i; ++j)
-     {assert(t.get(j) == 2 * j)
-     }
-    assert(t.get(i+1) == null)
+
+  function dd(number)
+   {return number < 10 ? '0'+number : number
    }
-  is_deeply(t.keys(), range(0, N).sort())                                       // Sort into character order rather than numeric order
+
+  for(let i = 0; i < N; ++i)
+   {t.set(dd(i), 2 * i)
+    for(let j = 0; j < i; ++j)
+     {assert(t.get(dd(j)) == 2 * j)
+     }
+    assert(t.get(dd(i+1)) == null)
+   }
+
+  is_deeply(t.keys(), range(0, N).map((x)=>dd(x)).sort())                       // Sort into character order rather than numeric order
+
+//stop("Root keys=", t.root.nodes[2].keys)
+  is_deeply(t.getFirst(), "00")
+  for(let i = 0; i < N-1; ++i)                                                  //
+   {is_deeply(t.getGt(dd(i)), dd(i+1))
+   }
+  is_deeply(t.getLast(),  dd(N-1))
+  assert(t.getGt(dd(N-1)) === null)
  }
 
 if (testing) testResults()
