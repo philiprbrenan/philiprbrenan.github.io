@@ -426,7 +426,7 @@ function Tree(N)                                                                
     for(var p = t.root; p != null;)                                             // Non empty tree
      {const f = p.check(key)
       if (p.leaf())                                                             // Leaf node
-       {return f < p.keys.length - 1 ? p.keys[f + 1] : null                    // Next from match on leaf as the key must exist in the leaf
+       {return f < p.keys.length - 1 ? p.keys[f + 1] : null                     // Next from match on leaf as the key must exist in the leaf
        }
       if (f != null) return p.nodes[f+1].getFirst()                             // Step through next node and go first - th node must exist because we are not on a leaf
       const F = p.firstGt(key)                                                  // Next larger key
@@ -695,9 +695,8 @@ if (testing)                                                                    
 
   is_deeply(t.keys(), range(0, N).map((x)=>dd(x)).sort())                       // Sort into character order rather than numeric order
 
-//stop("Root keys=", t.root.nodes[2].keys)
   is_deeply(t.getFirst(), "00")
-  for(let i = 0; i < N-1; ++i)                                                  //
+  for(let i = 0; i < N-1; ++i)                                                  // Check succeeding values
    {is_deeply(t.getGt(dd(i)), dd(i+1))
    }
   is_deeply(t.getLast(),  dd(N-1))
