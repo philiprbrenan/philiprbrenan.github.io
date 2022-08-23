@@ -154,7 +154,7 @@ let is_deeply_tests_passed = 0;                                                 
 
 function is_deeply(got, expected)                                               // Compare what we got with what we expected
  {const m = equal(got, expected);
-  if (m == null) return ++is_deeply_tests_passed
+  if (m === null) return ++is_deeply_tests_passed
   stop(m)
  }
 
@@ -162,7 +162,7 @@ let not_deeply_tests_passed = 0;                                                
 
 function not_deeply(got, expected)                                              // Compare what we got with what we expected
  {const m = equal(got, expected);
-  if (m == null) return stop("Unexpectedly equal")
+  if (m === null) return stop("Unexpectedly equal")
   ++not_deeply_tests_passed
   return m
  }
@@ -178,11 +178,11 @@ function range(start, end)                                                      
  }
 
 function LinkedList()                                                           // Linked lists
- {const l = this
+ {const l = this; l.first = l.last = null;
 
   l.putFirst = (value) =>                                                       // Put a value onto the front of the list
    {const e = new Element(value)
-    if (l.first == null) l.first = l.last = e
+    if (l.first === null) l.first = l.last = e
     else
      {(l.first.prev = e).next = l.first
       l.first = l.first.prev
@@ -192,7 +192,7 @@ function LinkedList()                                                           
 
   l.putLast = (value) =>                                                        // Put a value onto the end of the list
    {const e = new Element(value)
-    if (l.first == null) l.first = l.last = e
+    if (l.first === null) l.first = l.last = e
     else
      {(l.last.next = e).prev = l.last
       l.last = l.last.next
@@ -202,22 +202,22 @@ function LinkedList()                                                           
 
   l.unshift = value => l.putFirst(value)                                        // Push a value onto the front of the list
   l.push    = value => l.putLast(value)                                         // Push a value onto the end of the list
-  l.pop = () => l.last == null ? null : l.last.remove().value                   // Pop the value off the end of the list
-  l.shift = () => l.first == null ? null : l.first.remove().value               // Shift the value off the front of the list
+  l.pop = () => l.last === null ? null : l.last.remove().value                   // Pop the value off the end of the list
+  l.shift = () => l.first === null ? null : l.first.remove().value               // Shift the value off the front of the list
 
   l.print = () =>                                                               // Print the list
-   {for(let p = l.first; p != null; p = p.next) say(p.value)
+   {for(let p = l.first; p !== null; p = p.next) say(p.value)
    }
 
   l.string = () =>                                                              // Stringify the values in the list
    {const s = []
-    for(let p = l.first; p != null; p = p.next) s.push(dump(p.value))
+    for(let p = l.first; p !== null; p = p.next) s.push(dump(p.value))
     return s.join(" ")
    }
 
   l.size = () =>                                                                // Size of the list
    {let n = 0
-    for(let p = l.first; p != null; p = p.next) ++n
+    for(let p = l.first; p !== null; p = p.next) ++n
     return n
    }
 
@@ -340,8 +340,8 @@ function Hash()                                                                 
    {const n = h.hash(key)
     for(let i = 0; i < h.arenaSize; ++i)
      {const j = n + i
-      if (h.keys[j] == key)  return h.data[j]
-      if (h.keys[j] == null) return null
+      if (h.keys[j] ==  key)  return h.data[j]
+      if (h.keys[j] === null) return null
      }
    }
  }
@@ -371,24 +371,24 @@ function Tree(N)                                                                
   t.size = 0                                                                    // Number of elements in the tree
 
   this.set = (key, data) =>                                                     // Put a key value pair
-   {if (t.root == null)                                                         // Empty tree
+   {if (t.root === null)                                                        // Empty tree
      {const e = t.root = new Element()
       e.keys.push(key); e.data.push(data)
       return
      }
 
     let q = null                                                                // Parent to merge into
-    for (var p = t.root; p != null; q = p, p = p.step(key))                     // Non empty tree
+    for (var p = t.root; p !== null; q = p, p = p.step(key))                    // Non empty tree
      {if (p.count() >= t.N - 1)                                                 // Split the node if possible
        {p.split()
-        if (q != null)                                                          // Merge split node back into preceding node
+        if (q !== null)                                                         // Merge split node back into preceding node
          {q.merge(p)
           p = q                                                                 // Restart from parent
          }
        }
 
       const f = p.check(key)
-      if (f != null)                                                            // Located the key
+      if (f !== null)                                                           // Located the key
        {p.data[f] = data
         return
        }
@@ -404,40 +404,39 @@ function Tree(N)                                                                
    }
 
   this.get = (key) =>                                                           // Get the data associated with a key or null if the key is not present in the tree
-   {if (t.root == null) return null                                             // Empty tree
-    for(var p = t.root; p != null; p = p.step(key))                             // Non empty tree
-     {const f = p.check(key)
-      if (f != null) return p.data[f]
-      if (p.leaf()) return null                                                 // On a leaf
+   {if (t.root === null) return null                                            // Empty tree
+    for(var p = t.root; p !== null; p = p.step(key))                            // Non empty tree
+     {const f = p.check(key)                                                    // Check for matching key
+      if (f !== null) return p.data[f]                                          // Found a matching node
+      if (p.leaf()) return null                                                 // On a leaf so no where else to search so the key is not present int the tree
      }
    }
 
   this.getFirst = () =>                                                         // Get the first key in a tree
-   {return t.root == null ? null : t.root.getFirst()
+   {return t.root === null ? null : t.root.getFirst()
    }
 
   this.getLast = () =>                                                          // Get the last key in a tree
-   {return t.root == null ? null : t.root.getLast()
+   {return t.root === null ? null : t.root.getLast()
    }
 
-  this.getGt = (key) =>                                                         // Get the next key after the specified one
-   {if (t.root == null) return null                                             // Empty tree
-    if (key == t.root.getLast()) return null                                    // Last key so no next
-    for(var p = t.root; p != null;)                                             // Non empty tree
+  this.getNext = (key) =>                                                       // Get the next key after the specified one
+   {if (t.root === null || key == t.root.getLast()) return null                 // Empty tree or last key
+    for(var p = t.root; p !== null;)                                            // Non empty tree
      {const f = p.check(key)
       if (p.leaf())                                                             // Leaf node
        {return f < p.keys.length - 1 ? p.keys[f + 1] : null                     // Next from match on leaf as the key must exist in the leaf
        }
-      if (f != null) return p.nodes[f+1].getFirst()                             // Step through next node and go first - th node must exist because we are not on a leaf
+      if (f !== null) return p.nodes[f+1].getFirst()                             // Step through next node and go first - th node must exist because we are not on a leaf
       const F = p.firstGt(key)                                                  // Next larger key
-      if (F === null)
-       {p = p.nodes[p.nodes.length-1]
-        continue
+      if (F === null)                                                            // Larger than all keys in node
+       {p = p.nodes[p.nodes.length-1]                                           // Continue with last node
        }
-      const q = p.nodes[F]                                                      // Left of next larger key
-      const l = q.getLast()                                                     // Last key after going right
-      if (key == l) return p.keys[F]                                            // Next greater key in this node is th next greter key because the current key is the key previous to the next greater key in this node
-      p = q
+      else                                                                      // Found a larger key
+       {const q = p.nodes[F]                                                    // Left of next larger key
+        if (key == q.getLast()) return p.keys[F]                                // Next greater key in this node is the next greter key because the current key is the key previous to the next greater key in this node
+        p = q
+       }
      }
    }
 
@@ -557,13 +556,13 @@ function Tree(N)                                                                
      }
 
     e.getFirst = () =>                                                          // Get the first key in a tree
-     {for(var p = e; p != null; p = p.nodes[0])                                 // Non empty tree
+     {for(var p = e; p !== null; p = p.nodes[0])                                 // Non empty tree
        {if (p.leaf()) return p.keys[0]                                          // On a leaf
        }
      }
 
     e.getLast = () =>                                                           // Get the last key in a tree
-     {for(var p = e; p != null; p = p.nodes[p.nodes.length-1])                  // Non empty tree
+     {for(var p = e; p !== null; p = p.nodes[p.nodes.length-1])                  // Non empty tree
        {if (p.leaf()) return p.keys[p.keys.length-1]                            // On a leaf
        }
      }
@@ -630,7 +629,7 @@ if (testing)                                                                    
 
   is_deeply(e.check(10), 0)
   is_deeply(e.check(20), 1)
-  is_deeply(e.check(4) == null ? 1 : 0, 1)
+  is_deeply(e.check(4) === null ? 1 : 0, 1)
 
   is_deeply(e.step( 5), 0)
   is_deeply(e.step(15), 1)
@@ -690,17 +689,17 @@ if (testing)                                                                    
     for(let j = 0; j < i; ++j)
      {assert(t.get(dd(j)) == 2 * j)
      }
-    assert(t.get(dd(i+1)) == null)
+    assert(t.get(dd(i+1)) === null)
    }
 
   is_deeply(t.keys(), range(0, N).map((x)=>dd(x)).sort())                       // Sort into character order rather than numeric order
 
   is_deeply(t.getFirst(), "00")
   for(let i = 0; i < N-1; ++i)                                                  // Check succeeding values
-   {is_deeply(t.getGt(dd(i)), dd(i+1))
+   {is_deeply(t.getNext(dd(i)), dd(i+1))
    }
   is_deeply(t.getLast(),  dd(N-1))
-  assert(t.getGt(dd(N-1)) === null)
+  assert(t.getNext(dd(N-1)) === null)
  }
 
 if (testing) testResults()
