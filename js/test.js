@@ -2,9 +2,8 @@
 Javascript basics: debugging, testing, data structures: lists, hashes, trees.
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
-
-const {Testing} = require("./basics.js")                                        // Load the testing module
-const {dump, is_deeply, say, stop, LinkedList, Hash, testResults, Tree} = Testing()
+const {dump, is_deeply, say, stop, LinkedList, Hash, testResults, Tree}         // Load the basics module
+  = require("./basics.js")
 
 class LinkedListClass                                                           // Linked list as a class rather than a function
  {constructor() {this.first = null; this.last = null;}
