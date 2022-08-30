@@ -2,7 +2,7 @@
 Javascript basics: debugging, testing, data structures: lists, hashes, trees.
 Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 ------------------------------------------------------------------------------*/
-function Testing(testing=false) {                                               // Testing name space
+const testing = require.main === module
 
 function dump(i)                                                                // Dump a data structure
  {const m = new Map()                                                           // Prevent recursion
@@ -202,8 +202,8 @@ function LinkedList()                                                           
 
   l.unshift = value => l.putFirst(value)                                        // Push a value onto the front of the list
   l.push    = value => l.putLast(value)                                         // Push a value onto the end of the list
-  l.pop = () => l.last === null ? null : l.last.remove().value                   // Pop the value off the end of the list
-  l.shift = () => l.first === null ? null : l.first.remove().value               // Shift the value off the front of the list
+  l.pop = () => l.last === null ? null : l.last.remove().value                  // Pop the value off the end of the list
+  l.shift = () => l.first === null ? null : l.first.remove().value              // Shift the value off the front of the list
 
   l.print = () =>                                                               // Print the list
    {for(let p = l.first; p !== null; p = p.next) say(p.value)
@@ -427,9 +427,9 @@ function Tree(N)                                                                
       if (p.leaf())                                                             // Leaf node
        {return f < p.keys.length - 1 ? p.keys[f + 1] : null                     // Next from match on leaf as the key must exist in the leaf
        }
-      if (f !== null) return p.nodes[f+1].getFirst()                             // Step through next node and go first - th node must exist because we are not on a leaf
+      if (f !== null) return p.nodes[f+1].getFirst()                            // Step through next node and go first - th node must exist because we are not on a leaf
       const F = p.firstGt(key)                                                  // Next larger key
-      if (F === null)                                                            // Larger than all keys in node
+      if (F === null)                                                           // Larger than all keys in node
        {p = p.nodes[p.nodes.length-1]                                           // Continue with last node
        }
       else                                                                      // Found a larger key
@@ -562,7 +562,7 @@ function Tree(N)                                                                
      }
 
     e.getLast = () =>                                                           // Get the last key in a tree
-     {for(var p = e; p !== null; p = p.nodes[p.nodes.length-1])                  // Non empty tree
+     {for(var p = e; p !== null; p = p.nodes[p.nodes.length-1])                 // Non empty tree
        {if (p.leaf()) return p.keys[p.keys.length-1]                            // On a leaf
        }
      }
@@ -702,13 +702,6 @@ if (testing)                                                                    
   assert(t.getNext(dd(N-1)) === null)
  }
 
-if (testing) testResults()
+if (testing) testResults()                                                      // Say the test results
 
-return {dump, equal, Hash, is_deeply, LinkedList, not_deeply, range, say, stop, testResults, Tree}
-
-}
-
-if(process.argv[1].match(/basics\.js/)) Testing(true)                           // Testing if called directly
-
-//module.exports = {dump, equal, Hash, is_deeply, LinkedList, not_deeply, say, stop, testResults, Tree}
-module.exports = {Testing}
+module.exports = {dump, equal, Hash, is_deeply, LinkedList, not_deeply, range, say, stop, testResults, Tree}
