@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+body {
+  margin: 1% 10% 1% 10%;
+  font-family: verdana;
+  font-size: x-large;
+ }
+p {
+  max-width: 40em;
+ }
+li {
+  margin: 0 0 1em 0;
+  max-width: 40em;
+ }
+figcaption {
+  font-weight: bold;
+ }
+img {
+  max-width :80vw;
+  max-height:60vh;
+ }
+img.small {
+  max-width :20vw;
+  max-height:20vh;
+ }
+  </style>
+  <base href="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/bt/">
+</head>
+
+<body>
+
+
+<h1>Project La Loba: Lights Out Book Automation</h1>
+
+<p>Here is a design for a fully automated system for reliably and cost
+effectively receiving, picking, listing, purging and mailing several thousand
+books per day chosen from a body of one million books or more. The proposed
+system is built from cheap and readily available components made of <a href="https://en.wikipedia.org/wiki/Steel">steel</a>. 
+<p>The proposed system does not rely on humans to work within the <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a>, merely to observe the <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> from a safe distance and to maintain the <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> equipment in good working order.  Some minimal human effort is required to tip
+Gaylords full of books into the system and, likewise, transport away Gaylords
+of books to be recycled or mailed.
+
+<h1>Guiding principles</h1>
+
+<ol>
+
+<li>Full automation keeping <a href="https://en.wikipedia.org/wiki/Person">people</a> safe by keeping them out of the machinery
+when it is operating
+
+<li>Avoid rotations where ever possible as they are harder to implement than
+linear motion.
+
+<li>Only use cheap, recyclable components available via mass production.  This
+implies the extensive use of <a href="https://en.wikipedia.org/wiki/Steel">steel</a>. 
+<li>Steel can <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> 10 times its own weight.  A hundred tons of books will
+require 10 tons of <a href="https://en.wikipedia.org/wiki/Steel">steel</a> to <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> them.  <a href="https://en.wikipedia.org/wiki/Steel">steel</a> currently costs around $1K per
+ton.
+
+<li>Favor simplicity, reliability, robust, linear, quick payback solutions over
+all others.
+
+<li> <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">Don't Repeat Yourself</a>: favor a gantry crane with 4 wheels over 100 bookcases each with 4
+wheels.
+
+</ol>
+
+<h1>Floor Plan</h1>
+
+<p>Books are tipped out onto a downward sloping ramp.  The ramp is vibrated
+to spread out the books along the ramp.
+
+<figure>
+  <img src="images/FullAutomationFloorPlan.jpeg">
+  <figcaption>Floor plan</figcaption>
+</figure>
+
+<p>Books are picked out of the ramp using a vacuum powered corner grabber.
+Books that are <b>buys</b> are jacketted in a <a href="https://en.wikipedia.org/wiki/Steel">steel</a> clip. The remainder are
+transferred to recycling bins. Jacketed buys are moved to the kitting area for
+loading into storage trays via the lower crane.  The storage trays full of
+books are transported to the dense cube in the storage area by the upper crane.
+
+<p>The storage area  is processed periodically in a <b>pick cycle</b>. In a
+pick cycle, each tray in turn is moved to the kitting area and its contents
+transferred either to the kitting area or to another tray. The tray is then
+returned to the storage area by the upper crane.
+
+<p>Here is a <a
+href="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/stackOverFlow.mp4">video
+showing a simulation of the storage area during processing.</a></p>
+
+
+<p>The kitting area is used to <a href="https://en.wikipedia.org/wiki/Assembly_language#Assembler">assemble</a> <b>multi-order</b> orders during each
+pick cycle. As soon as a multi-order is complete it is moved by the lower crane
+to the mail area where the books are placed in packages and dropped in to a
+mail bin ready for daily pickup.
+
+
+<h1>Design</h1>
+
+<p>Books can be simultaneously protected from wear and tear, made to occupy a
+standardized volume, kept from opening unexpectedly and made manipulable by
+jacketing them in a magnetic <a href="https://en.wikipedia.org/wiki/Steel">steel</a> clip.
+
+<figure>
+  <img src="images/bookClip2.png">
+  <figcaption>Book clip made with three <a href="https://aws.amazon.com/ec2/spot/">spot</a> welds and four bends</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a
+href="https://www.tinkercad.com/things/fMAdkoX7Pky?sharecode=6vmsbOA7_1qqPTeM7qDw8GjgGHHD45ZJo9zMHu8y_n4">Book
+Clip</a>.
+
+<p>It is conceivable that book clips can be fabricated as a <a
+href="https://jymachinery.en.made-in-china.com/product/vSRnOTpkbjYL/China-Precision-Customized-Part-Stainless-Steel-Investment-Lost-Wax-Silicon-Sol-Casting-Combine-with-CNC-Machining-Service-Full-inspection-and-Great-Aftersale-Service.html">single
+metal casting</a> or using <a
+href="https://www.thomasnet.com/articles/custom-manufacturing-fabricating/disadvantages-and-advantages-of-plastic-over-metal-fabrication/">injection
+molded plastic</a> with enough iron powder in it to make it magnetic.</p>
+
+<p>The jacket illustrated is designed to be easy to clip around books of
+differing sizes and, likewise, to be removed when the book is mailed or purged.
+The pyramid at the bottom is used to guide the clip, and hence the book, into a
+corresponding pyramid slot in the kitting area and storage trays reducing the need for
+positional accuracy considerably. The oval clips are made of spring <a href="https://en.wikipedia.org/wiki/Steel">steel</a> which
+is <a href="https://aws.amazon.com/ec2/spot/">spot</a> welded to the U-tube frame as is the pyramid at the bottom.
+
+<p>Shapes such as <a
+href="https://jymachinery.en.made-in-china.com/product/twCTudzOrgUM/China-OEM-Metal-Stainless-Steel-Precision-Investment-Silica-Sol-Lost-Wax-Casting-for-Auto-Parts-Machinery-Industrial-Valve-Pump-Impeller-Marine-Kitchenware-Bathroom.html">pyramids
+are easily made by casting.</a></p>
+
+<p>The book clip shown has the following advantages of:
+
+<ol>
+<li>It fits a <b>range</b> of different book sizes
+<li>It can be <b>reused</b> multiple times
+<li>It is <b>easy</b> to place and remove around books
+<li>It is <b>easy</b> to manufacturer in a small number of <a href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/contentmodels/cmlts.html#cmlts__step">step</a>s </ol>
+
+<p>It is easy to stand books in an egg tray even though egg trays were not
+designed for this purpose:</p>
+
+<figure>
+  <img src="images/booksOnEggTray.jpg">
+  <figcaption>Books in an egg tray</figcaption>
+</figure>
+
+<p>Consequently it will be easy to stand books wrapped with such a clip in a
+tray with appropriate sized slots in its floor. Lowering the book into position
+with a magnetic or pneumatic grab will engage the pyramid in the corresponding
+pyramid slot to position the clip, and hence the book, accurately.  The grab
+can then be withdrawn leaving the book standing in position.
+
+<p>The books are stored in a tray acting as a large egg tray:
+
+<figure>
+  <img src="images/Tray3d.png">
+  <figcaption>Books in a tray</figcaption>
+</figure>
+
+<p>The outer tray is typically <b>5.8m</b> by <b>2.3m</b> and consists of five
+smaller inner trays bolted to the outer frame. This arrangement allows the
+inner trays to be removed from the outer tray and reassembled as cubes for
+easier transportation.
+
+<p>The dimensions of the tray correspond to those of a small <a href="https://en.wikipedia.org/wiki/Intermodal_container">Intermodal Shipping Container</a> which enables
+us to use equipment developed for such containers to lift and transport them:
+
+<figure>
+  <img src="images/Corner.png">
+  <figcaption>Intermodal shipping container corner</figcaption>
+</figure>
+
+<p>There is a significant advantage to using container technology: the spreader
+bar tensions the sides of the tray when the tray is lifted allowing the sides
+of the tray to be constructed of less <a href="https://en.wikipedia.org/wiki/Steel">steel</a> than might otherwise be required.
+</p>
+
+<figure>
+  <img src="images/SpreaderBar.png">
+  <figcaption>Intermodal shipping container spreader bar</figcaption>
+</figure>
+
+<p>The books are placed in the tray using a three axis crane with an electro-magnetic chuck:
+
+<figure>
+  <img src="svg/OffsetCassette.svg">
+  <figcaption>Placing books in a tray</figcaption>
+</figure>
+
+<p>The trays can be stacked in a storage area and then brought to a work area
+for processing using a gantry crane.
+
+<figure>
+  <img src="svg/FlatSteelJacketDuplex.svg">
+  <figcaption>Processing books in the work area</figcaption>
+</figure>
+
+<p>In the work area books are picked and placed in the AutoKitter which has
+enough room to hold the number of books picked in one cycle.  For each cycle,
+the AutoKitter is preloaded with replacement books to go into the slots vacated
+by picked books.  At the end of the cycle the three axis crane unloads the
+AutoKitter in multi-order order and places the books in the mail area where
+they are removed from their <a href="https://en.wikipedia.org/wiki/Steel">steel</a> clips and dropped into mailing sacks.  The <a href="https://en.wikipedia.org/wiki/Steel">steel</a> clips are sent back to receiving for reuse on incoming books.
+
+<figure>
+  <img src="svg/AutoKitter.svg">
+  <figcaption>Auto kitting books in the work area</figcaption>
+</figure>
+
+<p>In the receiving area books are tipped out of gaylords onto a descending
+ramp. Foam covered weighted rollers hung above the ramp <a href="https://en.wikipedia.org/wiki/Online_help">help</a> flatten out the
+books.  The books slide slowly down the ramp because the ramp is vibrated by a
+hydraulically powered plate vibrator which shifts the books into the positions
+which minimizes their potential energy by increasing their entropy.
+
+<figure>
+  <img src="svg/TippingOut.svg">
+  <figcaption>Tipping books out from incoming Gaylords</figcaption>
+</figure>
+
+<p>Once the books are sufficiently spread out it is easy to isolate the corners
+either by using a 3d camera ($279 from Intel) or manually using offshore labor
+with access to <a href="https://en.wikipedia.org/wiki/Gigabit_Ethernet">gigabit</a> Internet.
+
+<figure>
+  <img class=small src="images/CornerGrabber3.png">
+  <img class=small src="images/CornerGrabber2.png">
+  <img class=small src="images/CornerGrabber5.png">
+  <img class=small src="images/CornerGrabber4.png">
+  <img class=small src="images/CornerGrabber1.png">
+  <img class=small src="images/CornerGrabber7.png">
+  <figcaption>Corner Grabber made of injection molded plastic</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a href="https://www.tinkercad.com/things/jNoJs2dFSA3?sharecode=MM_Se39T-FlG2Fj0ULUAEVU0eYCAx_Qw--_-INOPigU">Corner Grabber</a>.
+
+<p>Here is a <a
+href="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/CornerGrabber.mp4">movie
+of the corner grabber being printed</a>
+
+<p>Applying a corner grabber with a vacuum to a corner of a book that forms part of the
+spine of the book enables the book to be lifted off the ramp onto a tray in a
+known orientation.
+
+<p>A domestic vacuum cleaner id more than capable of lifting a book by a corner of the spine as long as it is placed accurately:</p>
+<figure>
+  <img src="images/VacuumedBook.jpg">
+  <figcaption>Using a vacuum cleaner to lift a book</figcaption>
+</figure>
+
+<p>We do not need to lift the book clear of the deck, we just need to lift it
+enough so that it can slide easily over other books while it is moved to the
+clipping station and placed there in a known orientation as show in this <a
+href="cornerGrabber.webm">movie</a>
+
+<p>At this point the book can be examined, cleaned, checked etc. then
+maneuvered into a <a href="https://en.wikipedia.org/wiki/Steel">steel</a> clip.
+
+<p>Once in a <a href="https://en.wikipedia.org/wiki/Steel">steel</a> clip the book is easy to manipulate using an electromagnet
+if it is a "buy" else dropped in the recycling bin. "Buys" are placed in the
+kitting area so that they can be used to replace books picked for mailing. Once
+a jacketed book has been placed in a tray the book can be safely stored in the
+storage area from whence it can be picked out as needed in the <a href="https://en.wikipedia.org/wiki/Future">future</a>. 
+<h1>Key concepts</h1>
+
+<p>Here are the key ideas that this design relies on:
+
+<h2>Steel clip</h2>
+
+<p>There is a strong case to be made for putting the book into some kind of
+jacket, namely: mechanical manipulators are not as sensitive as human hands and
+so are likely to subject the book to greater forces when manipulating the book
+leading to the possibility of damage.
+
+<p>Placing the book in a jacket has the benefit that the book cannot fly open
+when being manipulated or transferred. While it is easy for a human to see and
+rectify this condition it is much harder for a machine to do this. But even
+though a human can rectofy this situation, it is still a waste of valauble time
+for them to engage in this pointless activity.
+
+<p>A number of different jacketting systems were considered:
+<ol>
+
+<li>The jacket is an individual <b>cubby slot</b> in a bookcase for each book.
+Attractive because of its simplicity, to be set against the difficulty of
+maneuvering an unprotected book into a cubby slot, an action that might have to
+be performed several times to each books.  A secondary difficulty is the amount
+of material and time required to construct one million such cubby slots.
+
+<li>The jacket is formed by <b>shrink wrapping</b> the book. Attractive because
+shrink wrap automation is a well known and supported technique.  The major
+difficulty is disposing of the shrink wrap when the book is purged - getting
+the book out of a wrapping that was designed to stay on is challenging
+especially if it has to be done in a completely automated manner, yet must be
+done because the book cannot be recycled if it is shrink wrapped.  A secondary
+concern is the difficulty of applying an identifying label to a shrink wrapped
+book.
+
+<li>The jacket is formed from <b>cardboard</b>: such a jacket can be recycled as is,
+but cannot easily be reused meaning that the cost of a new jacket must be
+bourne by each book regardless of whether the books sells.  A secondary
+disadvantage is finding a reliable way to close the cardboard sleeve around the
+book that can be easily undone when it is necessary to remove the book from its
+jacket.
+
+<li>The jacket is formed from <b>plastic</b>: such a jacket can be reused but not
+recycled.  In the case of DVDs the DVD is already pre-wrapped in a plastic
+jacket and this should be exploited in the storage system.  For books there is
+the difficulty of getting the book in and out of the jacket, the amount of
+plastic required, and the difficulty of lifting an object enclosed in slippery
+plastic jacket.  Plastic is not recyclable creating a waste disposal problem.
+
+<li>The jacket is formed from a clip consisting of a pair of <b>steel ovals</b>
+that grip the book rather like a clothes pin. Steel has the unbeatable
+advantages of high strength, low cost, malleability and recyclability combined
+with magnetic properties that make a book enclosed in iron easy to manipulate
+with machinery equipped with electro-magnets as is convincingly demonstrated by
+any toaster. </ol>
+
+<figure>
+  <img src="images/bookClip2.png">
+  <figcaption>Book clip made with three <a href="https://aws.amazon.com/ec2/spot/">spot</a> welds and four bends</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a href="https://www.tinkercad.com/things/fMAdkoX7Pky?sharecode=6vmsbOA7_1qqPTeM7qDw8GjgGHHD45ZJo9zMHu8y_n4">Book Clip</a>.
+
+
+<p>At the moment using a <a href="https://en.wikipedia.org/wiki/Steel">steel</a> jacket appears to offer the best combination of
+cost and reliability and so is the solution being most actively
+investigated.</p>
+
+<h2>Offset stacking</h2>
+
+<p>Humans are capable of removing books placed in a book case albeit at the
+risk of damaged fingers and skin, bumped heads, bashed knees and wasted space.
+Trying to get a machine to replicate this coordination of vision and mechanical
+actions is difficult.
+
+<p>Instead it is proposed to stand books in staggered lines with the books so
+arranged that there is air space around the outside of the clip around the
+book that can be entered by a mechanical picker with merely centimeter
+positional accuracy at a slight loss of packing density.
+
+<h2>Horizontal book cases</h2>
+
+<p>Vertical book cases are hardly satisfactory for humans as they must reach up
+and down at awkward heights to get books from the bottom or the top.  But for
+humans, horizontal book cases are not viable due to a lack of the <a
+href="https://en.wikisource.org/wiki/Winnie-the-Pooh_(1961)/Chapter_9">necessary
+dorsal muscles.</a>.
+
+<p>From an automation point of view: vertical book cases require 5 times as
+much construction material to give them the same moment of inertial as a
+horizontal book case being tensioned with a spreader bar and are all too likely
+to drop books when in motion.  Picking from and listing to a vertical book case
+is difficult because gravity frustrates rather than assists these actions.</p>
+
+<p>Horizontal book cases are easy to transport, occupy little head room when
+being transported and can be constructed from 5 times less material than
+vertical book cases because they can be pretensioned using a spreader bar.
+Automated picking and listing is assisted by gravity which is now aligned with
+the direction of motion used in these actions rather transverse to it.
+
+<h2>Pneumatic corner grabbing</h2>
+
+<p>Vacuum assisted corner grabbing makes it possible to pick up individual
+books dumped out en-masse from a Gaylord when the books are lying at random
+angles as we can always be certain that at least one corner will be uppermost
+and thus available for grabbing.
+
+<p>A plausible <a
+href="https://www.tinkercad.com/things/jNoJs2dFSA3?sharecode=MM_Se39T-FlG2Fj0ULUAEVU0eYCAx_Qw--_-INOPigU">corner
+grabber</a> has been designed in three dimensions and sent for three
+dimensional printing to <a href="https://en.wikipedia.org/wiki/Software_testing">test</a> this idea in more detail.
+
+<p>Here is a <a
+href="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/CornerGrabber.mp4">movie
+of the corner grabber being printed</a>
+
+<h2>Sorting books by size</h2>
+
+<p>Sorting books by size allows similar size books to be stored close together
+in a structure designed for books of that size to enable greater packing
+density than would be possible if the structure had to accommodate books of any
+size. Fortunately most books are sized using the <a href="https://en.wikipedia.org/wiki/Golden_ratio">The Golden Section</a> and cluster
+around a small number of average sizes.  It is entirely possible that the
+existing manual system will have to be retained for books with extremal
+dimensions.
+
+<p>Fortunately sorting books by size is not difficult using a corner grabber
+and a <a href="https://www.intelrealsense.com/depth-camera-d415/">three dimensional camera</a>. 
+<h1>Advantages</h1>
+
+<p>This design has numerous advantages:</p>
+
+<ol>
+
+<li><b>Space</b> - the system can be scaled in three dimensions to make good
+use of floor space by occupying currently unoccupied head room.</li>
+
+<li><b>Speed</b> - the system can easily be made faster by adding more cranes,
+trays and workstations.
+
+<li><b>Density</b> - storage is used efficiently by stacking the books densely.
+
+<li><b>Alignment</b> - only centimeter accuracy is required in placing books
+and trays - much less than is easily available from <a href="https://en.wikipedia.org/wiki/Laser">laser</a> distance measurements
+and worm screw drives.
+
+<li><b>Reliability</b> - the system has few moving parts all of which are
+manufactured and in use world wide making the system easy to maintain.
+
+<li><b>Robustness</b> - the system is built of <a href="https://en.wikipedia.org/wiki/Steel">steel</a> and can withstand bumps
+and the other minor shocks the flesh is heir to without great difficulty.
+
+<li><b>Price</b> - the system can be built from a small number of standard
+standard components that can easily be sourced from competing manufacturers from <a href="https://www.made-in-china.com/">Made In China</a>. 
+</ol>
+
+
+<h1>Cost</h1>
+
+<p>The cost of the <a href="https://en.wikipedia.org/wiki/Steel">steel</a> used to operate on 100 tons of books can be estimated
+heuristically at 10% or 10 tons.  Bulk <a href="https://en.wikipedia.org/wiki/Steel">steel</a> products cost around $1K per ton
+or $1 per kilogram. Finished <a href="https://en.wikipedia.org/wiki/Steel">steel</a> products such as book clips cost $10 per
+kilogram.
+
+<p>The major cost of this project is located in the labor required to design
+it.  We can either hire an expensive engineer to produce the system once using
+a <a href="https://en.wikipedia.org/wiki/Waterfall_model">waterfall development methodology</a> as if we were programming in <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> <b>or</b> we can use an <a href="https://en.wikipedia.org/wiki/Agile_software_development">agile development methodology</a> as
+we do with <a href="http://www.perl.org/">Perl</a> by applying low cost labor to <a href="https://en.wikipedia.org/wiki/Steel">steel</a> to implement a number of
+prototypes that can be iterated quickly and cheaply to <a href="https://en.wikipedia.org/wiki/Find_(Unix)">find</a> the optimal design.
+
+<p>A design considered optimal can then be outsourced for construction in bulk
+to either <a
+href="https://tijuanaedc.org/contract-manufacturing-in-mexico/">Mexico</a> or <a href="https://www.made-in-china.com/">Made In China</a>, the latter in particular having shown great interest in securing this
+kind of work.
+
+<h1>Recommendation</h1>
+
+<p>We can build this system incrementally using an <a href="https://en.wikipedia.org/wiki/Agile_software_development">agile development methodology</a>. 
+<p>The smallest component we could build first is the corner grabber
+illustrated above.
+
+<p>The next smallest component would be the steel jacket used to protect
+each book.
+
+<p>From there we can progress to a minimal kitting crane followed by a full
+size one.
+
+<p>Once relationships with suppliers have been established and some capability
+jdeveloped in basic steel work we can contemplate larger components that will
+allow us to gradually replace the existing manual wooden system with an
+automated steel one.
+
+
+
+
+<h1>Specifics</h1>
+
+<h2>Placing a clip on a book</h2>
+
+<p>The clips used to protect and manipulate book are made from spring <a href="https://en.wikipedia.org/wiki/Steel">steel</a> welded to a U channel.  The clip can easily be placed using the device pictured
+below:</p>
+
+<figure>
+  <img src="images/ClippingStationA.png">
+  <img src="images/ClippingStationB.png">
+  <figcaption>Placing a clip on a book</figcaption>
+</figure>
+
+<p>Clips, recovered from the mailing and purging areas slide along a plastic
+monorail to the clipping station.  The clip at the bitter end is positioned by
+the blue electromagnet. A book is dragged into the clipping station by a corner
+grabber suspended from an overhead two girder gantry crane. Once in the
+clipping station the book is positioned by pneumatic rams and its cover is held
+down in place to prevent buckling when the clip is applied.  A pneumatic ram
+pushes the next clip onto the book rather in the same way that a staple gun
+pushes a staple into paper. The book is thus clipped by the face opposing the
+spine making it easy to pick the book up by its spine using a side grabber
+which rotates the book into the preferred vertical position used for storage
+and kitting.</p>
+
+<p>Three dimensional drawing of the:
+<a href="https://www.tinkercad.com/things/dDGPC97zw3S?sharecode=k4Zp41Q6RHa-2-_CTgfddci5xO7JjHuSoVikLgesbew">
+Book clipping Station</a>
+
+<p>Experiments using curved <a href="https://en.wikipedia.org/wiki/Steel">steel</a> kitchen utensils (forks) show that curved <a href="https://en.wikipedia.org/wiki/Steel">steel</a> slides easily over a typical book cover. </p>
+
+<h2>Removing a clip from a book</h2>
+
+<p>Books that are mailed or purged will have to be declipped. The blue
+electro-magnet holds the clip in place while the books is moved by a grab and
+placed in a mailing sack. The electromagnet holding the clip is then rotated
+and the electromagnet released so that the clip falls out onto the grey
+monorail below which will transport the clip back to the clipping station.
+
+<figure>
+  <img src="images/DeclipperA.png">
+  <img src="images/DeclipperB.png">
+  <figcaption>Removing a clip from a book</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a href="https://www.tinkercad.com/things/5tKeRieNsVt?sharecode=zDvFMyowvyJtS9DTllqokon4817prZPtixXeEvuSTMs">Moving clips back from the mailing
+area to the jacketting area</a>
+
+<h2>Moving clips back from the mailing area to the jacketting area</h2>
+
+<p>The clips recovered from books that have been mailed or purged are returned
+to the jacketting area by sliding them along a <a
+href="https://waytop.en.made-in-china.com/product/eOoaIlpynrUb/China-UHMW-Plastic-Chain-Guides-Plastic-UHMWPE-Guide-Rail.html">plastic
+monorail</a>.  The motion of the clips can be assisted by applying a rotating
+arm made of a similar material to push them along a guide rail.
+
+<figure>
+  <img src="images/ClipMoverA.png">
+  <img src="images/ClipMoverB.png">
+  <figcaption>Moving clips back from the mailing area to the jacketting area</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a href="https://www.tinkercad.com/things/5LZMbKhzdhY?sharecode=FPxdmDwkDxSiCOPd-06qe5afX90BxRoE4YPnkcJs9vc">Moving clips back from the mailing
+area to the jacketting area</a> The advantages of plastic rails:
+
+<ol>
+<li>They are <b>cheap</b>
+<li>They have good <b>friction</b> properties
+<li>The plastic can easily be <b>curved</b> around corners.
+</ol>
+
+<h2>Placing a book in the kitting area or a storage tray</h2>
+
+<p>Books are pulled out of or placed into the kitting area or storage trays using the <b>Book Puller</b>.
+
+<figure>
+  <img src="images/BookPullerA.png">
+  <img src="images/BookPullerB.png">
+  <figcaption>Placing books in the kitting area or storage tray</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a href="https://www.tinkercad.com/things/diSKesOQe6c?sharecode=IhsCbDG3wz1WxMAPHthZaOe_FyCxUa6fhtPoWTR0LqA">Book Puller</a>
+
+<p>The book puller is positioned by a scissor jack driven by a worm screw.  The
+design of the clip attached to the book requires only centimeter accuracy to
+position a book in the kitting area or storage trays, yet a worm screw
+(unleveraged) can provide 500 times that accuracy at 20cm/s.  We do need to
+position over distances of several meters which would be difficult to do with
+an unleveraged workscrew but is feasible with a 10 level scissor gate driven by
+such a worm screw.
+
+<p>The book is lowered (or raised) using two pneumatic pistons. The pistons
+grip the book along its spine using a vacuum powered spine grabber.  Once the
+book has been lifted into the book puller a small gate driven by a stepper
+motor closes over the slot through which the book entered the puller to prevent
+the book from falling out in the event that vacuum is lost during transit.
+
+<figure>
+  <img src="images/SpineGrabberA.png">
+  <img src="images/SpineGrabberB.png">
+  <figcaption>A grabber for picking up books by their spines</figcaption>
+</figure>
+
+<p>Storing books spine up allows a bar <a href="https://en.wikipedia.org/wiki/Computer_program">code</a> on the spine of the book to be read
+to confirm the identity of the book stored at that location.
+
+<p>The book puller is mounted on trolleys which run along ibeam(s) scaffolded
+over the kitting  and jacketting areas. The book puller can be positioned in
+two dimensions using two scissor gates - although only one has been shown in
+the drawing for the purposes of clarity.
+
+<h3>Positioning a book puller over a book in a <a href="https://en.wikipedia.org/wiki/Network_socket">socket</a> in a storage tray</h3>
+
+<p>The actual position of the book puller will be measured by a <a
+href="https://www.iadiy.com/Laser-Range-Finder-modules-30m-RS232-USB-Time-of-flight-phase-shift">laser
+range finder</a> which is accurate to about 3mm: more than enough accuracy to
+position the 1cm pyramid at the base of the book clip in the corresponding <a href="https://en.wikipedia.org/wiki/Network_socket">socket</a> in the tray below.
+
+<figure>
+  <img src="images/laser-range-finder.png">
+  <figcaption>Laser range finder</figcaption>
+</figure>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Laser">laser</a> range finder coordinates for each slot in each tray can be found
+by shining a strong light under the tray in an otherwise dark room - it will
+then be easy to center the book puller above each <a href="https://en.wikipedia.org/wiki/Network_socket">socket</a> in each tray using a
+light meter and record the coordinates accurately so that the location of each
+slot can be located subsequently by <a href="https://en.wikipedia.org/wiki/Laser">laser</a> range finder alone without having to
+locate each <a href="https://en.wikipedia.org/wiki/Network_socket">socket</a> a new which will save time placing and retrieving books.
+
+<p>The coefficient of thermal expansion of <a href="https://en.wikipedia.org/wiki/Steel">steel</a> is 11e-6 per degree centigrade
+leading to a change in size of a 10m <a href="https://en.wikipedia.org/wiki/Steel">steel</a> beam experiencing a temperature
+change of 20C will give rise to a thermal expansion of 2mm which is well within
+the desired accuracy of 1 cm for positioning books.
+
+<h3>Books positioned in a tray</h3>
+
+<p>Trays holding books are made of square <a href="https://en.wikipedia.org/wiki/Steel">steel</a> tubing with pyramid slots
+(yellow) <a href="https://aws.amazon.com/ec2/spot/">spot</a> welded to their sides. The pyramid on each book clip fits
+securely into a pyramid slot. The shape of the pyramid allows the clip to be
+placed reliably with just centimeter accuracy.
+
+<figure>
+  <img src="images/BooksInTrayA.png">
+  <img src="images/BooksInTrayB.png">
+  <img src="images/BooksInTrayC.png">
+  <figcaption>Clipped books standing in a tray</figcaption>
+</figure>
+
+<p>Three dimensional view of <a
+href="https://www.tinkercad.com/things/iHDLOMSEP3r?sharecode=Tu004Gr45Gf_RGJOSYDQRvuDUPQaUj4oAcsZcABskJI">books
+standing in a tray</a>
+
+<p>The pyramid and the corresponding slot is easy to make by mould casting at
+$10 per kilogram in bulk. The <a href="https://en.wikipedia.org/wiki/Steel">steel</a> tubes to which the pyramid slots are welded
+area cost $1K per ton in bulk.
+
+<p>The positioning of the pyramid slots on the square <a href="https://en.wikipedia.org/wiki/Steel">steel</a> tubes only needs to
+be done with millimeter accuracy or so as we can measure their positions photo
+electronically then record their actual coordinates for later use.
+
+<h3>Book Hill Climb</h3>
+
+<p>One proposed solution for separating books dumped out of a Gaylord is to
+place them on an upward sloping conveyor belt covered with grippy plastic.  As
+the books go up hill any upper books not in direct contact with the conveyor
+belt slide off any lower books until they settle directly onto the conveyor.
+
+<p>Books coming off the hill climb will need to be oriented in a known way
+which might require corner grabbing to ensure that the book is correctly
+positioned in the clipping station. Once corner grabbing is in play we can
+probably dispense with the hill climb as the separation of books can also be
+done by corner grabbing once they have been spread out by vibrating them down a
+ramp which will also be necessary with a hill climb because otherwise the books
+at the bottom of the dump out pile might get damahed betwen the force applied
+by the weight of the books above them and the action of the conveyor belt.
+
+<p>There is also the question of whether the grippy plastic can stay grippy
+enough to be useful after having several tons of books dumped onto it.</p>
+
+<h2>Sorting books</h2>
+
+<p>Books are poured out of a Gaylord into the large end of  a sloping semi-cone
+which is rocked (and possibly vibrated) so that the books gradually separate
+into a line of books aligned with their longest axis parallel to that of the
+semi-cone.  The semi-cone is perhaps 5 meters long  and 2 meters wide at the
+wide, high end before narrowing down to perhaps 40 cm at the low, narrow end.
+
+<p>The length and motion of the semi-cone provide space and time for books to
+spread out enough that they can be dropped one by one on to the conveyor belt
+beneath the narrow low end of the semi-cone.
+
+<figure>
+  <img src="images/BookSorterA.png">
+  <img src="images/BookSorterB.png">
+  <figcaption>Sorting books by size and aligning them for clipping</figcaption>
+</figure>
+
+<p>Three dimensional drawing: <a href="https://www.tinkercad.com/things/4tuv44ZPYMc?sharecode=QCx2_AwigvGYMsAFOaHBxJnlvQWdcbHoGPSdtBiAeSg">Book Sorter</a>
+
+<p>At the low end of the semi-cone the books drop out onto a conveyor belt in
+front of an <a href="https://en.wikipedia.org/wiki/Dynamic_array">array</a> of sized pushers.  We can measure the size of each book on the
+conveyor belt using a bright light placed under the conveyor belt to cast a
+shadow representing the size of the book onto an overhead camera. When the book
+passes in front of an appropriately sized pusher, the pusher pushes an
+alignment rectangle forward to align the book and slide the book off the
+conveyor belt onto a slide that takes the book to a clipping station capable of
+clipping books of that size. The clipped book is then moved to the kitting area
+for loading into a storage tray that can accept books of that size.
+
+</body>
+</html>
