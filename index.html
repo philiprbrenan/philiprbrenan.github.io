@@ -278,11 +278,23 @@ conducive to getting work done with dispatch.
 <p>I recently set up a payment gateway which connects to the New Jersey Department of
 Agriculture to allow vets to pay bills via credit cards.
 
-
 <li><h5>Geometry: The construction of the pentagon</h5>
 
 <p>Created this <a href="http://www.perl.org/">Perl</a> <a href="https://en.wikipedia.org/wiki/Computer_program">program</a> available on <a href="https://www.cpan.org/authors/id/P/PR/PRBRENAN/geops-1.2.pl">cpan</a> to construct the pentagon in green:
 <img id=pentagon src="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/Pentagon.png">
+
+<p>Created <a href="https://metacpan.org/pod/Math::Algebra::Symbols">Math::Algebra::Symbols</a> and used it to produce a formula for the area of a triangle:
+
+<pre>
+ 1/2*$C * sqrt(1/2*$A**2 + 1/2*$A**2*$B**2/$C**2 + 1/2*$B**2 -
+               1/4*$C**2 - 1/4*$A**4/$C**2 - 1/4*$B**4/$C**2);
+</pre>
+
+<p>using axioms derived from this sketch:
+
+<img id=triangle src="AreaOfTriangle/AreaOfTriangle.svg">
+
+<p>as shown in this <a href="AreaOfTriangle/areaOfATriangle.pl">perl program</a>.
 
 </ol>
 </body>
