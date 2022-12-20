@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1000">
+  <style>
+    .title {
+      font-size: 200%;
+      font-weight: bold;
+      stroke: darkred;
+      fill  : darkred;
+    }
+    .expected {
+      font-size: 150%;
+      font-weight: bold;
+      stroke: darkblue;
+      fill  : darkblue;
+    }
+    .count, .squareNumber {
+      font-size: 180%;
+      font-weight: bold;
+      stroke: darkgreen;
+      fill  : darkgreen;
+    }
+    .in {
+      stroke: green;
+      stroke-width: 8;
+    }
+    .out {
+      stroke: pink;
+      stroke-width: 8;
+    }
+    .position {
+      font-size: 150%;
+    }
+    .newLine {
+      stroke: black;
+      fill: silver;
+    }
+    .lineNumberStart {
+      font-size: 150%;
+      font-weight: bold;
+      stroke: darkgreen;
+      fill: darkgreen;
+    }
+    .lineNumberContinue {
+      font-size: 120%;
+      stroke: darkblue;
+      fill: darkblue;
+    }
+    .sectorLine {
+      stroke: darkOrange;
+      stroke-width     : 8;
+      stroke-dasharray : 4 3;
+    }
+    .sectorA {
+      stroke: green;
+      stroke-width     : 4;
+      stroke-dasharray : 3 2;
+    }
+    .sectorB {
+      stroke: red;
+      stroke-width     : 4;
+      stroke-dasharray : 3 1;
+    }
+    .sectorN {
+      stroke: blue;
+      stroke-width     : 4;
+      stroke-dasharray : 4 2;
+    }
+    .number {
+      text-align: right;
+    }
+    #legend {
+    }
+   .segmentNumber     {color: darkRed}
+   .segmentIn         {color: darkBlue}
+   .segmentNewLine    {color: darkGreen}
+   .segmentPx         {color: darkOrange}
+   .segmentPy         {color: darkOrange}
+   .segmentOx         {color: darkgoldenrod}
+   .segmentOy         {color: darkgoldenrod}
+   .segmentAx         {color: darkViolet}
+   .segmentAy         {color: darkViolet}
+   .segmentBx         {color: darkmagenta}
+   .segmentBy         {color: darkmagenta}
+   .segmentIA         {color: green}
+   .segmentIB         {color: blue}
+
+  </style>
+  <rect stroke='#ddd' fill-opacity='0' width='2000' height='1000' x='0' y='0'></rect>
+<text stroke='#000' x='040' y='020'>Tue Dec 20 01:19:16 GMT 2022</text><text class='title'    stroke='#000' x='100' y='100'>Square_and_Octagon</text><text class='expected' stroke='#000' x='100' y='140'>--expected=9
+</text><text class='count' fill='#000' x='100' y='180'>Draws = 9</text><line class='in' x1='800.000000' y1='100.000000' x2='1400.000000' y2='100.000000'/>
+<line class='out' x1='1400.000000' y1='100.000000' x2='1400.000000' y2='700.000000'/>
+<line class='out' x1='1400.000000' y1='700.000000' x2='800.000000' y2='700.000000'/>
+<line class='in' x1='800.000000' y1='700.000000' x2='800.000000' y2='300.000000'/>
+<line class='out' x1='800.000000' y1='300.000000' x2='1000.000000' y2='100.000000'/>
+<line class='in' x1='1000.000000' y1='100.000000' x2='1200.000000' y2='100.000000'/>
+<line class='out' x1='1200.000000' y1='100.000000' x2='1400.000000' y2='300.000000'/>
+<line class='in' x1='1400.000000' y1='300.000000' x2='1400.000000' y2='500.000000'/>
+<line class='out' x1='1400.000000' y1='500.000000' x2='1200.000000' y2='700.000000'/>
+<line class='in' x1='1200.000000' y1='700.000000' x2='1000.000000' y2='700.000000'/>
+<line class='out' x1='1000.000000' y1='700.000000' x2='800.000000' y2='500.000000'/>
+<line class='in' x1='800.000000' y1='500.000000' x2='1000.000000' y2='300.000000'/>
+<line class='out' x1='1000.000000' y1='300.000000' x2='1200.000000' y2='300.000000'/>
+<line class='in' x1='1200.000000' y1='300.000000' x2='1200.000000' y2='500.000000'/>
+<line class='in' x1='1200.000000' y1='500.000000' x2='1000.000000' y2='500.000000'/>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='600.000000' y='700.000000'></rect>
+<text class='squareNumber' x='760.000000' y='725.000000'>4</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='800.000000' y='700.000000'></rect>
+<text class='squareNumber' x='960.000000' y='725.000000'>11</text>
+<rect class='newLine' width='16' height='16' x='992.000000' y='692.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1000.000000' y='700.000000'></rect>
+<text class='squareNumber' x='1160.000000' y='725.000000'>10</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1200.000000' y='700.000000'></rect>
+<text class='squareNumber' x='1360.000000' y='725.000000'>3</text>
+<rect class='newLine' width='16' height='16' x='1392.000000' y='692.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='600.000000' y='500.000000'></rect>
+<text class='squareNumber' x='760.000000' y='525.000000'>12</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='800.000000' y='500.000000'></rect>
+<text class='squareNumber' x='960.000000' y='525.000000'>16</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1000.000000' y='500.000000'></rect>
+<text class='squareNumber' x='1160.000000' y='525.000000'>15</text>
+<rect class='newLine' width='16' height='16' x='1192.000000' y='492.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1200.000000' y='500.000000'></rect>
+<text class='squareNumber' x='1360.000000' y='525.000000'>9</text>
+<rect class='newLine' width='16' height='16' x='1392.000000' y='492.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='600.000000' y='300.000000'></rect>
+<text class='squareNumber' x='760.000000' y='325.000000'>5</text>
+<rect class='newLine' width='16' height='16' x='792.000000' y='292.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='800.000000' y='300.000000'></rect>
+<text class='squareNumber' x='960.000000' y='325.000000'>13</text>
+<rect class='newLine' width='16' height='16' x='992.000000' y='292.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1000.000000' y='300.000000'></rect>
+<text class='squareNumber' x='1160.000000' y='325.000000'>14</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1200.000000' y='300.000000'></rect>
+<text class='squareNumber' x='1360.000000' y='325.000000'>8</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='600.000000' y='100.000000'></rect>
+<text class='squareNumber' x='760.000000' y='125.000000'>1</text>
+<rect class='newLine' width='16' height='16' x='792.000000' y='92.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='800.000000' y='100.000000'></rect>
+<text class='squareNumber' x='960.000000' y='125.000000'>6</text>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1000.000000' y='100.000000'></rect>
+<text class='squareNumber' x='1160.000000' y='125.000000'>7</text>
+<rect class='newLine' width='16' height='16' x='1192.000000' y='92.000000'></rect>
+<rect stroke='#000' fill-opacity='0' width='200' height='200' x='1200.000000' y='100.000000'></rect>
+<text class='squareNumber' x='1360.000000' y='125.000000'>2</text>
+<rect class='newLine' width='16' height='16' x='1392.000000' y='92.000000'></rect>
+<text class='lineNumberStart' x='820.000000' y='100.000000'>  1</text>
+<text class='lineNumberStart' x='1420.000000' y='100.000000'>  2</text>
+<line class='sectorLine' x1='1400.000000' y1='100.000000' x2='1460.000000' y2='100.000000'/>
+<text class='lineNumberStart' x='1420.000000' y='700.000000'>  3</text>
+<line class='sectorA' x1='1400.000000' y1='700.000000' x2='1310.000000' y2='700.000000'/>
+<line class='sectorB' x1='1400.000000' y1='700.000000' x2='1400.000000' y2='790.000000'/>
+<line class='sectorN' x1='1400.000000' y1='700.000000' x2='1357.573593' y2='742.426407'/>
+<text class='lineNumberContinue' x='820.000000' y='700.000000'>  3</text>
+<line class='sectorA' x1='800.000000' y1='700.000000' x2='890.000000' y2='700.000000'/>
+<line class='sectorB' x1='800.000000' y1='700.000000' x2='710.000000' y2='700.000000'/>
+<line class='sectorN' x1='800.000000' y1='700.000000' x2='800.000000' y2='640.000000'/>
+<text class='lineNumberStart' x='820.000000' y='300.000000'>  4</text>
+<line class='sectorLine' x1='800.000000' y1='300.000000' x2='800.000000' y2='240.000000'/>
+<text class='lineNumberContinue' x='1020.000000' y='100.000000'>  4</text>
+<line class='sectorA' x1='1000.000000' y1='100.000000' x2='1000.000000' y2='190.000000'/>
+<line class='sectorB' x1='1000.000000' y1='100.000000' x2='1063.639610' y2='36.360390'/>
+<line class='sectorN' x1='1000.000000' y1='100.000000' x2='1055.432772' y2='122.961006'/>
+<text class='lineNumberStart' x='1220.000000' y='100.000000'>  5</text>
+<line class='sectorLine' x1='1200.000000' y1='100.000000' x2='1260.000000' y2='100.000000'/>
+<text class='lineNumberContinue' x='1420.000000' y='300.000000'>  5</text>
+<line class='sectorA' x1='1400.000000' y1='300.000000' x2='1310.000000' y2='300.000000'/>
+<line class='sectorB' x1='1400.000000' y1='300.000000' x2='1463.639610' y2='363.639610'/>
+<line class='sectorN' x1='1400.000000' y1='300.000000' x2='1377.038994' y2='355.432772'/>
+<text class='lineNumberStart' x='1420.000000' y='500.000000'>  6</text>
+<line class='sectorLine' x1='1400.000000' y1='500.000000' x2='1400.000000' y2='560.000000'/>
+<text class='lineNumberContinue' x='1220.000000' y='700.000000'>  6</text>
+<line class='sectorA' x1='1200.000000' y1='700.000000' x2='1200.000000' y2='610.000000'/>
+<line class='sectorB' x1='1200.000000' y1='700.000000' x2='1136.360390' y2='763.639610'/>
+<line class='sectorN' x1='1200.000000' y1='700.000000' x2='1144.567228' y2='677.038994'/>
+<text class='lineNumberStart' x='1020.000000' y='700.000000'>  7</text>
+<line class='sectorLine' x1='1000.000000' y1='700.000000' x2='940.000000' y2='700.000000'/>
+<text class='lineNumberContinue' x='820.000000' y='500.000000'>  7</text>
+<line class='sectorA' x1='800.000000' y1='500.000000' x2='890.000000' y2='500.000000'/>
+<line class='sectorB' x1='800.000000' y1='500.000000' x2='736.360390' y2='436.360390'/>
+<line class='sectorN' x1='800.000000' y1='500.000000' x2='822.961006' y2='444.567228'/>
+<text class='lineNumberStart' x='1020.000000' y='300.000000'>  8</text>
+<line class='sectorLine' x1='1000.000000' y1='300.000000' x2='1042.426407' y2='257.573593'/>
+<text class='lineNumberContinue' x='1220.000000' y='300.000000'>  8</text>
+<line class='sectorA' x1='1200.000000' y1='300.000000' x2='1136.360390' y2='363.639610'/>
+<line class='sectorB' x1='1200.000000' y1='300.000000' x2='1290.000000' y2='300.000000'/>
+<line class='sectorN' x1='1200.000000' y1='300.000000' x2='1222.961006' y2='355.432772'/>
+<text class='lineNumberStart' x='1220.000000' y='500.000000'>  9</text>
+<text class='lineNumberContinue' x='1020.000000' y='500.000000'>  9</text>
+<foreignObject width='100%' height='100%' x='100' y='250'><div xmlns='http://www.w3.org/1999/xhtml'><table id='legend' border='1' cellspacing='5' cellpadding='5'><tr><th>#</th><th>In</th><th>New</th><th colspan='2'>Point</th><th colspan='2'>Origin</th><th colspan='2'>A</th><th colspan='2'>B</th><th>iA</th><th>iB</th></tr><tr><td class='number segmentNumber'> 1</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>1</td>
+<td class='number segmentPy'>4</td>
+<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='number segmentNumber'> 2</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>4</td>
+<td class='number segmentPy'>4</td>
+<td class='number segmentOx'>4</td>
+<td class='number segmentOy'>4</td>
+<td class='number segmentAx'>7</td>
+<td class='number segmentAy'>4</td>
+<td></td><td></td><td class='segmentIA'>on</td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 3</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>4</td>
+<td class='number segmentPy'>1</td>
+<td class='number segmentOx'>4</td>
+<td class='number segmentOy'>1</td>
+<td class='number segmentAx'>1</td>
+<td class='number segmentAy'>1</td>
+<td class='number segmentBx'>4</td>
+<td class='number segmentBy'>-2</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 4</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>1</td>
+<td class='number segmentPy'>1</td>
+<td class='number segmentOx'>1</td>
+<td class='number segmentOy'>1</td>
+<td class='number segmentAx'>4</td>
+<td class='number segmentAy'>1</td>
+<td class='number segmentBx'>-2</td>
+<td class='number segmentBy'>1</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'></td>
+</tr><tr><td class='number segmentNumber'> 5</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>1</td>
+<td class='number segmentPy'>3</td>
+<td class='number segmentOx'>1</td>
+<td class='number segmentOy'>3</td>
+<td class='number segmentAx'>1</td>
+<td class='number segmentAy'>5</td>
+<td></td><td></td><td class='segmentIA'>on</td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 6</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>2</td>
+<td class='number segmentPy'>4</td>
+<td class='number segmentOx'>2</td>
+<td class='number segmentOy'>4</td>
+<td class='number segmentAx'>2</td>
+<td class='number segmentAy'>2</td>
+<td class='number segmentBx'>3</td>
+<td class='number segmentBy'>5</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 7</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>3</td>
+<td class='number segmentPy'>4</td>
+<td class='number segmentOx'>3</td>
+<td class='number segmentOy'>4</td>
+<td class='number segmentAx'>4</td>
+<td class='number segmentAy'>4</td>
+<td></td><td></td><td class='segmentIA'>on</td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 8</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>4</td>
+<td class='number segmentPy'>3</td>
+<td class='number segmentOx'>4</td>
+<td class='number segmentOy'>3</td>
+<td class='number segmentAx'>3</td>
+<td class='number segmentAy'>3</td>
+<td class='number segmentBx'>5</td>
+<td class='number segmentBy'>2</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 9</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>4</td>
+<td class='number segmentPy'>2</td>
+<td class='number segmentOx'>4</td>
+<td class='number segmentOy'>2</td>
+<td class='number segmentAx'>4</td>
+<td class='number segmentAy'>1</td>
+<td></td><td></td><td class='segmentIA'>on</td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 10</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>3</td>
+<td class='number segmentPy'>1</td>
+<td class='number segmentOx'>3</td>
+<td class='number segmentOy'>1</td>
+<td class='number segmentAx'>3</td>
+<td class='number segmentAy'>2</td>
+<td class='number segmentBx'>2</td>
+<td class='number segmentBy'>0</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 11</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>2</td>
+<td class='number segmentPy'>1</td>
+<td class='number segmentOx'>2</td>
+<td class='number segmentOy'>1</td>
+<td class='number segmentAx'>1</td>
+<td class='number segmentAy'>1</td>
+<td></td><td></td><td class='segmentIA'>on</td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 12</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>1</td>
+<td class='number segmentPy'>2</td>
+<td class='number segmentOx'>1</td>
+<td class='number segmentOy'>2</td>
+<td class='number segmentAx'>2</td>
+<td class='number segmentAy'>2</td>
+<td class='number segmentBx'>0</td>
+<td class='number segmentBy'>3</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 13</td>
+<td class='segmentIn'></td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>2</td>
+<td class='number segmentPy'>3</td>
+<td class='number segmentOx'>2</td>
+<td class='number segmentOy'>3</td>
+<td class='number segmentAx'>3</td>
+<td class='number segmentAy'>4</td>
+<td></td><td></td><td class='segmentIA'>on</td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 14</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>3</td>
+<td class='number segmentPy'>3</td>
+<td class='number segmentOx'>3</td>
+<td class='number segmentOy'>3</td>
+<td class='number segmentAx'>2</td>
+<td class='number segmentAy'>2</td>
+<td class='number segmentBx'>4</td>
+<td class='number segmentBy'>3</td>
+<td class='segmentIA'></td>
+<td class='segmentIB'>on</td>
+</tr><tr><td class='number segmentNumber'> 15</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'>new</td>
+<td class='number segmentPx'>3</td>
+<td class='number segmentPy'>2</td>
+<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='number segmentNumber'> 16</td>
+<td class='segmentIn'>in</td>
+<td class='segmentNewLine'></td>
+<td class='number segmentPx'>2</td>
+<td class='number segmentPy'>2</td>
+<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div></foreignObject></svg>
