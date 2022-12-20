@@ -45,6 +45,11 @@ img#infinity
   border-radius: 25px;
   border: 3px solid #ccc;
  }
+.kattis
+ {width: 100%;
+  border-radius: 25px;
+  border: 3px solid #ccc;
+ }
 img
  {width: 75vw;
   border-radius: 25px;
@@ -81,6 +86,15 @@ li:hover {
 .dropped {background-color: pink;}
 .picked  {background-color: transparent;}
 .possible{background-color: lemonchiffon;}
+
+.kattisRow {
+  display: flex;
+}
+
+.kattisBlock {
+    padding-left  : 1%;
+    padding-right : 1%;
+}
 </style>
 
 <base href="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/">
@@ -114,18 +128,22 @@ li:hover {
 <table class=title><tr><td align=left><h3>AppaApps Inc. Austin, Texas</h3><td align=right><h3>2010 onwards</h3></table>
 
 <p>Solved two of the hardest problems on <a href="https://open.kattis.com/problems">Kattis</a> :
-<ol>
-<li>
+<div class=kattisRow>
+
+<div class=kattisBlock>
 <a href="https://open.kattis.com/problems/magicalmysteryknight">Knights Tour</a> using
 <a href="https://github.com/philiprbrenan/philiprbrenan.github.io/blob/main/perl/MagicalMysteryKnightsTour.pl">this Perl code</a> to generate a
 <a href="https://github.com/philiprbrenan/philiprbrenan.github.io/blob/main/MagicalMysteryKnightsTour/tour.c">solution in C</a> written in the <a href="https://b-ok.xyz/book/633119/db5c78">C programming language</a> that was fast enough to meet the stringent speed and <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> requirements specified.
-<p><img src="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/MagicalMysteryKnightsTour/KattisKnightsTour.png">
+<p><a href="https://open.kattis.com/problems/magicalmysteryknight"><img class=kattis src="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/MagicalMysteryKnightsTour/KattisKnightsTour.png"></a>
+</div>
 
-<li></p><a href="https://open.kattis.com/problems/connectdots">Connect The Dots</a> using
+<div class=kattisBlock>
+<a href="https://open.kattis.com/problems/connectdots">Connect The Dots</a> using
 <a href="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/745127217b6893f8bbbd4763f9ee3e73e939cd8f/joinTheDots/Square_and_Octagon.svg">svg to visualize the problem</a> before writing
 <a href="https://github.com/philiprbrenan/philiprbrenan.github.io/blob/main/joinTheDots/JoinTheDots.java">a solution</a> written in <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> .
-<p><img src="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/joinTheDots/JoinTheDots.png">
-</ol>
+<p><a href="https://open.kattis.com/problems/connectdots"><img class=kattis src="https://raw.githubusercontent.com/philiprbrenan/philiprbrenan.github.io/main/joinTheDots/JoinTheDots.png"></a>
+</div>
+</div>
 
 <p>Designed the hardware for a <a href="http://prb.appaapps.com/laLoba/laLoba.html">fully
 automated warehouse system</a> for managing millions of books using <a href="http://www.perl.org/">Perl</a>, <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">Scalar Vector Graphics</a> and <a href="https://metacpan.org/pod/Data::Edit::Xml">Data::Edit::Xml</a>. 
