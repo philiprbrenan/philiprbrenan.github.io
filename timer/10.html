@@ -6,13 +6,10 @@
   <title>10 Minute Timer</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif
-      text-align: center
-      margin-top: 50px
-    }
-    #timer {
-      font-weight: bold
-      font-size:50vh
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 20vh;
+      font-size : 20vh;
     }
   </style>
 </head>
@@ -39,7 +36,7 @@
     audio.play()
   }
 
-  function countdown() {
+  function countdown() {                                                        // Count down and then play chimes 
     updateTimer()
 
     if (secondsLeft === 0) {
