@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Minute Timer</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif
+      text-align: center
+      margin-top: 50px
+    }
+    #timer {
+      font-weight: bold
+      font-size:50vh
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="timer">10:00</h1>
+
+<script>
+  var timerDuration = 600                                                      // 10 minutes
+
+  var timerDisplay = document.getElementById('timer')
+  var secondsLeft = timerDuration
+
+  function updateTimer() {                                                      // Update timer
+    var minutes = Math.floor(secondsLeft / 60)
+    var seconds = secondsLeft % 60
+    minutes = minutes < 10 ? '0' + minutes : minutes
+    seconds = seconds < 10 ? '0' + seconds : seconds
+    timerDisplay.textContent = minutes + ':' + seconds
+  }
+
+  function playChimes() {                                                       // Add your chimes or alert here
+
+    const audio = new Audio('file:///home/phil/people/Maria/rulesBella2Slow.mp3')
+    audio.play()
+  }
+
+  function countdown() {
+    updateTimer()
+
+    if (secondsLeft === 0) {
+      playChimes()
+    } else {
+      secondsLeft--
+      setTimeout(countdown, 1000)
+    }
+  }
+
+  // Start the countdown when the page loads
+  countdown()
+  playChimes()
+</script>
+
+</body>
+</html>
