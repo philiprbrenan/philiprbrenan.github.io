@@ -21,7 +21,7 @@
 <h1 id="timer">10:00</h1>
 
 <script>
-  var timerDuration = 600                                                      // 10 minutes
+  var timerDuration = 600                                                       // 10 minutes
 
   var timerDisplay = document.getElementById('timer')
   var secondsLeft = timerDuration
@@ -34,8 +34,7 @@
     timerDisplay.textContent = minutes + ':' + seconds
   }
 
-  function playChimes() {                                                       // Add your chimes or alert here
-
+  function playChimes() {                                                       // Chimes
     const audio = new Audio('https://github.com/philiprbrenan/philiprbrenan.github.io/raw/main/timer/Bella%20ciao%20ringtone%20meloboom.mp3')
     audio.play()
   }
@@ -51,10 +50,7 @@
     }
   }
 
-  // Start the countdown when the page loads
-  countdown()
-  playChimes()
+  countdown()                                                                   // Start the countdown when the page loads
 </script>
-
 </body>
 </html>
