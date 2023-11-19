@@ -5,39 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>10 Minute Timer</title>
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      margin-top: 20vh;
-      font-size : 20vh;
-    }
+body {
+  font-family: 'Verdana', sans-serif;
+  text-align: center;
+  font-size : 20vh;
+  margin: 1% 10% 1% 10%;
+}
+.bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 20vw;
+}
   </style>
 </head>
 <body>
 
-<h1 id="timer">10:00</h1>
+<h2 id="timer">10:00</h2>
+
+<img id="instructions" class="bottom-image" src="" >
 
 <script>
-  const timerDuration = 600                                                     // 10 minutes
-  const audio         = new Audio('https://github.com/philiprbrenan/philiprbrenan.github.io/raw/main/timer/Bella%20ciao%20ringtone%20meloboom.mp3') // Chimes
-  const timerDisplay  = document.getElementById('timer')
-  var secondsLeft     = timerDuration
+const timerDuration = 600                                                       // 10 minutes
+const av            = 'https://github.com/philiprbrenan/philiprbrenan.github.io/raw/main/timer/' // Audio visual source
+const audio         = new Audio(av+'/Bella%20ciao%20ringtone%20meloboom.mp3')   // Chimes
+const help          =           av+'/Instructions.png'                          // Help allowing audio to be played
+const timerDisplay  = document.getElementById('timer')
+var secondsLeft     = timerDuration
 
-  function countdown() {                                                        // Count down and play chimes at end
-    const minutes  = Math.floor(secondsLeft / 60);
-    const seconds2 = secondsLeft % 60;
-    const seconds  = seconds2 < 10 ? '0' + seconds2 : seconds2;
+function countdown() {                                                          // Count down and play chimes at end
+  const minutes  = Math.floor(secondsLeft / 60);
+  const seconds2 = secondsLeft % 60;
+  const seconds  = seconds2 < 10 ? '0' + seconds2 : seconds2;
 
-    timerDisplay.textContent = minutes + ':' + seconds;                         // Format display 
+  timerDisplay.textContent = minutes + ':' + seconds;                           // Format display
 
-    if (secondsLeft === 0) audio.play()                                         // Finished - play chimes
-    else {
-      secondsLeft--                                                             // Count down
-      setTimeout(countdown, 1000)
-    }
+  if (secondsLeft === 0) audio.play()                                           // Finished - play chimes
+  else {
+    secondsLeft--                                                               // Count down
+    setTimeout(countdown, 1000)
   }
+}
 
-  countdown()                                                                   // Start the countdown when the page loads
+instructions.src = help                                                         // Explain how to let audio play
+countdown()                                                                     // Start the countdown when the page loads
 </script>
 </body>
 </html>
