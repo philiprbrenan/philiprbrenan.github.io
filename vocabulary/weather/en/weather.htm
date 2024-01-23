@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{margin: 1% 10% 1% 10%;}
+img {width : 100%; height: auto;}
+.thing {font-weight: bold;}
+</style>
+<body>
+<h1 onclick="playTheWeather.play()">The Weather</h1>
+<table border="0" cellpadding="10">
+<tr><td><a href="../images/Centigrade.jpg"  ><img src="../images2/Centigrade.jpg"  ></a><p class="thing" onclick="playCentigrade   .play()">Centigrade
+    <td><a href="../images/Clear.jpeg"      ><img src="../images2/Clear.jpeg"      ></a><p class="thing" onclick="playClear        .play()">Clear
+    <td><a href="../images/Cloudy.jpg"      ><img src="../images2/Cloudy.jpg"      ></a><p class="thing" onclick="playCloudy       .play()">Cloudy
+    <td><a href="../images/Cold.jpg"        ><img src="../images2/Cold.jpg"        ></a><p class="thing" onclick="playCold         .play()">Cold
+    <td><a href="../images/Dry.jpg"         ><img src="../images2/Dry.jpg"         ></a><p class="thing" onclick="playDry          .play()">Dry
+    <td><a href="../images/Foggy.jpeg"      ><img src="../images2/Foggy.jpeg"      ></a><p class="thing" onclick="playFoggy        .play()">Foggy
+<tr><td><a href="../images/Fresh.jpeg"      ><img src="../images2/Fresh.jpeg"      ></a><p class="thing" onclick="playFresh        .play()">Fresh
+    <td><a href="../images/Hazy.jpeg"       ><img src="../images2/Hazy.jpeg"       ></a><p class="thing" onclick="playHazy         .play()">Hazy
+    <td><a href="../images/Humid.jpg"       ><img src="../images2/Humid.jpg"       ></a><p class="thing" onclick="playHumid        .play()">Humid
+    <td><a href="../images/IceCream.jpg"    ><img src="../images2/IceCream.jpg"    ></a><p class="thing" onclick="playIceCream     .play()">IceCream
+    <td><a href="../images/Lightening.jpg"  ><img src="../images2/Lightening.jpg"  ></a><p class="thing" onclick="playLightening   .play()">Lightening
+    <td><a href="../images/Powder.jpeg"     ><img src="../images2/Powder.jpeg"     ></a><p class="thing" onclick="playPowder       .play()">Powder
+<tr><td><a href="../images/Rainbow.png"     ><img src="../images2/Rainbow.png"     ></a><p class="thing" onclick="playRainbow      .play()">Rainbow
+    <td><a href="../images/Rainy.jpg"       ><img src="../images2/Rainy.jpg"       ></a><p class="thing" onclick="playRainy        .play()">Rainy
+    <td><a href="../images/Snowy.jpg"       ><img src="../images2/Snowy.jpg"       ></a><p class="thing" onclick="playSnowy        .play()">Snowy
+    <td><a href="../images/Storm.jpg"       ><img src="../images2/Storm.jpg"       ></a><p class="thing" onclick="playStorm        .play()">Storm
+                                                                                        <p class="thing" onclick="playThunder      .play()">Thunder
+    <td><a href="../images/Sunny.jpg"       ><img src="../images2/Sunny.jpg"       ></a><p class="thing" onclick="playSunny        .play()">Sunny
+
+    <td><a href="../images/Temperature.jpg" ><img src="../images2/Temperature.jpg" ></a><p class="thing" onclick="playTemperature  .play()">Temperature
+<tr><td><a href="../images/Today.png"       ><img src="../images2/Today.png"       ></a><p class="thing" onclick="playToday        .play()">Today
+    <td><a href="../images/Tomorrow.png"    ><img src="../images2/Tomorrow.png"    ></a><p class="thing" onclick="playTomorrow     .play()">Tomorrow
+    <td><a href="../images/Tornado.jpg"     ><img src="../images2/Tornado.jpg"     ></a><p class="thing" onclick="playTornado      .play()">Tornado
+    <td><a href="../images/Warm.avif"       ><img src="../images2/Warm.avif"       ></a><p class="thing" onclick="playWarm         .play()">Warm
+    <td><a href="../images/Windy.jpg"       ><img src="../images2/Windy.jpg"       ></a><p class="thing" onclick="playWindy        .play()">Windy
+    <td><a href="../images/Yesterday.png"   ><img src="../images2/Yesterday.png"   ></a><p class="thing" onclick="playYesterday    .play()">Yesterday
+ </table>
+
+<audio id="playCentigrade"  src="audio/Centigrade.wav"  ></audio>
+<audio id="playClear"       src="audio/Clear.wav"       ></audio>
+<audio id="playCloudy"      src="audio/Cloudy.wav"      ></audio>
+<audio id="playCold"        src="audio/Cold.wav"        ></audio>
+<audio id="playDry"         src="audio/Dry.wav"         ></audio>
+<audio id="playFoggy"       src="audio/Foggy.wav"       ></audio>
+<audio id="playFresh"       src="audio/Fresh.wav"       ></audio>
+<audio id="playHazy"        src="audio/Hazy.wav"        ></audio>
+<audio id="playHumid"       src="audio/Humid.wav"       ></audio>
+<audio id="playIceCream"    src="audio/IceCream.wav"    ></audio>
+<audio id="playLightening"  src="audio/Lightening.wav"  ></audio>
+<audio id="playPowder"      src="audio/Powder.wav"      ></audio>
+<audio id="playRainbow"     src="audio/Rainbow.wav"     ></audio>
+<audio id="playRainy"       src="audio/Rainy.wav"       ></audio>
+<audio id="playSnowy"       src="audio/Snowy.wav"       ></audio>
+<audio id="playStorm"       src="audio/Storm.wav"       ></audio>
+<audio id="playSunny"       src="audio/Sunny.wav"       ></audio>
+<audio id="playTemperature" src="audio/Temperature.wav" ></audio>
+<audio id="playTheWeather"  src="audio/TheWeather.wav"  ></audio>
+<audio id="playThunder"     src="audio/Thunder.wav"     ></audio>
+<audio id="playToday"       src="audio/Today.wav"       ></audio>
+<audio id="playTomorrow"    src="audio/Tomorrow.wav"    ></audio>
+<audio id="playTornado"     src="audio/Tornado.wav"     ></audio>
+<audio id="playWarm"        src="audio/Warm.wav"        ></audio>
+<audio id="playWindy"       src="audio/Windy.wav"       ></audio>
+<audio id="playYesterday"   src="audio/Yesterday.wav"   ></audio>
+<p>Click the words to hear them. Click on the pictures to see them.
+</body>
+</html>
+
+<p></p>
