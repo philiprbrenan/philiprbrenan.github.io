@@ -1,0 +1,11 @@
+cock
+crocodile
+dolphin
+duck
+eagle
+koala
+monkey
+octopus
+seagull
+snake
+whale
