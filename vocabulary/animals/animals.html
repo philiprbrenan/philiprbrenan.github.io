@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body{margin: 1% 10% 1% 10%;}
+  img {width : 100%; height: auto;}
+  .thing {font-weight: bold; font-family: "Century Gothic", serif; font-size:200%;}
+  td {text-align: center;}
+  .english, .spanish {display: block;}
+  .hidden            {display: none; }
+</style>
+<body>
+<h1 onclick="playTitle.play()">Animals</h1>
 
+<p>Click on the words to hear them in English.  Show words in:
+<input checked="1" type="checkbox" id="toggleEn">English
+<input checked="1" type="checkbox" id="toggleEs">Spanish
+
+<audio id="playTitle" src="Animals.wav"></audio>
+<table border="0" cellpadding="10">
+  <tr>    <td onclick="playbear.play()"><img src="bear.jpg"><p class="thing en">bear<p class="es">oso
+    <audio   id="playbear"             src="bear.wav"></audio>
+    <td onclick="playbird.play()"><img src="bird.jpg"><p class="thing en">bird<p class="es">pajaro
+    <audio   id="playbird"             src="bird.wav"></audio>
+    <td onclick="playcat.play()"><img src="cat.jpg"><p class="thing en">cat<p class="es">gato
+    <audio   id="playcat"             src="cat.wav"></audio>
+    <td onclick="playcow.play()"><img src="cow.jpg"><p class="thing en">cow<p class="es">vaca
+    <audio   id="playcow"             src="cow.wav"></audio>
+    <td onclick="playdonkey.play()"><img src="donkey.jpg"><p class="thing en">donkey<p class="es">burro
+    <audio   id="playdonkey"             src="donkey.wav"></audio>
+    <td onclick="playgiraffe.play()"><img src="giraffe.jpg"><p class="thing en">giraffe<p class="es">jirafa
+    <audio   id="playgiraffe"             src="giraffe.wav"></audio>
+  <tr>    <td onclick="playhen.play()"><img src="hen.jpg"><p class="thing en">hen<p class="es">gallina
+    <audio   id="playhen"             src="hen.wav"></audio>
+    <td onclick="playhorse.play()"><img src="horse.jpg"><p class="thing en">horse<p class="es">caballo
+    <audio   id="playhorse"             src="horse.wav"></audio>
+    <td onclick="playmouse.play()"><img src="mouse.jpg"><p class="thing en">mouse<p class="es">raton
+    <audio   id="playmouse"             src="mouse.wav"></audio>
+    <td onclick="playpig.play()"><img src="pig.jpg"><p class="thing en">pig<p class="es">cerdo
+    <audio   id="playpig"             src="pig.wav"></audio>
+    <td onclick="playrhino.play()"><img src="rhino.jpg"><p class="thing en">rhino<p class="es">rinoceronte
+    <audio   id="playrhino"             src="rhino.wav"></audio>
+    <td onclick="playsheep.play()"><img src="sheep.jpg"><p class="thing en">sheep<p class="es">oveja
+    <audio   id="playsheep"             src="sheep.wav"></audio>
+  <tr>    <td onclick="playtiger.play()"><img src="tiger.jpg"><p class="thing en">tiger<p class="es">tigre
+    <audio   id="playtiger"             src="tiger.wav"></audio>
+    <td onclick="playzebra.play()"><img src="zebra.jpg"><p class="thing en">zebra<p class="es">cebra
+    <audio   id="playzebra"             src="zebra.wav"></audio>
+</table>
+<script>
+function tEn() {
+  document.querySelectorAll('.en').forEach(function(element) {if (!toggleEn.checked)    {element.classList.add('hidden')} else {element.classList.remove('hidden')}})
+}
+function tEs() {
+  document.querySelectorAll('.es').forEach(function(element) {if (!toggleEs.checked)    {element.classList.add('hidden')} else {element.classList.remove('hidden')}})
+}
+
+toggleEn.addEventListener('change', tEn); tEn()
+toggleEs.addEventListener('change', tEs); tEs()
+</script>
+</body>
+</html>
