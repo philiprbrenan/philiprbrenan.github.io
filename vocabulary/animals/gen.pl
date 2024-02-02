@@ -31,31 +31,48 @@ sub enFromPhoto($)                                                              
  }
 
 my %es = (                                                                      # Spanish
-  bear             => "oso"
-, bird             => "pájaro"
-, cat              => "gato"
-, cock             => "gallo"
-, cow              => "vaca"
-, crocodile        => "cocodrilo"
-, dolphin          => "delfín"
-, donkey           => "burro"
-, duck             => "pato"
-, eagle            => "águila"
-, giraffe          => "jirafa"
-, hen              => "gallina"
-, horse            => "caballo"
-, koala            => "koala"
-, monkey           => "mono"
-, mouse            => "ratón"
-, octopus          => "pulpo"
-, pig              => "cerdo"
-, rhino            => "rinoceronte"
-, seagull          => "gaviota"
-, sheep            => "oveja"
-, snake            => "serpiente"
-, tiger            => "tigre"
-, whale            => "ballena"
-, zebra            => "cebra"
+    bear       => "oso",
+    bird       => "pájaro",
+    cat        => "gato",
+    cock       => "gallo",
+    cow        => "vaca",
+    crab       => "cangrejo",
+    crocodile  => "cocodrilo",
+    dolphin    => "delfín",
+    donkey     => "burro",
+    duck       => "pato",
+    eagle      => "águila",
+    giraffe    => "jirafa",
+    gorilla    => "gorila",
+    hen        => "gallina",
+    horse      => "caballo",
+    koala      => "koala",
+    leopard    => "leopardo",
+    monkey     => "mono",
+    mouse      => "ratón",
+    octopus    => "pulpo",
+    pig        => "cerdo",
+    rhino      => "rinoceronte",
+    seagull    => "gaviota",
+    seal       => "foca",
+    shark      => "tiburón",
+    sheep      => "oveja",
+    snake      => "serpiente",
+    tiger      => "tigre",
+    walrus     => "morsa",
+    whale      => "ballena",
+    zebra      => "cebra",
+);
+
+my %africa = (                                                                  # Live in Africa
+bird       => 1,
+crocodile  => 1,
+giraffe    => 1,
+gorilla    => 1,
+leopard    => 1,
+monkey     => 1,
+rhino      => 1,
+zebra      => 1,
 );
 
 my %fly = (                                                                     # Animals that fly
@@ -78,11 +95,15 @@ sheep            => 1);
 
 my %swim = (                                                                    # Animals that like to swim
 bear             => 1,
+crab             => 1,
 crocodile        => 1,
 dolphin          => 1,
 duck             => 1,
 octopus          => 1,
 seagull          => 1,
+seal             => 1,
+shark            => 1,
+walrus           => 1,
 whale            => 1);
 
 sub esFromPhoto($)                                                              # Spanish name from photo
@@ -103,7 +124,7 @@ my @h = <<END;                                                                  
 <style>
   body    {margin     : 1% 1% 1% 1%;}
   img     {width      : 100%; height: auto; min-width:20vw; max-width:30vw;  max-height:30vh; }
-  .en     {font-weight: bold; font-family: "Century Gothic", serif; font-size:200%;}
+  .en     {font-weight: bold; font-family:" Century Gothic", serif; font-size:200%;}
   #table  {display    : flex; flex-wrap: wrap;}
   .thing  {text-align : center}
   .hidden {display    : none}
@@ -116,6 +137,7 @@ my @h = <<END;                                                                  
 <input checked="1" type="checkbox" id="toggleEs">Spanish
 
 <p>Choose animals that:
+<input type="checkbox" id="toggleAfrica"> live in Africa,
 <input type="checkbox" id="toggleFly"> can fly,
 <input type="checkbox" id="toggleFarm">are found on a farm,
 <input type="checkbox" id="toggleSwim">like to swim.
@@ -128,13 +150,16 @@ for my $i(keys @p)                                                              
  {my $p = fne $p[$i];
   my $e = enFromPhoto $p;
   my $s = esFromPhoto($p)//'*****';                                             # Perhaps not yet translated
-  $audio{$p} = my $a = "$e.$audioX";
+  $audio{$p} = my $a =" $e.$audioX";
 
-  my ($fly, $farm, $swim) = ($fly {$e} ? "fly"  : '',                           # Capabilities
-                             $farm{$e} ? "farm" : '',
-                             $swim{$e} ? "swim" : '');
+  my ($africa, $fly, $farm, $swim) =                                            # Capabilities
+   ($africa{$e} ?" africa" : '',
+    $fly   {$e} ?" fly"    : '',
+    $farm  {$e} ?" farm"   : '',
+    $swim  {$e} ?" swim"   : '');
+
   push @h, <<END;
-    <div class="thing $fly $farm $swim" onclick="play$e.play()"><table><tr><td><img src="$p"><tr><td class="en">$e<tr><td class="es">$s<tr><td><audio id="play$e" src="$a"></audio></table></div>
+    <div class="thing $africa $fly $farm $swim" onclick="play$e.play()"><table><tr><td><img src="$p"><tr><td class="en">$e<tr><td class="es">$s<tr><td><audio id="play$e" src="$a"></audio></table></div>
 END
  }
 
@@ -161,11 +186,18 @@ function find(array, element)
  }
 
 function tShow()
- {const farm = document.querySelectorAll('.farm')
-  const fly  = document.querySelectorAll('.fly')
-  const swim = document.querySelectorAll('.swim')
-  const All  = document.querySelectorAll('.thing')
-  let   all  = [...All]
+ {const africa = document.querySelectorAll('.africa')
+  const farm   = document.querySelectorAll('.farm')
+  const fly    = document.querySelectorAll('.fly')
+  const swim   = document.querySelectorAll('.swim')
+  const All    = document.querySelectorAll('.thing')
+  let   all    = [...All]
+
+  if (toggleAfrica.checked)
+   {const f = []
+    for(const a of all) if (find(africa, a)) f.push(a)
+    all = f
+   }
 
   if (toggleFarm.checked)
    {const f = []
@@ -192,16 +224,17 @@ function tShow()
 toggleEn.addEventListener('change', tEn); tEn()
 toggleEs.addEventListener('change', tEs); tEs()
 
-toggleFarm.addEventListener('change', tShow)
-toggleFly .addEventListener('change', tShow)
-toggleSwim.addEventListener('change', tShow)
+toggleAfrica.addEventListener('change', tShow)
+toggleFarm  .addEventListener('change', tShow)
+toggleFly   .addEventListener('change', tShow)
+toggleSwim  .addEventListener('change', tShow)
 tShow()
 </script>
 </body>
 </html>
 END
 
-owf($index, join "", @h);                                                       # Write html
+owf($index, join" ", @h);                                                       # Write html
 
 push my @s, <<END;                                                              # Audio script
 <h1>$title</h1>
@@ -213,7 +246,7 @@ for my $p(@p)                                                                   
   my $a = $audio{fne $p};
   if (!$a or !-e $a or fileSize($a) < 1e3)                                      # Files not yet recorded
    {my $s = esFromPhoto($p);
-    push @s, "<tr><th>$s<td>$n<td>$n<td>$n" if $s;
+    push @s," <tr><th>$s<td>$n<td>$n<td>$n" if $s;
     $translate{$n}++
    }
  }
@@ -224,6 +257,6 @@ push @s, <<END;
 </html>
 END
 
-owf($script,    join "\n", @s);                                                 # Write script
-owf($translate, join "\n", sort keys %translate);                               # Words needing translation
-owf($list,      join "\n", map {pad(enFromPhoto($_), 16)." => 1,"} @p);         # Words needing categories
+owf($script,    join" \n", @s);                                                 # Write script
+owf($translate, join" \n", sort keys %translate);                               # Words needing translation
+owf($list,      join" \n", map {pad(enFromPhoto($_), 16)." => 1,"} @p);         # Words needing categories
