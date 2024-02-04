@@ -2,11 +2,12 @@
 <html>
 <style>
   body    {margin     : 1% 1% 1% 1%;}
-  img     {width      : 100%; height: auto; min-width:20vw; max-width:30vw;  max-height:30vh; }
+  img     {width      : 100%; min-width:20vw; max-width:30vw; max-height:30vh; }
   .en     {font-weight: bold; font-family:" Century Gothic", serif; font-size:200%;}
   #table  {display    : flex; flex-wrap: wrap;}
   .thing  {text-align : center}
   .hidden {display    : none}
+  .big    {max-width:none; max-height:none;}
 </style>
 <body>
 <h1 onclick="playTitle.play()">Winter Holiday</h1>
@@ -45,6 +46,14 @@ function tEs() {
 
 toggleEn.addEventListener('change', tEn); tEn()
 toggleEs.addEventListener('change', tEs); tEs()
+
+document.querySelectorAll('img').forEach(function(element)                      // Open full size in another tab
+ {element.addEventListener('click', function (e)
+   {if (e.ctrlKey||e.shiftKey)
+     {window.open(element.getAttribute('src'))
+     }
+   })
+ })
 </script>
 </body>
 </html>
