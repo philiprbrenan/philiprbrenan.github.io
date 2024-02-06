@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body    {margin     : 1% 1% 1% 1%;}
+  img     {width      : 100%; height: auto; min-width:20vw; max-width:30vw;  max-height:30vh; }
+  .en     {font-weight: bold; font-family:" Century Gothic", serif; font-size:200%;}
+  #table  {display    : flex; flex-wrap: wrap;}
+  .thing  {text-align : center}
+  .hidden {display    : none}
+</style>
+<body>
+<h1 onclick="playTitle.play()">House</h1>
+
+<p>Click on the words to hear them in English.  Show words in:
+<input checked="1" type="checkbox" id="toggleEn">English
+<input checked="1" type="checkbox" id="toggleEs">Spanish
+
+<p>Choose animals that:
+<input type="checkbox" id="toggleInside"> inside the house,
+<input type="checkbox" id="toggleOutside"> or outside the house.
+
+<audio id="playTitle" src="House.wav"></audio>
+<div id=table>
+     <div class="thing inside " onclick="playair_conditioner.play()"><table><tr><td><img src="air_conditioner.jpg"><tr><td class="en">air conditioner<tr><td class="es">aire acondicionado<tr><td><audio id="playair_conditioner" src="air_conditioner.wav"></audio></table></div>
+     <div class="thing inside " onclick="playaquarium.play()"><table><tr><td><img src="aquarium.jpg"><tr><td class="en">aquarium<tr><td class="es">acuario<tr><td><audio id="playaquarium" src="aquarium.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playbalcony.play()"><table><tr><td><img src="balcony.jpg"><tr><td class="en">balcony<tr><td class="es">balc&#243;n<tr><td><audio id="playbalcony" src="balcony.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbasin.play()"><table><tr><td><img src="basin.jpg"><tr><td class="en">basin<tr><td class="es">lavabo<tr><td><audio id="playbasin" src="basin.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbath.play()"><table><tr><td><img src="bath.jpg"><tr><td class="en">bath<tr><td class="es">ba&#241;era<tr><td><audio id="playbath" src="bath.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbathroom.play()"><table><tr><td><img src="bathroom.jpg"><tr><td class="en">bathroom<tr><td class="es">ba&#241;o<tr><td><audio id="playbathroom" src="bathroom.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbed.play()"><table><tr><td><img src="bed.jpg"><tr><td class="en">bed<tr><td class="es">cama<tr><td><audio id="playbed" src="bed.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbedroom.play()"><table><tr><td><img src="bedroom.jpg"><tr><td class="en">bedroom<tr><td class="es">dormitorio<tr><td><audio id="playbedroom" src="bedroom.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbench.play()"><table><tr><td><img src="bench.jpg"><tr><td class="en">bench<tr><td class="es">banco<tr><td><audio id="playbench" src="bench.wav"></audio></table></div>
+     <div class="thing inside " onclick="playbunk_bed.play()"><table><tr><td><img src="bunk_bed.jpg"><tr><td class="en">bunk bed<tr><td class="es">litera<tr><td><audio id="playbunk_bed" src="bunk_bed.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playbus_stop.play()"><table><tr><td><img src="bus_stop.jpg"><tr><td class="en">bus stop<tr><td class="es">parada de autob&#250;s<tr><td><audio id="playbus_stop" src="bus_stop.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playcar.play()"><table><tr><td><img src="car.jpg"><tr><td class="en">car<tr><td class="es">coche<tr><td><audio id="playcar" src="car.wav"></audio></table></div>
+     <div class="thing inside " onclick="playcarpet.play()"><table><tr><td><img src="carpet.jpg"><tr><td class="en">carpet<tr><td class="es">alfombra<tr><td><audio id="playcarpet" src="carpet.wav"></audio></table></div>
+     <div class="thing inside " onclick="playceiling.play()"><table><tr><td><img src="ceiling.jpg"><tr><td class="en">ceiling<tr><td class="es">techo<tr><td><audio id="playceiling" src="ceiling.wav"></audio></table></div>
+     <div class="thing inside " onclick="playchair.play()"><table><tr><td><img src="chair.jpg"><tr><td class="en">chair<tr><td class="es">silla<tr><td><audio id="playchair" src="chair.wav"></audio></table></div>
+     <div class="thing inside " onclick="playclock.play()"><table><tr><td><img src="clock.jpg"><tr><td class="en">clock<tr><td class="es">reloj<tr><td><audio id="playclock" src="clock.wav"></audio></table></div>
+     <div class="thing inside " onclick="playcouch.play()"><table><tr><td><img src="couch.jpg"><tr><td class="en">couch<tr><td class="es">sof&#225;<tr><td><audio id="playcouch" src="couch.wav"></audio></table></div>
+     <div class="thing inside " onclick="playcurtain.play()"><table><tr><td><img src="curtain.jpg"><tr><td class="en">curtain<tr><td class="es">cortina<tr><td><audio id="playcurtain" src="curtain.wav"></audio></table></div>
+     <div class="thing inside " onclick="playdesk.play()"><table><tr><td><img src="desk.jpg"><tr><td class="en">desk<tr><td class="es">escritorio<tr><td><audio id="playdesk" src="desk.wav"></audio></table></div>
+     <div class="thing inside " onclick="playdining_room.play()"><table><tr><td><img src="dining_room.jpg"><tr><td class="en">dining room<tr><td class="es">comedor<tr><td><audio id="playdining_room" src="dining_room.wav"></audio></table></div>
+     <div class="thing inside " onclick="playdining_table.play()"><table><tr><td><img src="dining_table.jpg"><tr><td class="en">dining table<tr><td class="es">mesa de comedor<tr><td><audio id="playdining_table" src="dining_table.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playdog_house.play()"><table><tr><td><img src="dog_house.jpg"><tr><td class="en">dog house<tr><td class="es">caseta de perro<tr><td><audio id="playdog_house" src="dog_house.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playdoor_bell.play()"><table><tr><td><img src="door_bell.jpg"><tr><td class="en">door bell<tr><td class="es">timbre<tr><td><audio id="playdoor_bell" src="door_bell.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playdriveway.play()"><table><tr><td><img src="driveway.jpg"><tr><td class="en">driveway<tr><td class="es">entrada de coches<tr><td><audio id="playdriveway" src="driveway.wav"></audio></table></div>
+     <div class="thing inside " onclick="playfan.play()"><table><tr><td><img src="fan.jpg"><tr><td class="en">fan<tr><td class="es">ventilador<tr><td><audio id="playfan" src="fan.wav"></audio></table></div>
+     <div class="thing inside " onclick="playfloor.play()"><table><tr><td><img src="floor.jpg"><tr><td class="en">floor<tr><td class="es">suelo<tr><td><audio id="playfloor" src="floor.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playflower_bed.play()"><table><tr><td><img src="flower_bed.jpg"><tr><td class="en">flower bed<tr><td class="es">macizo de flores<tr><td><audio id="playflower_bed" src="flower_bed.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playfront_door.play()"><table><tr><td><img src="front_door.jpg"><tr><td class="en">front door<tr><td class="es">puerta principal<tr><td><audio id="playfront_door" src="front_door.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playgarage.play()"><table><tr><td><img src="garage.jpg"><tr><td class="en">garage<tr><td class="es">garaje<tr><td><audio id="playgarage" src="garage.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playgarden.play()"><table><tr><td><img src="garden.jpg"><tr><td class="en">garden<tr><td class="es">jardin<tr><td><audio id="playgarden" src="garden.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playgate.play()"><table><tr><td><img src="gate.jpg"><tr><td class="en">gate<tr><td class="es">puerta<tr><td><audio id="playgate" src="gate.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playhammock.play()"><table><tr><td><img src="hammock.jpg"><tr><td class="en">hammock<tr><td class="es">hamaca<tr><td><audio id="playhammock" src="hammock.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playhedge.play()"><table><tr><td><img src="hedge.jpg"><tr><td class="en">hedge<tr><td class="es">seto<tr><td><audio id="playhedge" src="hedge.wav"></audio></table></div>
+     <div class="thing inside " onclick="playkitchen.play()"><table><tr><td><img src="kitchen.jpg"><tr><td class="en">kitchen<tr><td class="es">cocina<tr><td><audio id="playkitchen" src="kitchen.wav"></audio></table></div>
+     <div class="thing inside " onclick="playlamp.play()"><table><tr><td><img src="lamp.jpg"><tr><td class="en">lamp<tr><td class="es">l&#225;mpara<tr><td><audio id="playlamp" src="lamp.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playletter_box.play()"><table><tr><td><img src="letter_box.jpg"><tr><td class="en">letter box<tr><td class="es">buz&#243;n<tr><td><audio id="playletter_box" src="letter_box.wav"></audio></table></div>
+     <div class="thing inside " onclick="playliving_room.play()"><table><tr><td><img src="living_room.jpg"><tr><td class="en">living room<tr><td class="es">sala de estar<tr><td><audio id="playliving_room" src="living_room.wav"></audio></table></div>
+     <div class="thing inside " onclick="playlobby.play()"><table><tr><td><img src="lobby.jpg"><tr><td class="en">lobby<tr><td class="es">vest&#237;bulo<tr><td><audio id="playlobby" src="lobby.wav"></audio></table></div>
+     <div class="thing inside " onclick="playmat.play()"><table><tr><td><img src="mat.jpg"><tr><td class="en">mat<tr><td class="es">alfombrilla<tr><td><audio id="playmat" src="mat.wav"></audio></table></div>
+     <div class="thing inside " onclick="playmicrowave_oven.play()"><table><tr><td><img src="microwave_oven.jpg"><tr><td class="en">microwave oven<tr><td class="es">microondas<tr><td><audio id="playmicrowave_oven" src="microwave_oven.wav"></audio></table></div>
+     <div class="thing inside " onclick="playmirror.play()"><table><tr><td><img src="mirror.jpg"><tr><td class="en">mirror<tr><td class="es">espejo<tr><td><audio id="playmirror" src="mirror.wav"></audio></table></div>
+     <div class="thing inside " onclick="playpillow.play()"><table><tr><td><img src="pillow.jpg"><tr><td class="en">pillow<tr><td class="es">almohada<tr><td><audio id="playpillow" src="pillow.wav"></audio></table></div>
+     <div class="thing inside " onclick="playrefrigerator.play()"><table><tr><td><img src="refrigerator.jpg"><tr><td class="en">refrigerator<tr><td class="es">nevera<tr><td><audio id="playrefrigerator" src="refrigerator.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playroof.play()"><table><tr><td><img src="roof.jpg"><tr><td class="en">roof<tr><td class="es">tejado<tr><td><audio id="playroof" src="roof.wav"></audio></table></div>
+     <div class="thing inside " onclick="playshelves.play()"><table><tr><td><img src="shelves.jpg"><tr><td class="en">shelves<tr><td class="es">estantes<tr><td><audio id="playshelves" src="shelves.wav"></audio></table></div>
+     <div class="thing inside " onclick="playshower.play()"><table><tr><td><img src="shower.jpg"><tr><td class="en">shower<tr><td class="es">ducha<tr><td><audio id="playshower" src="shower.wav"></audio></table></div>
+     <div class="thing inside " onclick="playsink.play()"><table><tr><td><img src="sink.jpg"><tr><td class="en">sink<tr><td class="es">fregadero<tr><td><audio id="playsink" src="sink.wav"></audio></table></div>
+     <div class="thing inside " onclick="playstairway.play()"><table><tr><td><img src="stairway.jpg"><tr><td class="en">stairway<tr><td class="es">escalera<tr><td><audio id="playstairway" src="stairway.wav"></audio></table></div>
+     <div class="thing inside " onclick="playstove.play()"><table><tr><td><img src="stove.jpg"><tr><td class="en">stove<tr><td class="es">estufa<tr><td><audio id="playstove" src="stove.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playstreet.play()"><table><tr><td><img src="street.jpg"><tr><td class="en">street<tr><td class="es">calle<tr><td><audio id="playstreet" src="street.wav"></audio></table></div>
+     <div class="thing inside " onclick="playtable.play()"><table><tr><td><img src="table.jpg"><tr><td class="en">table<tr><td class="es">mesa<tr><td><audio id="playtable" src="table.wav"></audio></table></div>
+     <div class="thing inside " onclick="playtelephone.play()"><table><tr><td><img src="telephone.jpg"><tr><td class="en">telephone<tr><td class="es">tel&#233;fono<tr><td><audio id="playtelephone" src="telephone.wav"></audio></table></div>
+     <div class="thing inside " onclick="playtelevision.play()"><table><tr><td><img src="television.jpg"><tr><td class="en">television<tr><td class="es">televisi&#243;n<tr><td><audio id="playtelevision" src="television.wav"></audio></table></div>
+     <div class="thing inside " onclick="playtoilet.play()"><table><tr><td><img src="toilet.jpg"><tr><td class="en">toilet<tr><td class="es">inodoro<tr><td><audio id="playtoilet" src="toilet.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playtree.play()"><table><tr><td><img src="tree.jpg"><tr><td class="en">tree<tr><td class="es">&#225;rbol<tr><td><audio id="playtree" src="tree.wav"></audio></table></div>
+     <div class="thing inside " onclick="playvacuum_cleaner.play()"><table><tr><td><img src="vacuum_cleaner.jpg"><tr><td class="en">vacuum cleaner<tr><td class="es">aspiradora<tr><td><audio id="playvacuum_cleaner" src="vacuum_cleaner.wav"></audio></table></div>
+     <div class="thing inside " onclick="playvase.play()"><table><tr><td><img src="vase.jpg"><tr><td class="en">vase<tr><td class="es">jarr&#243;n<tr><td><audio id="playvase" src="vase.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playwall.play()"><table><tr><td><img src="wall.jpg"><tr><td class="en">wall<tr><td class="es">pared<tr><td><audio id="playwall" src="wall.wav"></audio></table></div>
+     <div class="thing inside " onclick="playwatering_can.play()"><table><tr><td><img src="watering_can.jpg"><tr><td class="en">watering can<tr><td class="es">regadera<tr><td><audio id="playwatering_can" src="watering_can.wav"></audio></table></div>
+     <div class="thing inside " onclick="playwindow.play()"><table><tr><td><img src="window.jpg"><tr><td class="en">window<tr><td class="es">ventana<tr><td><audio id="playwindow" src="window.wav"></audio></table></div>
+ </div>
+ <script>
+function tEn() {
+  document.querySelectorAll('.en').forEach(function(element) {if (!toggleEn.checked)    {element.classList.add('hidden')} else {element.classList.remove('hidden')}})
+}
+function tEs() {
+  document.querySelectorAll('.es').forEach(function(element) {if (!toggleEs.checked)    {element.classList.add('hidden')} else {element.classList.remove('hidden')}})
+}
+
+function find(array, element)
+ {for (const elem of array)
+   {if (elem === element)
+     {return 1
+     }
+   }
+  return 0
+ }
+
+function tShow()
+ {const inside  = document.querySelectorAll('.inside')
+  const outside = document.querySelectorAll('.outside')
+  const All    = document.querySelectorAll('.thing')
+  let   all    = [...All]
+
+  if (toggleInside.checked)
+   {const f = []
+    for(const a of all) if (find(inside, a)) f.push(a)
+    all = f
+   }
+
+  if (toggleOutside.checked)
+   {const f = []
+    for(const a of all) if (find(outside, a)) f.push(a)
+    all = f
+   }
+
+  for(const a of All)
+   {find(all, a) ? a.classList.remove('hidden') : a.classList.add('hidden')
+   }
+ }
+
+toggleEn.addEventListener('change', tEn); tEn()
+toggleEs.addEventListener('change', tEs); tEs()
+
+toggleInside .addEventListener('change', tShow)
+toggleOutside.addEventListener('change', tShow)
+tShow()
+
+document.querySelectorAll('img').forEach(function(element)                      // Open full size in another tab
+ {element.addEventListener('click', function (e)
+   {if (e.ctrlKey||e.shiftKey)
+     {window.open(element.getAttribute('src'))
+     }
+   })
+ })
+</script>
+</body>
+</html>
