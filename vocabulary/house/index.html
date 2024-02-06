@@ -13,11 +13,12 @@
 
 <p>Click on the words to hear them in English.  Show words in:
 <input checked="1" type="checkbox" id="toggleEn">English
-<input checked="1" type="checkbox" id="toggleEs">Spanish
+<input checked="1" type="checkbox" id="toggleEs">Spanish.
 
-<p>Choose animals that:
+Choose things that belong:
 <input type="checkbox" id="toggleInside"> inside the house,
 <input type="checkbox" id="toggleOutside"> or outside the house.
+Hold the <b>ctrl</b> down and click on a photo to see the photo full size.
 
 <audio id="playTitle" src="House.wav"></audio>
 <div id=table>
@@ -29,7 +30,7 @@
      <div class="thing inside " onclick="playbathroom.play()"><table><tr><td><img src="bathroom.jpg"><tr><td class="en">bathroom<tr><td class="es">ba&#241;o<tr><td><audio id="playbathroom" src="bathroom.wav"></audio></table></div>
      <div class="thing inside " onclick="playbed.play()"><table><tr><td><img src="bed.jpg"><tr><td class="en">bed<tr><td class="es">cama<tr><td><audio id="playbed" src="bed.wav"></audio></table></div>
      <div class="thing inside " onclick="playbedroom.play()"><table><tr><td><img src="bedroom.jpg"><tr><td class="en">bedroom<tr><td class="es">dormitorio<tr><td><audio id="playbedroom" src="bedroom.wav"></audio></table></div>
-     <div class="thing inside " onclick="playbench.play()"><table><tr><td><img src="bench.jpg"><tr><td class="en">bench<tr><td class="es">banco<tr><td><audio id="playbench" src="bench.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playbench.play()"><table><tr><td><img src="bench.jpg"><tr><td class="en">bench<tr><td class="es">banco<tr><td><audio id="playbench" src="bench.wav"></audio></table></div>
      <div class="thing inside " onclick="playbunk_bed.play()"><table><tr><td><img src="bunk_bed.jpg"><tr><td class="en">bunk bed<tr><td class="es">litera<tr><td><audio id="playbunk_bed" src="bunk_bed.wav"></audio></table></div>
      <div class="thing  outside" onclick="playbus_stop.play()"><table><tr><td><img src="bus_stop.jpg"><tr><td class="en">bus stop<tr><td class="es">parada de autob&#250;s<tr><td><audio id="playbus_stop" src="bus_stop.wav"></audio></table></div>
      <div class="thing  outside" onclick="playcar.play()"><table><tr><td><img src="car.jpg"><tr><td class="en">car<tr><td class="es">coche<tr><td><audio id="playcar" src="car.wav"></audio></table></div>
@@ -64,7 +65,7 @@
      <div class="thing inside " onclick="playmirror.play()"><table><tr><td><img src="mirror.jpg"><tr><td class="en">mirror<tr><td class="es">espejo<tr><td><audio id="playmirror" src="mirror.wav"></audio></table></div>
      <div class="thing inside " onclick="playpillow.play()"><table><tr><td><img src="pillow.jpg"><tr><td class="en">pillow<tr><td class="es">almohada<tr><td><audio id="playpillow" src="pillow.wav"></audio></table></div>
      <div class="thing inside " onclick="playrefrigerator.play()"><table><tr><td><img src="refrigerator.jpg"><tr><td class="en">refrigerator<tr><td class="es">nevera<tr><td><audio id="playrefrigerator" src="refrigerator.wav"></audio></table></div>
-     <div class="thing  outside" onclick="playroof.play()"><table><tr><td><img src="roof.jpg"><tr><td class="en">roof<tr><td class="es">tejado<tr><td><audio id="playroof" src="roof.wav"></audio></table></div>
+     <div class="thing  outside" onclick="playroof.play()"><table><tr><td><img src="roof.jpg"><tr><td class="en">roof<tr><td class="es">techo<tr><td><audio id="playroof" src="roof.wav"></audio></table></div>
      <div class="thing inside " onclick="playshelves.play()"><table><tr><td><img src="shelves.jpg"><tr><td class="en">shelves<tr><td class="es">estantes<tr><td><audio id="playshelves" src="shelves.wav"></audio></table></div>
      <div class="thing inside " onclick="playshower.play()"><table><tr><td><img src="shower.jpg"><tr><td class="en">shower<tr><td class="es">ducha<tr><td><audio id="playshower" src="shower.wav"></audio></table></div>
      <div class="thing inside " onclick="playsink.play()"><table><tr><td><img src="sink.jpg"><tr><td class="en">sink<tr><td class="es">fregadero<tr><td><audio id="playsink" src="sink.wav"></audio></table></div>
@@ -79,7 +80,7 @@
      <div class="thing inside " onclick="playvacuum_cleaner.play()"><table><tr><td><img src="vacuum_cleaner.jpg"><tr><td class="en">vacuum cleaner<tr><td class="es">aspiradora<tr><td><audio id="playvacuum_cleaner" src="vacuum_cleaner.wav"></audio></table></div>
      <div class="thing inside " onclick="playvase.play()"><table><tr><td><img src="vase.jpg"><tr><td class="en">vase<tr><td class="es">jarr&#243;n<tr><td><audio id="playvase" src="vase.wav"></audio></table></div>
      <div class="thing  outside" onclick="playwall.play()"><table><tr><td><img src="wall.jpg"><tr><td class="en">wall<tr><td class="es">pared<tr><td><audio id="playwall" src="wall.wav"></audio></table></div>
-     <div class="thing inside " onclick="playwatering_can.play()"><table><tr><td><img src="watering_can.jpg"><tr><td class="en">watering can<tr><td class="es">regadera<tr><td><audio id="playwatering_can" src="watering_can.wav"></audio></table></div>
+     <div class="thing inside outside" onclick="playwatering_can.play()"><table><tr><td><img src="watering_can.jpg"><tr><td class="en">watering can<tr><td class="es">regadera<tr><td><audio id="playwatering_can" src="watering_can.wav"></audio></table></div>
      <div class="thing inside " onclick="playwindow.play()"><table><tr><td><img src="window.jpg"><tr><td class="en">window<tr><td class="es">ventana<tr><td><audio id="playwindow" src="window.wav"></audio></table></div>
  </div>
  <script>
