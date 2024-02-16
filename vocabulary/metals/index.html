@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body    {margin     : 1% 1% 1% 1%;}
+  img     {width      : 100%; min-width:20vw; max-width:30vw; }
+  .en     {font-weight: bold; font-family:" Century Gothic", serif; font-size:200%;}
+  #table  {display    : flex; flex-wrap: wrap;}
+  .thing  {text-align : center}
+  .hidden {display    : none}
+  .big    {max-width:none; max-height:none;}
+</style>
+<body>
+<h1 onclick="playTitle.play()">Metals</h1>
+
+<p>Click on the words to hear them in English.  Show:
+<input checked="1" type="checkbox" id="toggleEn">name,
+<input checked="1" type="checkbox" id="toggleEs">descrption.
+Hold the <b>ctrl</b> key down and click on a photo to see the photo full size.
+
+<audio id="playTitle" src="Metals.wav"></audio>
+<div id=table>
+     <div class="thing" onclick="playaluminium.play()"><table><tr><td><img src="aluminium.jpg"><tr><td class="en">aluminium<tr><td class="es"><p>Lightweight and corrosion-resistant metal used in various industries such as aerospace and construction.<tr><td><audio id="playaluminium" src="aluminium.wav"></audio></table></div>
+     <div class="thing" onclick="playbrass.play()"><table><tr><td><img src="brass.jpg"><tr><td class="en">brass<tr><td class="es"><p>Alloy of copper and zinc, valued for its decorative properties and used in musical instruments and fittings.<tr><td><audio id="playbrass" src="brass.wav"></audio></table></div>
+     <div class="thing" onclick="playbronze.play()"><table><tr><td><img src="bronze.jpg"><tr><td class="en">bronze<tr><td class="es"><p>Copper-based alloy often containing tin and other elements, known for its strength and used in sculptures and bearings.<tr><td><audio id="playbronze" src="bronze.wav"></audio></table></div>
+     <div class="thing" onclick="playchromium.play()"><table><tr><td><img src="chromium.jpg"><tr><td class="en">chromium<tr><td class="es"><p>Hard and corrosion-resistant metal used in stainless steel production and in plating to improve surface durability.<tr><td><audio id="playchromium" src="chromium.wav"></audio></table></div>
+     <div class="thing" onclick="playcopper.play()"><table><tr><td><img src="copper.jpg"><tr><td class="en">copper<tr><td class="es"><p>Highly conductive metal with excellent ductility, widely used in electrical wiring and plumbing.<tr><td><audio id="playcopper" src="copper.wav"></audio></table></div>
+     <div class="thing" onclick="playgold.play()"><table><tr><td><img src="gold.jpg"><tr><td class="en">gold<tr><td class="es"><p>Valuable metal prized for its rarity and aesthetic appeal, used in jewelry, investment, and electronics.<tr><td><audio id="playgold" src="gold.wav"></audio></table></div>
+     <div class="thing" onclick="playiron.play()"><table><tr><td><img src="iron.png"><tr><td class="en">iron<tr><td class="es"><p>Abundant metal with high strength and versatility, essential in construction, manufacturing, and transportation.<tr><td><audio id="playiron" src="iron.wav"></audio></table></div>
+     <div class="thing" onclick="playlead.play()"><table><tr><td><img src="lead.jpg"><tr><td class="en">lead<tr><td class="es"><p>Dense metal with high malleability and corrosion resistance, used in batteries, construction, and radiation shielding.<tr><td><audio id="playlead" src="lead.wav"></audio></table></div>
+     <div class="thing" onclick="playsilver.play()"><table><tr><td><img src="silver.jpg"><tr><td class="en">silver<tr><td class="es"><p>Highly conductive and malleable metal with antibacterial properties, used in electronics, jewelry, and photography.<tr><td><audio id="playsilver" src="silver.wav"></audio></table></div>
+     <div class="thing" onclick="playstainless_steel.play()"><table><tr><td><img src="stainless_steel.jpg"><tr><td class="en">stainless steel<tr><td class="es"><p>Steel alloy with a minimum of 10.5% chromium content, resistant to corrosion and widely used in various applications.<tr><td><audio id="playstainless_steel" src="stainless_steel.wav"></audio></table></div>
+     <div class="thing" onclick="playtin.play()"><table><tr><td><img src="tin.jpg"><tr><td class="en">tin<tr><td class="es"><p>Malleable metal commonly used as a coating for other materials and in solder for joining metals.<tr><td><audio id="playtin" src="tin.wav"></audio></table></div>
+     <div class="thing" onclick="playtitanium.play()"><table><tr><td><img src="titanium.jpg"><tr><td class="en">titanium<tr><td class="es"><p>Lightweight and strong metal with excellent corrosion resistance, used in aerospace, medical implants, and sporting goods.<tr><td><audio id="playtitanium" src="titanium.wav"></audio></table></div>
+     <div class="thing" onclick="playzinc.play()"><table><tr><td><img src="zinc.jpg"><tr><td class="en">zinc<tr><td class="es"><p>Metal with anti-corrosive properties, commonly used in galvanization of steel, batteries, and alloys.<tr><td><audio id="playzinc" src="zinc.wav"></audio></table></div>
+ </div>
+ <script>
+function tEn() {
+  document.querySelectorAll('.en').forEach(function(element) {if (!toggleEn.checked)    {element.classList.add('hidden')} else {element.classList.remove('hidden')}})
+}
+function tEs() {
+  document.querySelectorAll('.es').forEach(function(element) {if (!toggleEs.checked)    {element.classList.add('hidden')} else {element.classList.remove('hidden')}})
+}
+
+toggleEn.addEventListener('change', tEn); tEn()
+toggleEs.addEventListener('change', tEs); tEs()
+
+document.querySelectorAll('img').forEach(function(element)                      // Open full size in another tab
+ {element.addEventListener('click', function (e)
+   {if (e.ctrlKey||e.shiftKey)
+     {window.open(element.getAttribute('src'))
+     }
+   })
+ })
+</script>
+</body>
+</html>
