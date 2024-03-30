@@ -25,7 +25,7 @@
 <p><a href="pitchDeck.pptx">Power Point Overview</a>
 </div>
 <div class="horizontalItem">
-<p>Last updated: <a href="">2024-03-29 at 20:46:15 Z</a>
+<p>Last updated: <a href="">2024-03-30 at 20:53:36 Z</a>
 </div>
 </div>
 
@@ -69,7 +69,15 @@
 
 <h2 id="pomo">Problem or Market Opportunity</h2>
 
-<p><q>Chip factories and <a href="https://en.wikipedia.org/wiki/Data">data</a> centers can consume 100 times more power than a typical industrial business.  Wall Street Journal 2024-03-29 A14</q>
+<p><i>Chip factories and <a href="https://en.wikipedia.org/wiki/Data">data</a> centers can consume 100 times more power than a typical industrial business.  Wall Street Journal 2024-03-29 A14</i>
+
+<p><i>Electricity demand to power <a href="https://en.wikipedia.org/wiki/Data">data</a> centers is projected to increase by 13%
+to 15% com- pounded annually through 2030. Yet a shortage of power is already
+delaying new <a href="https://en.wikipedia.org/wiki/Data">data</a> centers by two to six years, according to commercial- real
+estate firm CBRE Group. It is also driving Big Tech companies into the energy
+business. Amazon this month struck a $650 million deal to buy a <a href="https://en.wikipedia.org/wiki/Data">data</a> center in
+Pennsylvania powered by an on-site 2.5 gigawatt nuclear plant. Wall Street
+Journal 2024-03-29 A14</i>
 
 <p>High <a href="https://en.wikipedia.org/wiki/Speed">speed</a>, low power <a href="https://en.wikipedia.org/wiki/Database">database</a> system on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>.  The need for faster
 graphics produced the <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a> industry. The need to secure crypto currencies
@@ -158,19 +166,44 @@ thought to this problem.
 <p><b>DB2</b> <a
 href="https://www.redbooks.ibm.com/technotes/tips1204.pdf">with BLU
 Acceleration</a> runs on existing <a href="https://en.wikipedia.org/wiki/IBM">IBM</a> infrastructure.  It is a <a href="https://en.wikipedia.org/wiki/Software">software</a>
-solution not a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> level hardware solution.
+solution not a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> level <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> solution.
 
 <p><a href="https://www.oracle.com/engineered-systems/exadata/"><b>Oracle
 Exadata</b></a> is a conventional <a href="https://en.wikipedia.org/wiki/Computer">computer</a> optimized with appropriate <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a>,
-disk and network options to provide an optimal conventional computing
+<a href="https://en.wikipedia.org/wiki/Solid-state_drive">disk drive</a>s and <a href="https://en.wikipedia.org/wiki/Computer_network">network</a> options to provide an optimal conventional computing
 environment in which to run an Oracle <a href="https://en.wikipedia.org/wiki/Database">database</a>.  But there is no evidence of
 any new <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> design being used to power this solution.
 
-<p>In summary, both of these important <a href="https://en.wikipedia.org/wiki/Database">database</a> vendors are aware that hardware
+<p>In summary, both of these important <a href="https://en.wikipedia.org/wiki/Database">database</a> vendors are aware that <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a>
 acceleration is beneficial to <a href="https://en.wikipedia.org/wiki/Database">database</a> processing but they have not moved
 beyond the constraints of conventional solutions. Given that both companies
 operate in mature markets,  a break through on this area would surely have to
 be of great interest to them.</p>
+
+<p>Other companies are also attempting to address this issue from the <a href="https://en.wikipedia.org/wiki/Software">software</a>
+side: <a href="https://vastdata.com/dataengine">DataEngine</a> <i> The
+DataEngine is a containerized computing environment that customers deploy on
+their choice of CPUs, GPUs and DPUs</i>.  Obviously they would be much better
+off if they could do this in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> instead of <a href="https://en.wikipedia.org/wiki/Software">software</a>.
+
+<p>Likewise <a href="https://www.pinecone.io/product/">PineCone</a> which is using in
+<a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> <a href="https://en.wikipedia.org/wiki/Database">database</a>s in much the same way as BLU acceleration.  Using conventional
+<a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> is not enough, they should be adding logic, in situ, to the <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> so
+processing can be done quickly in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> close to the <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> rather than
+slowly in conventional <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> far from the <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a>.
+
+<p><a href="https://www.influxdata.com/">Influx data</a> offers <i>sub-second queries</i>
+so again their implementation must be a <a href="https://en.wikipedia.org/wiki/Software">software</a> one. We want to offer nano
+second queries so our solution must be a <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> one.</p>
+
+<p>My personal favorite: <a
+href="https://blog.bit.io/welcome-to-the-new-bit-io-cb27e4527d27">bit.io</a> -
+full marks for a great name while using <a href="https://github.com/philiprbrenan/postgres">Postgres</a> but still doing thing in
+<a href="https://en.wikipedia.org/wiki/Software">software</a> not in <a href="https://en.wikipedia.org/wiki/Silicon">Silicon</a> .</p>
+
+<p>All of these companies like to mention that they make <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a> applications easier
+and faster.  We could too!</p>
+
 
 <h2 id="ca">Competitive Advantage</h2>
 
@@ -205,7 +238,7 @@ show that it quickly answers queries against a preloaded <a href="https://en.wik
 <a href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/technicalContent/task.html#task">task</a> has been done using our purpose built <a href="https://en.wikipedia.org/wiki/Electronic_design_automation"><b>E</b>lectronic <b>D</b>esign <b>A</b>utomation</a> tools but needs to be cross
 checked with industry standard tools to confirm expected operation.
 
-<li><p>Use  <a href="https://en.wikipedia.org/wiki/Integrated_circuit_layout">mask</a> to create demo <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> in hardware and mount on <a href="https://en.wikipedia.org/wiki/Printed_circuit_board">printed circuit board</a>
+<li><p>Use  <a href="https://en.wikipedia.org/wiki/Integrated_circuit_layout">mask</a> to create demo <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> and mount on <a href="https://en.wikipedia.org/wiki/Printed_circuit_board">printed circuit board</a>
 <li><p>Send the <a href="https://en.wikipedia.org/wiki/Printed_circuit_board">printed circuit board</a> to well known the <a href="https://en.wikipedia.org/wiki/Data">data</a> centers for evaluation
 <li><p>Savings report from one customer keen to advertise their <a href="https://en.wikipedia.org/wiki/Environmentally_friendly">green</a> credentials
 <li><p>Sustained production at <a href="https://en.wikipedia.org/wiki/TSMC">TSMC ltd</a> in <a href="https://en.wikipedia.org/wiki/Arizona">Arizona</a> to supply follow on demand
@@ -214,7 +247,7 @@ checked with industry standard tools to confirm expected operation.
 <h2 id="cadp">Current & Desired Partnerships</h2>
 
 <p>None currently. Desired: Organization that can provide expertise in
-converting a design emulated in <a href="https://en.wikipedia.org/wiki/Software">software</a> to one realized in hardware.
+converting a design emulated in <a href="https://en.wikipedia.org/wiki/Software">software</a> to one realized in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a>.
 
 <p>We are looking for a series <b>A</b> round with a <b>10%</b> raise of $1 million
 against a valuation of $10 million.</p>
@@ -257,7 +290,7 @@ standard for <a href="https://en.wikipedia.org/wiki/Electronic_design_automation
 <h2 id="waygpr">What are your greatest perceived risks?</h2>
 
 <p>That some well funded company will seize on this idea before we have made
-any progress at the hardware level and get there first.
+any progress at the <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> level and get there first.
 
 <h2 id="wdyefc">What do you expect from the ChipStart program?</h2>
 
