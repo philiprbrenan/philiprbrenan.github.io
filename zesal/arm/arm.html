@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{margin: 1% 10% 1% 10%;}
+    body p {max-width: 40em;}
+    li {margin-bottom: 10px;}
+    #logo {max-width: 50%;}
+    #wiring {max-width: 100%;}
+    .toc_2 {color: #AD1D18}
+    .toc_3 {color: #009150}
+    body {font-family: Verdana, Geneva, sans-serif;}
+  </style>
+<body>
+
+<h1>Database on a chip</h1>
+
+<table border="0" cellpadding="10">
+<tr><td>
+
+<div id=toc>
+  <table cellspacing=10 border=0>
+    <tr><td align=right>1<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#es">Executive Summary</a>
+    <tr><td align=right>2<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#td">Team details</a>
+    <tr><td align=right>3<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#tda">Appa Apps Ltd Inc</a>
+    <tr><td align=right>4<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_3" href="#tdb">Chief Technology Officer</a>
+    <tr><td align=right>5<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_3" href="#gpd">VP Global Product Development</a>
+    <tr><td align=right>6<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#ps">Problem Statement</a>
+    <tr><td align=right>7<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sabm">Service and Business Model</a>
+    <tr><td align=right>8<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sg">Sales & Growth</a>
+    <tr><td align=right>9<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sr">Service revenue</a>
+    <tr><td align=right>10<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#htc">Traction with customers/investors</a>
+    <tr><td align=right>11<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#soc">Size of client base</a>
+    <tr><td align=right>12<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#mp">Market Potential</a>
+    <tr><td align=right>13<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#tmdac">Target market</a>
+    <tr><td align=right>14<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#tmd">Description</a>
+    <tr><td align=right>15<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#kca">Key competitive advantages</a>
+    <tr><td align=right>16<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#fpgas">Field Programmable Gate Arrays</a>
+    <tr><td align=right>17<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#simd">Single Instruction, Multiple Data</a>
+    <tr><td align=right>18<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#cuco">Custom Computers</a>
+    <tr><td align=right>19<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sa1">Solution</a>
+    <tr><td align=right>20<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sa2">Solution Outline</a>
+    <tr><td align=right>21<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sa3">End application</a>
+    <tr><td align=right>22<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sa4">Technology</a>
+    <tr><td align=right>23<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#hla">High-level solution architecture</a>
+    <tr><td align=right>24<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#usp">Solution Unique Selling Point</a>
+    <tr><td align=right>25<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sdrm1">Solution development</a>
+    <tr><td align=right>26<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sdrm2">Roadmap</a>
+    <tr><td align=right>27<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#kc">Key challenge</a>
+    <tr><td align=right>28<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#daip">Arm IP</a>
+    <tr><td align=right>29<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sbg">Strategy/Business Growth Roadmap</a>
+    <tr><td align=right>30<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#aaa">Environmental impact</a>
+    <tr><td align=right>31<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#fh">Funding History</a>
+  </table>
+</div>
+
+<td><img id="logo" src="http://prb.appaapps.com/zesal/pitchdeck/images/logo.png">
+</table>
+
+
+<h1 id="es">Executive Summary</h1>
+
+<p>High <a href="https://en.wikipedia.org/wiki/Speed">speed</a>, low power <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups to reduce <a href="https://en.wikipedia.org/wiki/Data">data</a> center electricity bills for hard money cost savings.</p>
+
+<h1 id="td">Team details</h1>
+
+<h2 id="tda">Appa Apps Ltd Inc</h2>
+<p>Incorporated in Austin, Texas in 2012.</p>
+
+<h3 id="tdb">Chief Technology Officer</h3>
+
+<p><a href="https://prb.appaapps.com/">Philip R Brenan</a>
+
+<ol>
+
+<li><p>Developed a dynamic to static <a href="https://en.wikipedia.org/wiki/SQL">SQL</a> driver that enabled Neon Systems to go
+public.
+
+<li><p>Developed first three dimensional graphical representation of neutral beam
+injections systems for <a href="https://en.wikipedia.org/wiki/Joint_European_Torus">Joint European Torus</a> as described in <a href="https://www.sciencedirect.com/science/article/pii/B978008025697950052X">Physics design calculations for the JET neutral injectors</a> .
+
+</ol>
+
+<h3 id="gpd">VP Global Product Development</h3>
+
+<p><a href="https://ar.linkedin.com/in/vanina-a-godoy?trk=author_mini-profile_title">Vanina Godoy</a>
+
+<h1 id="ps">Problem Statement</h1>
+
+<p>Data centers consume 100 times more power than a typical industrial
+business. Wall Street Journal 2024-03-29 A14
+
+<p>Electricity demand to power <a href="https://en.wikipedia.org/wiki/Data">data</a> centers is projected to increase by 13% to
+15% compounded annually through 2030. Yet a shortage of power is already
+delaying new <a href="https://en.wikipedia.org/wiki/Data">data</a> centers by two to six years, according to commercial- real
+estate firm CBRE Group. It is also driving Big Tech companies into the energy
+business. Amazon this month struck a $650 million deal to buy a <a href="https://en.wikipedia.org/wiki/Data">data</a> center in
+Pennsylvania powered by an on-site 2.5 gigawatt nuclear plant. Wall Street
+Journal 2024-03-29 A14
+
+<h1 id="sabm">Service and Business Model</h1>
+
+<p>High <a href="https://en.wikipedia.org/wiki/Speed">speed</a>, low power <a href="https://en.wikipedia.org/wiki/Database">database</a> system on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> reduces power consumption
+for <a href="https://en.wikipedia.org/wiki/Data">data</a> centers leading to reduced electricity bills which saves real money
+making for an easy sale of the <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s that make these saving possible.
+
+<p>A <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a> saves power by performing graphics calculations in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> rather
+than in <a href="https://en.wikipedia.org/wiki/Software">software</a>. Likewise Bitcoin saves power by performing <a href="https://en.wikipedia.org/wiki/Hash_table">hash</a> calculations
+in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> rather then software.</p>
+
+<p><a href="https://www.wsj.com/market-data/quotes/NVDA/advanced-chart">Nvidia</a> has become a trillion dollar company by providing the <a href="https://en.wikipedia.org/wiki/Integrated_circuit_layout">mask</a>s for <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a>
+<a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s that perform graphics <a href="https://en.wikipedia.org/wiki/Function_(computer_programming)">function</a>s via custom <a href="https://en.wikipedia.org/wiki/Silicon">Silicon</a>.  This <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> of
+customizing <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s to specific <a href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/technicalContent/task.html#task">task</a>s was predicted in <a href="Introduction to VLSI systems">Introduction to VLSI, Mead, Conway, 1980</a> .
+
+<p>Eventually this <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> will be extended to <a href="https://en.wikipedia.org/wiki/Database">database</a> look ups as these too
+consume significant amounts of time and power in <a href="https://en.wikipedia.org/wiki/Data">data</a> center.  Not only does
+the lookup burn energy on the <a href="https://en.wikipedia.org/wiki/Database">database</a> <a href="https://en.wikipedia.org/wiki/Server_(computing)">server</a>, but also on the <a href="https://en.wikipedia.org/wiki/Computer">computer</a>s
+waiting for responses from the database.</p>
+
+<p>All the major <a href="https://en.wikipedia.org/wiki/Database">database</a> systems are open source.  By making sample <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s
+available with these capabilities to open source developers we can reasonable
+expect them to take advantage of these capabilities just as, for example,  <a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">gcc</a>
+takes advantage of vector instructions to implement the <b>strlen</b> <a href="https://en.wikipedia.org/wiki/Function_(computer_programming)">function</a>
+whenever possible.
+
+<p>The availability of <a href="https://en.wikipedia.org/wiki/Database">database</a>s capable of exploiting such capabilities will
+lead to more demand for more access to such <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s which <a href="https://en.wikipedia.org/wiki/Data">data</a> center operators
+will be keen to provide as they will be able to save money on their electricity
+bills while making their offering more compelling than those who <a href="https://1lib.eu/book/2468851/544b50">fail</a> to offer
+such a service.  An analogous <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> has already led to the replacement of
+mechanical disk drives with <a href="https://en.wikipedia.org/wiki/Solid-state_drive">Solid State Drive</a> in <a href="https://en.wikipedia.org/wiki/Data">data</a> centers for similar reasons. </p>
+
+<h1 id="sg">Sales & Growth</h1>
+<p>None so far.
+
+<h1 id="sr">Service revenue</h1>
+<p>None so far.
+
+<h1 id="htc">Traction with customers/investors</h1>
+<p>None so far.
+
+<h1 id="soc">Size of client base</h1>
+<p>None so far.
+
+<h1 id="mp">Market Potential</h1>
+
+<p>According to the IEA world production of electricity is: 10 trillion
+kilowatt hours per year. Data centers use about 1% of that electricity. Say we
+could reduce <a href="https://en.wikipedia.org/wiki/Data">data</a> center electricity usage by 1% that would save 1 billion
+kilowatt hours annually. A kilowatt hour costs approximately 10 cents. This
+would yield gross savings of $100 million per year.
+
+<h1 id="tmdac">Target market</h1>
+
+<h2 id="tmd">Description</h2>
+
+<p>Data center operators who wish to reduce their electricity bills.
+
+<h2 id="kca">Key competitive advantages</h2>
+
+<p>System on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> specialized to do <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups more quickly while
+using less power than a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> leading to quantifiable savings on
+electricity bills.
+
+<h1 id=cl">Competitive Landscape</h1>
+
+<h2 id="fpgas">Field Programmable Gate Arrays</h2>
+
+<p>An <a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">fpga</a> could also be programmed to do fast <a href="https://en.wikipedia.org/wiki/Database">database</a> look ups using the
+<a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> algorithm.  However, <a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">fpga</a> devices use 10-100 times as much power as a
+custom <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> and are perhaps 10-100 times lower.  For <a href="https://en.wikipedia.org/wiki/Database">database</a> look ups, an <a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">fpga</a>
+does not save enough electricity or time to make it a viable solution.</p>
+
+<h2 id="simd">Single Instruction, Multiple Data</h2>
+
+<p><a href="https://www.officedaytime.com/simd512e/">SIMD</a> vector instruction sets are common these days.  We emulated the <a href="https://en.wikipedia.org/wiki/X86-64">X86-64</a>
+instruction set using <a href="https://github.com/philiprbrenan/NasmX86">NasmX86</a> to see if <a href="https://www.officedaytime.com/simd512e/">SIMD</a> instructions produced any useful
+gain in the implementation of the <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> algorithm. On the contrary, we found
+that using <a href="https://www.officedaytime.com/simd512e/">SIMD</a>  instruction produced a slower implementation because more time
+was spent assembling the <a href="https://en.wikipedia.org/wiki/Data">data</a> in the formats required by these instructions
+than was gained by using them.
+
+<h2 id="cuco">Custom Computers</h2>
+
+<p>Both <b>Oracle</b> and <a href="https://en.wikipedia.org/wiki/IBM">IBM</a> have custom <a href="https://en.wikipedia.org/wiki/Computer">computer</a> products that indicate that
+they have given thought to this problem.
+
+<p><b>DB2</b> <a
+href="https://www.redbooks.ibm.com/technotes/tips1204.pdf">with BLU
+Acceleration</a> runs on existing <a href="https://en.wikipedia.org/wiki/IBM">IBM</a> infrastructure.  It is a <a href="https://en.wikipedia.org/wiki/Software">software</a>
+solution not a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> level <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> solution.
+
+<p><a href="https://www.oracle.com/engineered-systems/exadata/"><b>Oracle
+Exadata</b></a> is a conventional <a href="https://en.wikipedia.org/wiki/Computer">computer</a> optimized with appropriate <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a>,
+<a href="https://en.wikipedia.org/wiki/Solid-state_drive">disk drive</a>s and <a href="https://en.wikipedia.org/wiki/Computer_network">network</a> options to provide an optimal conventional computing
+environment in which to run an Oracle <a href="https://en.wikipedia.org/wiki/Database">database</a>.  But there is no evidence of
+any new <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> design being used to power this solution.
+
+<p>Both of these important <a href="https://en.wikipedia.org/wiki/Database">database</a> vendors are aware that acceleration is
+beneficial to <a href="https://en.wikipedia.org/wiki/Database">database</a> processing but they have not moved beyond the
+constraints of conventional solutions. Given that both companies operate in
+mature markets,  a break through on this area would surely have to be of great
+interest to them.</p>
+
+<h1 id="sa1">Solution</h1>
+<h2 id="sa2">Solution Outline</h2>
+
+<p>One of the more common actions performed by <a href="https://en.wikipedia.org/wiki/Computer">computer</a>s in <a href="https://en.wikipedia.org/wiki/Data">data</a> centers is
+running <a href="https://en.wikipedia.org/wiki/Software">software</a> to look up <a href="https://en.wikipedia.org/wiki/Data">data</a> in a <a href="https://en.wikipedia.org/wiki/Database">database</a> or in <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> <a href="https://en.wikipedia.org/wiki/Data">data</a> structures.
+
+<p>Convention <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>s have vector instruction sets specialized for doing
+arithmetic but do not have instructions specialized for traversing <a href="https://en.wikipedia.org/wiki/Database">database</a>
+structures held in <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a>. Consequently such looks ups consume much more
+time and electricity than is strictly necessary.
+
+<p>Converting <a href="https://en.wikipedia.org/wiki/Software">software</a> to <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> can <a href="https://en.wikipedia.org/wiki/Speed">speed</a> up processing by a factor of one
+thousand while similarly reducing power requirements. This has already been
+demonstrated by the rapid adoption of <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a>s for smart phone graphics processing
+and the <a href="https://en.wikipedia.org/wiki/Application-specific_integrated_circuit">application specific integrated circuit</a>s used for crypto currency mining.</p>
+
+<p>Following the approach outlined in <a href="Introduction to VLSI systems">Introduction to VLSI, Mead, Conway, 1980</a> we are designing instructions
+optimized for <a href="https://en.wikipedia.org/wiki/Database">database</a> look ups.  These instructions will then be executed by a
+small <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> against a <a href="https://en.wikipedia.org/wiki/Database">database</a> held in <a href="https://en.wikipedia.org/wiki/Solid-state_drive">Solid State Drive</a> <a href="https://en.wikipedia.org/wiki/Computer_memory">memory</a> to obtain nano second look ups
+while using less power than conventional <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>s.  Much less time times much less
+power is much less energy.
+
+<p>Communication with the outside world will be via on <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>, high <a href="https://en.wikipedia.org/wiki/Speed">speed</a>
+<a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> controllers.
+
+<h2 id="sa3">End application</h2>
+
+<p>All <a href="https://en.wikipedia.org/wiki/Database">database</a> systems in <a href="https://en.wikipedia.org/wiki/Data">data</a> centers are addressed via <a href="https://en.wikipedia.org/wiki/IP_address">IP address</a> addresses.  It
+will be easy to plug the <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> into an <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> controller to act as a front end
+cache for such systems to perform high <a href="https://en.wikipedia.org/wiki/Speed">speed</a>, low power look ups.
+
+<h2 id="sa4">Technology</h2>
+
+<p>The well known <a href="https://en.wikipedia.org/wiki/Process_management_(computing)">process</a> of converting <a href="https://en.wikipedia.org/wiki/Software">software</a> to <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> as described
+in <a href="Introduction to VLSI systems">Introduction to VLSI, Mead, Conway, 1980</a> .</p>
+
+
+<h1 id="hla">High-level solution architecture</h1>
+
+<p>All digital computing can be reduced to a sequence of operations implemented
+by <a href="https://en.wikipedia.org/wiki/NAND_gate">Nand</a> <a href="https://en.wikipedia.org/wiki/Logic_gate">digital logic gate</a>s. A conventional, generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> most manufacture this sequence on
+the fly as needed as one sequence among many.  <a href="http://prb.appaapps.com/zesal/pitchdeck/pitchDeck.html">Database on a Chip</a> would avoid
+all this overhead by hard coding the well known <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> algorithm used in most
+<a href="https://en.wikipedia.org/wiki/Database">database</a> look ups as a sequence of <a href="https://en.wikipedia.org/wiki/Logic_gate">digital logic gate</a>s on a <a href="https://en.wikipedia.org/wiki/Silicon">Silicon</a> <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> implementing the most
+intensive part of the <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> look up algorithm directly in the fabric of the
+<a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> inthe most efficient manner possible.
+
+<p>These instruction sequences would be placed either on their own <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> and
+connected via <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> or included as part of existing system on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> such as
+<a
+href="https://www.qualcomm.com/products/mobile/snapdragon/pcs-and-tablets/snapdragon-x-elite">Qualcomm
+Snapdragon X Elite</a>.
+
+<h1 id="usp">Solution Unique Selling Point</h1>
+
+<p>Plug the <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> into an <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> router and watch it do <a href="https://en.wikipedia.org/wiki/Database">database</a> look ups
+faster while using less electricity than your current equipment can.  Less
+power consumption means more profits.</p>
+
+<h1 id="sdrm1">Solution development</h1>
+
+<h2 id="sdrm2">Roadmap</h2>
+
+<p>Currently we have succeeded in representing the Btree look up algorithm as
+an instruction implemented in <a href="https://en.wikipedia.org/wiki/NAND_gate">Nand</a> <a href="https://en.wikipedia.org/wiki/Logic_gate">digital logic gate</a>s.
+
+<p>We used a purpose built <a href="https://en.wikipedia.org/wiki/Electronic_design_automation"><b>E</b>lectronic <b>D</b>esign <b>A</b>utomation</a> tool: <b><a href="https://github.com/philiprbrenan/com.AppaApps.Silicon">Silicon Chip</a> </b> to design, simulate,
+and layout the required sequences of <a href="https://en.wikipedia.org/wiki/Logic_gate">digital logic gate</a>s.  This solution needs to be cross
+checked with industry standard tools to confirm expected operation.
+
+<p>Then we need to place this sequence on a real <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> alongside a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>
+and <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> controller so that we can drive these specialized instructions to
+see if they lead to the expected improvements.
+
+<h2 id="kc">Key challenge</h2>
+
+<p>Getting our proposed wiring diagram implemented as a functioning <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>.
+
+<img id="wiring" src="http://prb.appaapps.com/zesal/pitchdeck/images/BTreeJ.png">
+
+<h1 id="daip">Arm IP</h1>
+
+<p>The additional instructions implemented by <a href="https://en.wikipedia.org/wiki/Database">database</a> on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> could usefully
+be driven by a conventional low power generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> either directly on the same
+<a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> or connected via an <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> controller.
+
+<h1 id="sbg">Strategy/Business Growth Roadmap</h1>
+
+<ol>
+<li><p>Construct proposed <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> <a href="https://en.wikipedia.org/wiki/Integrated_circuit_layout">mask</a> in <a href="https://en.wikipedia.org/wiki/Software">software</a> and <a href="https://en.wikipedia.org/wiki/Software_testing">test</a> through emulation.
+<li><p>Use  <a href="https://en.wikipedia.org/wiki/Integrated_circuit_layout">mask</a> to create demo <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> in <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> and mount on <a href="https://en.wikipedia.org/wiki/Printed_circuit_board">printed circuit board</a>
+<li><p>Send the <a href="https://en.wikipedia.org/wiki/Printed_circuit_board">printed circuit board</a> to well known the <a href="https://en.wikipedia.org/wiki/Data">data</a> centers for evaluation
+<li><p>Savings report from one customer keen to advertise their <a href="https://en.wikipedia.org/wiki/Environmentally_friendly">green</a> credentials
+<li><p>Sustained production at <a href="https://en.wikipedia.org/wiki/TSMC">TSMC ltd</a> in <a href="https://en.wikipedia.org/wiki/Arizona">Arizona</a> to supply follow on demand
+</ol>
+
+<h1 id="aaa">Environmental impact</h1>
+
+<p>One small step towards saving our environment by reducing demand for
+electricity. One giant improvement for mankind.
+
+<p>See: <a href="https://www.theguardian.com/environment/2023/may/17/global-heating-climate-crisis-record-temperatures-wmo-research">World likely to breach 1.5C climate threshold by 2027, scientists warn</a>
+
+<h1 id="fh">Funding History</h1>
+
+<p>Personal contributions of equipment and time by founders.
+</body>
+</html>
