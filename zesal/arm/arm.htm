@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Database on an ARM chip</title>
+  </head>
+  <style>
+    body{margin: 1% 10% 1% 10%;}
+    body p {max-width: 40em;}
+    li {margin-bottom: 10px;}
+    #logo {max-width: 50%;}
+    #wiring {max-width: 100%;}
+    .toc_2 {color: #AD1D18}
+    .toc_3 {color: #009150}
+    body {font-family: Verdana, Geneva, sans-serif;}
+  </style>
+<body>
+
+<h1>Database on an ARM chip</h1>
+
+<table border="0" cellpadding="10">
+<tr><td>
+
+<div id=toc>
+  <table cellspacing=10 border=0>
+    <tr><td align=right>1<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#es">Executive Summary</a>
+    <tr><td align=right>2<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#td">Team details</a>
+    <tr><td align=right>3<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#tda">Appa Apps Ltd Inc</a>
+    <tr><td align=right>4<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_3" href="#tdb">Chief Technology Officer</a>
+    <tr><td align=right>5<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_3" href="#gpd">Product Development</a>
+    <tr><td align=right>6<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#ps">Problem Statement</a>
+    <tr><td align=right>7<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sabm">Service and Business Model</a>
+    <tr><td align=right>8<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sg">Sales & Growth</a>
+    <tr><td align=right>9<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sr">Service revenue</a>
+    <tr><td align=right>10<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#htc">Traction with customers/investors</a>
+    <tr><td align=right>11<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#soc">Size of client base</a>
+    <tr><td align=right>12<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#mp">Market Potential</a>
+    <tr><td align=right>13<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#tmdac">Target market</a>
+    <tr><td align=right>14<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#tmd">Description</a>
+    <tr><td align=right>15<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#kca">Key competitive advantages</a>
+    <tr><td align=right>16<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#fpgas">Field Programmable Gate Arrays</a>
+    <tr><td align=right>17<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#simd">Single Instruction, Multiple Data</a>
+    <tr><td align=right>18<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#cuco">Custom Computers</a>
+    <tr><td align=right>19<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sa1">Solution</a>
+    <tr><td align=right>20<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sa2">Solution Outline</a>
+    <tr><td align=right>21<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sa3">End application</a>
+    <tr><td align=right>22<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sa4">Technology</a>
+    <tr><td align=right>23<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#hla">High-level solution architecture</a>
+    <tr><td align=right>24<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#usp">Solution Unique Selling Point</a>
+    <tr><td align=right>25<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sdrm1">Solution development</a>
+    <tr><td align=right>26<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#sdrm2">Roadmap</a>
+    <tr><td align=right>27<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#kc">Key challenge</a>
+    <tr><td align=right>28<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#daip">Arm IP</a>
+    <tr><td align=right>29<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#sbg">Strategy/Business Growth Roadmap</a>
+    <tr><td align=right>30<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#aaa">Environmental impact</a>
+    <tr><td align=right>31<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#fh">Funding History</a>
+  </table>
+</div>
+
+<td><img id="logo" src="http://prb.appaapps.com/zesal/pitchdeck/images/logo.png">
+</table>
+
+
+<h1 id="es">Executive Summary</h1>
+
+<p>Hi every-one, my name is vanina .  I work on product development at
+Appa Apps where we are designing "Database on a chip": High speed, low power
+database look-ups to reduce dataCenter electricity bills for real money cost
+savings.
+
+<p>Why do we want to do this?
+
+<p>The world is warming.  guardian reports that we are likely to  <a
+href="https://www.theguardian.com/environment/article/2024/may/08/world-scientists-climate-failure-survey-global-temperature?source=email&utm=">pass
+<b>1.5</b> degrees centigrade within the next three years</a>.
+
+<p>wsj reports that dataCenters consume one hundred times more power than that
+of a typical industrial business.
+
+<p>According to the International Energy Agency: dataCenters, globally, consume
+as much energy as the entire electricity usage of medium-sized countries like
+Spain, Mexico, Argentina, or Britain.
+
+<p>davidSuzuki tells us that: <q>The most effective way to save energy is to
+stop wasting it</q>.
+
+<p>dataCenters waste a lot of time and energy doing database look-ups using
+software running on generic cpus.
+
+<p>We believe we can significantly reduce the amount of energy used to do
+database look-ups by replacing the software, currently used to do them, with
+specialized chips designed to implement the same btree algorithm more
+efficiently in hardware instead. We are following the approach outlined in VLSI
+by designing cpu instructions optimized for database look-ups.
+
+<p>Graphics processing units show us the way: they are present in every
+smartphone today because they burn one thousand times less power than the
+equivalent software running on a generic cpu while running one thousand times
+faster. We can do the same with database look-ups.
+
+<p>Burning less power to do each look-up means: using less electricity; which
+means: lower electricity bills for dataCenter operators; and: less
+carbonDioxide in the atmosphere from burning fossil fuels to generate that
+electricity; so: we can all breathe free; while dataCenter customers waste less
+time waiting for their look-ups. Everybody wins!</p>
+
+<p>Currently we have succeeded in representing the btree look-up algorithm as
+an instruction implemented in nand gates ready for placement on a chip as shown
+in this diagram:
+
+<img id="wiring" src="http://prb.appaapps.com/zesal/pitchdeck/images/BTreeJ.png">
+
+<p>We need your help to place this instruction on a real silicon chip alongside
+a generic cpu and an ethernet controller so that we can drive this specialized
+instruction, in real life, to see if it leads to the improvements we expect.
+
+<p>Then we can:
+
+<ul>
+<li><p><i>Firstly</i>:  Send working chips to all the well known dataCenter operators for evaluation
+<li><p><i>Secondly</i>: Report the real savings from one operator to drive further chip sales at the others
+<li><p><i>Thirdly</i>:  Satisfy that demand by having chips built at scale at the new fabs being constructed in Arizona.
+<li><p><i>Lastly</i>:   Make lots of money while saving the environment!
+</ul>
+
+<p>Un pequeÃ±o paso para el hombre, un gran salto para la humanidad!</p>
+
+<h1 id="td">Team details</h1>
+
+<h2 id="tda">Appa Apps Ltd Inc</h2>
+<p>Incorporated in Austin, Texas in 2012.</p>
+
+<h3 id="tdb">Chief Technology Officer</h3>
+
+<p><a href="https://prb.appaapps.com/">Philip R Brenan</a>
+
+<ol>
+
+<li><p>Developed a dynamic to static sql driver that enabled Neon Systems to go
+public.
+
+<li><p>Developed first three dimensional graphical representation of neutral beam
+injections systems for jet as described in jetni .
+
+</ol>
+
+<h3 id="gpd">Product Development</h3>
+
+<p>vanina
+
+<h1 id="ps">Problem Statement</h1>
+
+<p> dataCenters consume 100 times more power than a typical industrial
+business. Wall Street Journal 2024-03-29 A14
+
+<p>Electricity demand to power dataCenters is projected to increase by 13% to
+15% compounded annually through 2030. Yet a shortage of power is already
+delaying new dataCenters by two to six years, according to commercial- real
+estate firm CBRE Group. It is also driving Big Tech companies into the energy
+business. Amazon this month struck a $650 million deal to buy a dataCenter in
+Pennsylvania powered by an on-site 2.5 gigawatt nuclear plant. Wall Street
+Journal 2024-03-29 A14
+
+<h1 id="sabm">Service and Business Model</h1>
+
+<p>High speed, low power database system on a chip reduces power consumption
+for dataCenters leading to reduced electricity bills which saves real money
+making for an easy sale of the chips that make these saving possible.
+
+<p>A gpu saves power by performing graphics calculations in hardware rather
+than in software. Likewise Bitcoin saves power by performing hash calculations
+in hardware rather then software.</p>
+
+<p>nvidia has become a trillion dollar company by providing the masks for gpu
+chips that perform graphics functions via custom silicon.  This process of
+customizing chips to specific tasks was predicted in VLSI .
+
+<p>Eventually this process will be extended to database look ups as these too
+consume significant amounts of time and power in dataCenter.  Not only does
+the lookup burn energy on the database server, but also on the computers
+waiting for responses from the database.</p>
+
+<p>All the major database systems are open source.  By making sample chips
+available with these capabilities to open source developers we can reasonable
+expect them to take advantage of these capabilities just as, for example,  gcc
+takes advantage of vector instructions to implement the <b>strlen</b> function
+whenever possible.
+
+<p>The availability of databases capable of exploiting such capabilities will
+lead to more demand for more access to such chips which dataCenter operators
+will be keen to provide as they will be able to save money on their electricity
+bills while making their offering more compelling than those who fail to offer
+such a service.  An analogous process has already led to the replacement of
+mechanical disk drives with ssd in dataCenters for similar reasons. </p>
+
+<h1 id="sg">Sales & Growth</h1>
+<p>None so far.
+
+<h1 id="sr">Service revenue</h1>
+<p>None so far.
+
+<h1 id="htc">Traction with customers/investors</h1>
+<p>None so far.
+
+<h1 id="soc">Size of client base</h1>
+<p>None so far.
+
+<h1 id="mp">Market Potential</h1>
+
+<p>According to the IEA world production of electricity is: 10 trillion
+kilowatt hours per year. dataCenters use about 1% of that electricity. Say we
+could reduce dataCenter electricity usage by 1% that would save 1 billion
+kilowatt hours annually. A kilowatt hour costs approximately 10 cents. This
+would yield gross savings of $100 million per year.
+
+<h1 id="tmdac">Target market</h1>
+
+<h2 id="tmd">Description</h2>
+
+<p> dataCenter operators who wish to reduce their electricity bills.
+
+<h2 id="kca">Key competitive advantages</h2>
+
+<p>System on a chip specialized to do database look-ups more quickly while
+using less power than a generic cpu leading to quantifiable savings on
+electricity bills.
+
+<h1 id=cl">Competitive Landscape</h1>
+
+<h2 id="fpgas">Field Programmable Gate Arrays</h2>
+
+<p>An fpga could also be programmed to do fast database look ups using the
+btree algorithm.  However, fpga devices use 10-100 times as much power as a
+custom chip and are perhaps 10-100 times lower.  For database look ups, an fpga
+does not save enough electricity or time to make it a viable solution.</p>
+
+<h2 id="simd">Single Instruction, Multiple Data</h2>
+
+<p>simd vector instruction sets are common these days.  We emulated the x64
+instruction set using nasmx86 to see if simd instructions produced any useful
+gain in the implementation of the btree algorithm. On the contrary, we found
+that using simd  instruction produced a slower implementation because more time
+was spent assembling the data in the formats required by these instructions
+than was gained by using them.
+
+<h2 id="cuco">Custom Computers</h2>
+
+<p>Both <b>Oracle</b> and ibm have custom computer products that indicate that
+they have given thought to this problem.
+
+<p><b>DB2</b> <a
+href="https://www.redbooks.ibm.com/technotes/tips1204.pdf">with BLU
+Acceleration</a> runs on existing ibm infrastructure.  It is a software
+solution not a chip level hardware solution.
+
+<p><a href="https://www.oracle.com/engineered-systems/exadata/"><b>Oracle
+Exadata</b></a> is a conventional computer optimized with appropriate memory,
+diskdrives and network options to provide an optimal conventional computing
+environment in which to run an Oracle database.  But there is no evidence of
+any new chip design being used to power this solution.
+
+<p>Both of these important database vendors are aware that acceleration is
+beneficial to database processing but they have not moved beyond the
+constraints of conventional solutions. Given that both companies operate in
+mature markets,  a break through on this area would surely have to be of great
+interest to them.</p>
+
+<h1 id="sa1">Solution</h1>
+<h2 id="sa2">Solution Outline</h2>
+
+<p>One of the more common actions performed by computers in dataCenters is
+running software to look up data in a database or in memory data structures.
+
+<p>Convention cpus have vector instruction sets specialized for doing
+arithmetic but do not have instructions specialized for traversing database
+structures held in memory. Consequently such looks ups consume much more
+time and electricity than is strictly necessary.
+
+<p>Converting software to hardware can speed up processing by a factor of one
+thousand while similarly reducing power requirements. This has already been
+demonstrated by the rapid adoption of gpus for smart phone graphics processing
+and the asics used for crypto currency mining.</p>
+
+<p>Following the approach outlined in VLSI we are designing instructions
+optimized for database look ups.  These instructions will then be executed by a
+small cpu against a database held in ssd memory to obtain nano second look ups
+while using less power than conventional cpus.  Much less time times much less
+power is much less energy.
+
+<p>Communication with the outside world will be via on chip, high speed
+ethernet controllers.
+
+<h2 id="sa3">End application</h2>
+
+<p>All database systems in dataCenters are addressed via ip addresses.  It
+will be easy to plug the chip into an ethernet controller to act as a front end
+cache for such systems to perform high speed, low power look ups.
+
+<h2 id="sa4">Technology</h2>
+
+<p>The well known process of converting software to hardware as described
+in VLSI .</p>
+
+
+<h1 id="hla">High-level solution architecture</h1>
+
+<p>All digital computing can be reduced to a sequence of operations implemented
+by nand gates. A conventional, generic cpu most manufacture this sequence on
+the fly as needed as one sequence among many.  doc would avoid
+all this overhead by hard coding the well known btree algorithm used in most
+database look ups as a sequence of gates on a silicon chip implementing the most
+intensive part of the btree look up algorithm directly in the fabric of the
+chip in the most efficient manner possible.
+
+<p>These instruction sequences would be placed either on their own chip and
+connected via ethernet or included as part of existing system on a chip such as
+<a
+href="https://www.qualcomm.com/products/mobile/snapdragon/pcs-and-tablets/snapdragon-x-elite">Qualcomm
+Snapdragon X Elite</a>.
+
+<h1 id="usp">Solution Unique Selling Point</h1>
+
+<p>Plug the chip into an ethernet router and watch it do database look ups
+faster while using less electricity than your current equipment can.  Less
+power consumption means more profits.</p>
+
+<h1 id="sdrm1">Solution development</h1>
+
+<h2 id="sdrm2">Roadmap</h2>
+
+<p>Currently we have succeeded in representing the btree look up algorithm as
+an instruction implemented in nand gates.
+
+<p>We used a purpose built eda tool: <b>SiliconChip </b> to design, simulate,
+and layout the required sequences of gates.  This solution needs to be cross
+checked with industry standard tools to confirm expected operation.
+
+<p>Then we need to place this sequence on a real chip alongside a generic cpu
+and ethernet controller so that we can drive these specialized instructions to
+see if they lead to the expected improvements.
+
+<h2 id="kc">Key challenge</h2>
+
+<p>Getting our proposed wiring diagram implemented as a functioning chip.
+
+<img id="wiring" src="http://prb.appaapps.com/zesal/pitchdeck/images/BTreeJ.png">
+
+<h1 id="daip">Arm IP</h1>
+
+<p>The additional instructions implemented by database on a chip could usefully
+be driven by a conventional low power generic cpu either directly on the same
+chip or connected to such cpus on other chips via an ethernet controller.
+
+<h1 id="sbg">Strategy/Business Growth Roadmap</h1>
+
+<ol>
+<li><p>Construct proposed chip mask in software and test through emulation.
+<li><p>Use the mask to create a demo chip in hardware and mount on a pcb.
+<li><p>Send the pcb to well known dataCenter operators for evaluation.
+<li><p>Report the actual savings from one customer to persuade more customers that they must follow.
+<li><p>Sustained production at the new fabs in az to supply follow on demand.
+</ol>
+
+<h1 id="aaa">Environmental impact</h1>
+
+<p>One small step towards saving our environment by reducing demand for
+electricity. One giant improvement for mankind.
+
+<p>See: <a href="https://www.theguardian.com/environment/2023/may/17/global-heating-climate-crisis-record-temperatures-wmo-research">World likely to breach 1.5C climate threshold by 2027, scientists warn</a>
+
+<h1 id="fh">Funding History</h1>
+
+<p>Personal contributions of equipment and time by founders.
+</body>
+</html>
