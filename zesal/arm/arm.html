@@ -63,17 +63,22 @@
 
 <h1 id="es">Executive Summary</h1>
 
-<p>High <a href="https://en.wikipedia.org/wiki/Speed">speed</a>, low power <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups to reduce <a href="https://en.wikipedia.org/wiki/Data">data</a> center electricity
-bills for real money cost savings.</p>
+<p>Hi every-one, my name is Vanina Godoy.  I am vice president for global
+product development at Appa Apps where we are working on the development of
+"Database on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>": High <a href="https://en.wikipedia.org/wiki/Speed">speed</a>, low power <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups to reduce <a href="https://en.wikipedia.org/wiki/Data">data</a>
+center electricity bills for real money cost savings.
+
+<p>Why do we want to do this?
 
 <p>The world is warming.  The Guardian reports that we are likely to pass <b>1.5Â°C</b>
 within three years.
 
 <p>The Wall Street Journal reports that <a href="https://en.wikipedia.org/wiki/Data">data</a> centers consume 100 times more
-power than that of a typical industrial business.  According to the International
-Energy Agency <a href="https://en.wikipedia.org/wiki/Data">data</a> centers consume about 100 billion kilowatt hours per year,
-equivalent to the entire usage of a medium-sized country like Spain, Mexico, or
-Britain.
+power than that of a typical industrial business.
+
+<p>According to the International Energy Agency <a href="https://en.wikipedia.org/wiki/Data">data</a> centers consume energy
+equivalent to the entire usage of a medium-sized country like Spain, Mexico,
+Argentina, or Britain.
 
 <p>According to David Suzuki: <q>The most effective way to save energy is to
 stop wasting it</q>.
@@ -81,39 +86,42 @@ stop wasting it</q>.
 <p>Data centers spend a lot of time doing <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups using <a href="https://en.wikipedia.org/wiki/Software">software</a>
 running on generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>s.
 
-<p>We can significantly reduce the amount of energy by using specialized <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s
-that implement the <a href="https://en.wikipedia.org/wiki/Software">software</a> currently used to perform <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups as
-<a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a> in a <a href="https://en.wikipedia.org/wiki/Silicon">Silicon</a> <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>. We are following the approach outlined in <a href="Introduction to VLSI systems">Introduction to VLSI, Mead, Conway, 1980</a> by
-designing <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> instructions optimized for <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups.
+<p>We can significantly reduce the amount of energy used to do <a href="https://en.wikipedia.org/wiki/Database">database</a>
+look-ups by designing specialized <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s to implement the <a href="https://en.wikipedia.org/wiki/Software">software</a> currently
+used to perform look-ups as <a href="https://en.wikipedia.org/wiki/Digital_electronics">hardware</a>. We are following the approach outlined in
+<a href="Introduction to VLSI systems">Introduction to VLSI, Mead, Conway, 1980</a> by designing <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> instructions optimized for <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups.
 
 <p>Graphics processing units have led the way: they are present in every
-smartphone these days because they burn one thousand times less power than does
-the equivalent <a href="https://en.wikipedia.org/wiki/Software">software</a> implemented on a generic <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a> while running one thousand
-times faster. We can do the same with <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups.
+smartphone today because they burn one thousand times less power than the
+equivalent <a href="https://en.wikipedia.org/wiki/Software">software</a> running on a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> while running one thousand times
+faster. We can do the same with <a href="https://en.wikipedia.org/wiki/Database">database</a> look-ups.
 
 <p>Burning less power to do each look-up means burning less electricity which
 means lower electricity bills for <a href="https://en.wikipedia.org/wiki/Data">data</a> centers and less carbon dioxide in the
-atmosphere from burning fossil fuels to generate electricity while their
-customers spend less time waiting for the results of the look-ups. Everybody
-wins.</p>
+atmosphere from burning fossil fuels to generate that electricity so their
+customers can breathe free while spending less time waiting for the results of
+their look-ups. Everybody wins!</p>
 
 <p>Currently we have succeeded in representing the Btree look-up algorithm as
-an instruction sequence implemented in <a href="https://en.wikipedia.org/wiki/NAND_gate">Nand</a> <a href="https://en.wikipedia.org/wiki/Logic_gate">digital logic gate</a>s.
+an instruction sequence implemented in <a href="https://en.wikipedia.org/wiki/NAND_gate">Nand</a> <a href="https://en.wikipedia.org/wiki/Logic_gate">digital logic gate</a>s ready for placement on a <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>
+as shown in this graphic:
 
 <img id="wiring" src="http://prb.appaapps.com/zesal/pitchdeck/images/BTreeJ.png">
 
 <p>We need your <a href="https://en.wikipedia.org/wiki/Online_help">help</a> to place this wiring diagram on a real <a href="https://en.wikipedia.org/wiki/Silicon">Silicon</a> <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>
-alongside a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> and <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> controller so that we can drive these
+alongside a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> and an <a href="https://en.wikipedia.org/wiki/Ethernet">Ethernet</a> controller so that we can drive these
 specialized instructions to see if they lead to the expected improvements.
 
 <p>Then we can:
 
 <ol>
-<li><p>Send the working <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> to well known the <a href="https://en.wikipedia.org/wiki/Data">data</a> centers for evaluation
-<li><p>Report the real savings from one customer to drive further sales
-<li><p>Satisfy the demand by having the <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> built at scale at the new <a href="https://en.wikipedia.org/wiki/Semiconductor_fabrication_plant">fab</a>s in Arizona.
+<li><p>Send working <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a>s to all the well known <a href="https://en.wikipedia.org/wiki/Data">data</a> centers for evaluation
+<li><p>Report the real savings from one customer to drive further <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> sales
+<li><p>Satisfy that demand by having the <a href="https://en.wikipedia.org/wiki/Integrated_circuit">chip</a> built at scale at the new <a href="https://en.wikipedia.org/wiki/Semiconductor_fabrication_plant">fab</a>s in Arizona.
 <li><p>Make lots of money while saving the environment!
 </ol>
+
+<p>Un pequeno passo para un hombre, un gand passo para la humanidad!</p>
 
 <h1 id="td">Team details</h1>
 
