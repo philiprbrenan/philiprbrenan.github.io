@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body{font-family: Verdana}
+    body{margin: 1% 10% 1% 10%;}
+    body p {max-width: 40em;}
+    li {margin-bottom: 10px;}
+    form       {display: flex; flex-direction: column; gap:5vh;}
+    .container {display: flex; flex-direction: column; gap:1vh;}
+    #jsonDisplay {
+            width: 80vw;
+            height: 50vh;
+            resize: none;
+            overflow-y: scroll;
+            font-family: monospace;
+        }
+</style>
+
+<body>
+
+<form id="form" class="container">
+
+<h1>Data required for a registration</h1>
+
+<h2>Music Title</h2>
+
+<fieldset class="container">
+  <legend>Genre type:</legend>
+  <label><input type="radio" name="genre" value="choral"          required=1>Classical - Choral     </label>
+  <label><input type="radio" name="genre" value="orchestral"      required=1>Classical - Orchestral </label>
+  <label><input type="radio" name="genre" value="opera"           required=1>Classical - Opera      </label>
+  <label><input type="radio" name="genre" value="jazz"            required=1>Jazz                   </label>
+  <label><input type="radio" name="genre" value="rock"            required=1>Rock                   </label>
+  <label><input type="radio" name="genre" value="popular"         required=1>Popular                </label>
+  <label><input type="radio" name="genre" value="country"         required=1>Country                </label>
+  <label><input type="radio" name="genre" value="folk"            required=1>Folk                   </label>
+  <label><input type="radio" name="genre" value="musical_theatre" required=1>Musical Theatre        </label>
+</fieldset>
+
+<fieldset class="container">
+<legend>Work content:</legend>
+    <label><input type="radio" name="content" value="Music and lyrics" required=1>Music and lyrics</label>
+    <label><input type="radio" name="content" value="Music only"       required=1>Music only      </label>
+</fieldset>
+
+<fieldset class="container">
+  <legend>Language of the work:</legend>
+  <select id="languages" name="languages">
+    <optgroup label="European Languages">
+        <option value="english">English</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+        <option value="italian">Italian</option>
+        <option value="spanish">Spanish</option>
+        <option value="portuguese">Portuguese</option>
+        <option value="russian">Russian</option>
+        <option value="dutch">Dutch</option>
+        <option value="swedish">Swedish</option>
+        <option value="norwegian">Norwegian</option>
+        <option value="danish">Danish</option>
+        <option value="finnish">Finnish</option>
+        <option value="greek">Greek</option>
+        <option value="polish">Polish</option>
+        <option value="czech">Czech</option>
+        <option value="hungarian">Hungarian</option>
+        <option value="turkish">Turkish</option>
+        <option value="romanian">Romanian</option>
+        <option value="bulgarian">Bulgarian</option>
+        <option value="croatian">Croatian</option>
+    </optgroup>
+    <optgroup label="Asian Languages">
+        <option value="chinese">Chinese</option>
+        <option value="japanese">Japanese</option>
+        <option value="korean">Korean</option>
+        <option value="hindi">Hindi</option>
+        <option value="bengali">Bengali</option>
+        <option value="urdu">Urdu</option>
+        <option value="thai">Thai</option>
+        <option value="vietnamese">Vietnamese</option>
+        <option value="tamil">Tamil</option>
+        <option value="telugu">Telugu</option>
+        <option value="marathi">Marathi</option>
+        <option value="kannada">Kannada</option>
+        <option value="malayalam">Malayalam</option>
+        <option value="punjabi">Punjabi</option>
+        <option value="gujarati">Gujarati</option>
+        <option value="lao">Lao</option>
+        <option value="burmese">Burmese</option>
+        <option value="khmer">Khmer</option>
+        <option value="indonesian">Indonesian</option>
+        <option value="malay">Malay</option>
+    </optgroup>
+    <optgroup label="Middle Eastern Languages">
+        <option value="arabic">Arabic</option>
+        <option value="hebrew">Hebrew</option>
+        <option value="persian">Persian</option>
+        <option value="kurdish">Kurdish</option>
+        <option value="turkish">Turkish</option>
+    </optgroup>
+    <optgroup label="African Languages">
+        <option value="swahili">Swahili</option>
+        <option value="amharic">Amharic</option>
+        <option value="yoruba">Yoruba</option>
+        <option value="zulu">Zulu</option>
+        <option value="xhosa">Xhosa</option>
+        <option value="igbo">Igbo</option>
+        <option value="afrikaans">Afrikaans</option>
+        <option value="hausa">Hausa</option>
+        <option value="somali">Somali</option>
+        <option value="shona">Shona</option>
+        <option value="siswati">Siswati</option>
+        <option value="tswana">Tswana</option>
+      </optgroup>
+  </select>
+</fieldset>
+
+<h2>Rights questions</h2>
+
+<fieldset class="container">
+  <legend>Is this work an arrangement of a public domain work?</legend>
+  <label><input type="radio" name="publicDomain" value="yes" required=1>Yes</label>
+  <label><input type="radio" name="publicDomain" value="no"  required=1>No </label>
+</fieldset>
+
+<fieldset class="container">
+  <legend>Does this work contain samples or medleys?</legend>
+  <label><input type="radio" name="samples" value="yes" required=1>Yes</label>
+  <label><input type="radio" name="samples" value="no"  required=1>No </label>
+</fieldset>
+
+<h2>Publication</h2>
+
+<fieldset class="container">
+  <legend>Are there any publishers on this work?</legend>
+  <label><input type="radio" name="publishers" value="yes" required=1>Yes</label>
+  <label><input type="radio" name="publishers" value="no"  required=1>No </label>
+</fieldset>
+
+<fieldset class="container">
+<label for="publisher">If yes, list the name of the publishing company: </label>
+  <input type="text" id="publisher" name="publisher">
+</fieldset>
+
+<fieldset class="container">
+  <legend>Authorial Identification</legend>
+
+  <label for="fullName">Author’s Full Legal Name: <input type="text" id="fullName" name="fullName" required=1></label>
+
+  <fieldset class="container">
+    <legend>Choose Role</legend>
+
+    <label for="author">        <input type="radio" id="author"         name="role" value="Author"          required=1>Author</label>
+    <label for="composer">      <input type="radio" id="composer"       name="role" value="Composer"        required=1>Composer</label>
+    <label for="composerAuthor"><input type="radio" id="composerAuthor" name="role" value="Composer/Author" required=1>Composer/Author</label>
+  </fieldset>
+
+  <label for="proNumber">PRO Registration Number: <input type="text" id="proNumber" name="proNumber" required=1></label>
+
+  <label for="proAffiliation">PRO Affiliation: <input type="text" id="proAffiliation" name="proAffiliation" required=1> </label>
+
+  <label for="writersShare">Writer’s Share (Maximum 200%): <input type="number" id="writersShare" name="writersShare" min="0" max="200" required=1></label>
+</fieldset>
+
+
+<h2>Recording</h2>
+
+<fieldset class="container">
+  <legend>Are there any artists?</legend>
+  <label><input type="radio" name="artists" value="yes" required=1>Yes</label>
+  <label><input type="radio" name="artists" value="no"  required=1>No </label>
+</fieldset>
+
+<fieldset class="container">
+  <legend>Are there any recordings?</legend>
+  <label><input type="radio" name="recordings" value="yes" required=1>Yes</label>
+  <label><input type="radio" name="recordings" value="no"  required=1>No </label>
+</fieldset>
+
+<fieldset class="container">
+  <legend>Was this work created for film, television, or a music library?</legend>
+  <label><input type="radio" name="film" value="yes" required=1>Yes</label>
+  <label><input type="radio" name="film" value="no"  required=1>No </label>
+</fieldset>
+
+<fieldset class="container">
+  <legend>Writing</legend>
+
+  <label for="title">Title: </label>
+  <input type="text" id="title" name="title" required=1>
+
+  <label for="legalName">Author’s Legal Name: </label>
+  <input type="text" id="legalName" name="legalName" required=1>
+</fieldset>
+
+<fieldset class="container">
+<legend>Work type</legend>
+<label><input type="radio" name="name" value="Animation"    required=1>Animation    </label>
+<label><input type="radio" name="name" value="Art"          required=1>Art          </label>
+<label><input type="radio" name="name" value="Book"         required=1>Book         </label>
+<label><input type="radio" name="name" value="Commercial"   required=1>Commercial   </label>
+<label><input type="radio" name="name" value="Concept"      required=1>Concept      </label>
+<label><input type="radio" name="name" value="Documentary"  required=1>Documentary  </label>
+<label><input type="radio" name="name" value="Format"       required=1>Format       </label>
+<label><input type="radio" name="name" value="Lyrics"       required=1>Lyrics       </label>
+<label><input type="radio" name="name" value="Manuscript"   required=1>Manuscript   </label>
+<label><input type="radio" name="name" value="Other"        required=1>Other        </label>
+<label><input type="radio" name="name" value="Pilot"        required=1>Pilot        </label>
+<label><input type="radio" name="name" value="Play"         required=1>Play         </label>
+<label><input type="radio" name="name" value="Poems"        required=1>Poems        </label>
+<label><input type="radio" name="name" value="Proposal"     required=1>Proposal     </label>
+<label><input type="radio" name="name" value="Reality"      required=1>Reality      </label>
+<label><input type="radio" name="name" value="Screenplay"   required=1>Screenplay   </label>
+<label><input type="radio" name="name" value="Synopsis"     required=1>Synopsis     </label>
+<label><input type="radio" name="name" value="Teleplay"     required=1>Teleplay     </label>
+<label><input type="radio" name="name" value="Treatment"    required=1>Treatment    </label>
+</fieldset>
+
+<input type="submit" value="Submit">
+</form>
+
+<div id="dlContainer" class="container"></div>
+
+<textarea id="jsonDisplay" readonly></textarea>
+
+<p>Upload PDF copy of written material
+</body>
+<script>
+document.getElementById('form').addEventListener('submit', function(event)      // On submit processing
+ {event.preventDefault();                                                       // Prevent default form submission
+
+  function gf(name)
+   {const e = document.querySelector('input[name="'+name+'"]:checked')
+    if (!e)
+     {console.log("Missing: "+name)
+      return ''
+     }
+    else return e.value
+   }
+
+  const dictionary = {
+  "Genre"            : gf("genre"  ),
+  "Content"          : gf("content"),
+  "Languages"        : languages          .value,
+  "PublicDomain"     : gf("publicDomain"),
+  "Samples"          : gf("samples"     ),
+  "Publishers"       : gf("publishers"  ),
+  "Publisher"        : publisher          .value,
+  "FullName"         : fullName           .value,
+  "Role"             : gf("role"    ),
+  "ProNumber"        : proNumber          .value,
+  "ProAffiliation"   : proAffiliation     .value,
+  "WritersShare"     : writersShare       .value,
+  "Artists"          : gf("artists"   ),
+  "Recordings"       : gf("recordings"),
+  "Film"             : gf("film"      ),
+  "Title"            : title              .value,
+  "LegalName"        : legalName          .value,
+  "Name"             : gf("name")
+  }
+  jsonDisplay.value = JSON.stringify(dictionary, null, 2);
+  jsonDisplay.scrollIntoView();
+ })
+</script>
+</html>
