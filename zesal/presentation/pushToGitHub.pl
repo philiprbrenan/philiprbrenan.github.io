@@ -12,6 +12,7 @@ use GitHub::Crud qw(:all);
 use feature qw(say current_sub);
 
 my $home    = q(/home/phil/btreeBlock/presentation/);                           # Home folder
+my $shaFile = q(/home/phil/btreeBlock/presentation/.shaFile);                   # File shas
 my $user    = q(philiprbrenan);                                                 # User
 my $repo    = q(philiprbrenan.github.io);                                       # Repo
 my $dir     = q(zesal/presentation);                                            # Work flow on Ubuntu
@@ -28,6 +29,8 @@ if (1)                                                                          
     push @files, $f;
    }
  }
+
+@files = changedFiles $shaFile, @files if 1;                                    # Filter out files that have not changed
 
 for my $s(@files)                                                               # Upload each selected file
  {my $c = readBinaryFile $s;                                                    # Load file
