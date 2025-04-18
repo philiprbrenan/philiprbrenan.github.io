@@ -9,6 +9,14 @@ body {
     line-height: 2;
    }
 
+news {
+    font-family: Verdana, sans-serif;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    max-width: 80ch;
+    word-wrap: break-word;
+   }
+
 td, th {
     font-size: 2em;
     font-weight: bold;
@@ -28,14 +36,16 @@ li {
 
 <h1 id="xxx">Database on a Chip</h1>
 
-<p>Data centers:
+<div id="news">
 
-<h2>Save money on your electricity bills with <b>Database on a Chip</b></h2>
+<h1>Data centers:</h1>
+
+<h2>Save money on your electricity bills</h2>
 
 <p>Performance as measured by <a href="https://openroad-flow-scripts.readthedocs.io/en/latest/mainREADME.html">Open Road</a> for a
 <a href="https://github.com/philiprbrenan/btreeBlock">custom cpu</a>
-versus a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> on a <b>2/3</b> <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">database key</a>s per leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .  The
-performance gap widens significantly as we increase the number of <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">database key</a>s in each
+versus a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> on a <b>2/3</b> <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database"><a href="https://en.wikipedia.org/wiki/Database">database</a> key</a>s per leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .  The
+performance gap widens significantly as we increase the number of <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database"><a href="https://en.wikipedia.org/wiki/Database">database</a> key</a>s in each
 branch and leaf towards <b>2**20/2**20+1</b> leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a>.
 
 <p><table cellpadding=10 border=1>
@@ -45,6 +55,7 @@ branch and leaf towards <b>2**20/2**20+1</b> leaf/branch <a href="https://en.wik
 <tr><td colspan=2> 5.24 x Smaller<td colspan=2> 2.26 x Faster<td colspan=2> 5.30 * Compact Code
 <tr><td colspan=4 style="text-align: center;"><b>62.76</b> x better
 </table>
+</div>
 
 <p>In the above <b>area</b> in micro meters squared equates to <b>power</b> consumption
 while <b>frequency</b> in mega hertz equates to <b>execution speed</b>b>. And even
