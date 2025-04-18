@@ -8,15 +8,9 @@ body {
     font-size: 2em;
     line-height: 2;
    }
-
 #news {
-    font-family: Verdana, sans-serif;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    max-width: 80ch;
-    word-wrap: break-word;
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.5;
    }
 
 #consumption td,
@@ -39,32 +33,33 @@ li {
 
 <h1 id="xxx">Database on a Chip</h1>
 
-<div id="news">
-
 <h1>Data centers:</h1>
 
-<h2>Save money on your electricity bills</h2>
+<h2>Save money on your electricity bills!</h2>
+
+<div id="news">
 
 <p>Performance as measured by <a href="https://openroad-flow-scripts.readthedocs.io/en/latest/mainREADME.html">Open Road</a> for a
 <a href="https://github.com/philiprbrenan/btreeBlock">custom cpu</a>
-versus a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> on a <b>2/3</b> <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database"><a href="https://en.wikipedia.org/wiki/Database">database</a> key</a>s per leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .  The
-performance gap widens significantly as we increase the number of <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database"><a href="https://en.wikipedia.org/wiki/Database">database</a> key</a>s in each
+versus a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> on a <b>2/3</b> <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">database key</a>s per leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .  The
+performance gap widens significantly as we increase the number of <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">database key</a>s in each
 branch and leaf towards <b>2**20/2**20+1</b> leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a>.
 
-<p><table cellpadding=10 border=1>
+<p><table cellpadding="10"  cellspacing="10" border=1>
 <tr><th colspan=2>Area um2<th colspan=2>Fmax MHz<th colspan=2>Statements
 <tr><th>Custom<th>Generic <th>Custom<th>Generic<th>Custom<th>Generic
 <tr><td>2467<td>12927<td>902<td>399<td>23<td>122
 <tr><td colspan=2> 5.24 x Smaller<td colspan=2> 2.26 x Faster<td colspan=2> 5.30 * Compact Code
 <tr><td colspan=4 style="text-align: center;"><b>62.76</b> x better
 </table>
-</div>
 
 <p>In the above <b>area</b> in micro meters squared equates to <b>power</b> consumption
 while <b>frequency</b> in mega hertz equates to <b>execution speed</b>b>. And even
 better a <a href="https://en.wikipedia.org/wiki/Find_(Unix)">find</a> operation takes far fewer statements to execute on the custom <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>
 than it does on the generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> because the operation <a href="https://en.wikipedia.org/wiki/Computer_program">code</a>s are so much better
 adapted to manipulating a <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .
+
+</div>
 
 <h2 id="xxx">The problem</h2>
 
