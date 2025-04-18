@@ -188,17 +188,16 @@ operators be more competitive by reducing the cost and time spent doing
 <p><img id="tugOfWar" src="images/SpecializedVersusGeneric.jpg">
 
 <p>Appa Apps Inc. has recently succeeded in synthesizing and routing a Verilog
-<a href="https://en.wikipedia.org/wiki/Software_versioning">version</a> of the well known <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> <a href="https://en.wikipedia.org/wiki/Database">database</a> algorithm normally written in <a href="https://b-ok.xyz/book/633119/db5c78">C programming language</a> ready for
-placement on an <a href="https://en.wikipedia.org/wiki/Application-specific_integrated_circuit">application specific integrated circuit</a> .
+<a href="https://en.wikipedia.org/wiki/Software_versioning">version</a> of the well known <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> <a href="https://en.wikipedia.org/wiki/Database">database</a> algorithm normally written in the <a href="https://b-ok.xyz/book/633119/db5c78">C programming language</a>
+ready for placement on an <a href="https://en.wikipedia.org/wiki/Application-specific_integrated_circuit">application specific integrated circuit</a> .
 
 <p>The custom CPU is 62 * better than a generic CPU
 
 <p>Performance as measured by <a href="https://openroad-flow-scripts.readthedocs.io/en/latest/mainREADME.html">Open Road</a> for the custom <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> versus a generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>
 on a 2/3 Keys per leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .  The performance gap widens as we
 increase the number of Keys in each branch and leaf of the <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> .
-leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a>.
 
-<table cellpadding=10 border=1>
+<p><table cellpadding=10 border=1>
 <tr><th colspan=2>Area um2<th colspan=2>Fmax MHz<th colspan=2>Statements
 <tr><th>Custom<th>Generic <th>Custom<th>Generic<th>Custom<th>Generic
 <tr><td>2467<td>12927<td>902<td>399<td>23<td>122
@@ -206,7 +205,7 @@ leaf/branch <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a>.
 <tr><td colspan=4 style="text-align: center;"><b>62.76</b> x better
 </table>
 
-In the above **area** in micro meters squared equates to **power** consumption
+<p>In the above **area** in micro meters squared equates to **power** consumption
 while **frequency** in mega hertz equates to **execution speed**. And even
 better a <a href="https://en.wikipedia.org/wiki/Find_(Unix)">find</a> operation takes far fewer statements to execute on the custom <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>
 than it does on the generic <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> because the operation <a href="https://en.wikipedia.org/wiki/Computer_program">code</a>s are so much better
