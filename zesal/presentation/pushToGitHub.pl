@@ -32,7 +32,7 @@ if (1)                                                                          
 for my $s(@files)                                                               # Upload each selected file
  {my $c = readBinaryFile $s;                                                    # Load file
 
-  $c = expandWellKnownWordsAsUrlsInMdFormat $c if $s =~ m(README);              # Expand README
+  $c = expandWellKnownWordsAsUrlsInHtmlFormat $c if $s =~ m(README);              # Expand README
 
   my $t = fpf $dir, swapFilePrefix $s, $home;                                             # File on github
   my $w = writeFileUsingSavedToken($user, $repo, $t, $c);                       # Write file into github
