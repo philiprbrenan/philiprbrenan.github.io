@@ -12,6 +12,7 @@ use GitHub::Crud qw(:all);
 use feature qw(say current_sub);
 
 my $home    = q(/home/phil/btreeBlock/presentation/);                           # Home folder
+my $outHtml = q(/home/phil/btreeBlock/presentation/index.html);                 # Output html
 my $shaFile = q(/home/phil/btreeBlock/presentation/.shaFile);                   # File shas
 my $user    = q(philiprbrenan);                                                 # User
 my $repo    = q(philiprbrenan.github.io);                                       # Repo
@@ -35,7 +36,10 @@ if (1)                                                                          
 for my $s(@files)                                                               # Upload each selected file
  {my $c = readBinaryFile $s;                                                    # Load file
 
-  $c = expandWellKnownWordsAsUrlsInHtmlFormat $c if $s =~ m(index)i;            # Expand Index.htm
+  if ($s =~ m(index)i)                                                          # Expand Index.htm
+   {$c = expandWellKnownWordsAsUrlsInHtmlFormat $c if $s =~ m(index)i;
+    owf($outHtml, $c);
+   }
 
   my $t = fpf $dir, swapFilePrefix $s, $home;                                   # File on github
   my $w = writeFileUsingSavedToken($user, $repo, $t, $c);                       # Write file into github
