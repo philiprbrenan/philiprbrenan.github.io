@@ -12,12 +12,12 @@ use GitHub::Crud qw(:all);
 use feature qw(say current_sub);
 
 my $home    = q(/home/phil/btreeBlock/presentation/);                           # Home folder
-my $outHtml = q(/home/phil/btreeBlock/presentation/index.html);                 # Output html
+my $outHtml = q(/home/phil/btreeBlock/presentation/index.htm);                  # Output html
 my $shaFile = q(/home/phil/btreeBlock/presentation/.shaFile);                   # File shas
 my $user    = q(philiprbrenan);                                                 # User
 my $repo    = q(philiprbrenan.github.io);                                       # Repo
 my $dir     = q(zesal/presentation);                                            # Work flow on Ubuntu
-my @ext     = qw(.htm .jpg .pl);                                                # Extensions of files to upload to github
+my @ext     = qw(.html .jpg .pl);                                               # Extensions of files to upload to github
 
 say STDERR timeStamp,  " Push presentation to github $repo";
 
