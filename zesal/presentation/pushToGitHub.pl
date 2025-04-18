@@ -17,7 +17,7 @@ my $shaFile = q(/home/phil/btreeBlock/presentation/.shaFile);                   
 my $user    = q(philiprbrenan);                                                 # User
 my $repo    = q(philiprbrenan.github.io);                                       # Repo
 my $dir     = q(zesal/presentation);                                            # Work flow on Ubuntu
-my @ext     = qw(.html .jpg .pl);                                               # Extensions of files to upload to github
+my @ext     = qw(.htm .jpg .pl);                                                # Extensions of files to upload to github
 
 say STDERR timeStamp,  " Push presentation to github $repo";
 
@@ -37,7 +37,7 @@ for my $s(@files)                                                               
  {my $c = readBinaryFile $s;                                                    # Load file
 
   if ($s =~ m(index)i)                                                          # Expand Index.htm
-   {$c = expandWellKnownWordsAsUrlsInHtmlFormat $c if $s =~ m(index)i;
+   {$c = expandWellKnownWordsAsUrlsInHtmlFormat $c;
     owf($outHtml, $c);
    }
 
