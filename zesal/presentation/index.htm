@@ -55,12 +55,12 @@ img {height: 70vh;}
 
 <div id="news">
 
-<p><a href="#problem">Problem:</a> dataCenters use a lot of electricity.</p>
-<p><a href="#solution">Solution:</a> a specialized chip to look up data much more efficiently.</p>
+<p><b><a href="#problem">Problem:</a></b> dataCenters use a lot of electricity.</p>
+<p><b><a href="#solution">Solution:</a></b> a specialized chip to look up data much more efficiently.</p>
 
 <p>Performance independently measured by openroad for a
 <a href="https://github.com/philiprbrenan/btreeBlock">custom</a> processor
-versus a generic processor on a <b>2/3</b> Keys per leaf/branch btree .  The
+versus a generic risc processor on a <b>2/3</b> Keys per leaf/branch btree .  The
 performance gap widens significantly as we increase the number of Keys in each
 branch and leaf in the btree .
 
@@ -68,7 +68,7 @@ branch and leaf in the btree .
 <tr><th colspan=2>Area &mu;m&sup2;<th colspan=2>Fmax MHz<th colspan=2>Statements
 <tr><th>Custom<th>Generic <th>Custom<th>Generic<th>Custom<th>Generic
 <tr><td>2467<td>12927<td>902<td>399<td>23<td>122
-<tr><td colspan=2> 5.24 x Smaller<td colspan=2> 2.26 x Faster<td colspan=2> 5.30 * Compact Code
+<tr><td colspan=2><b>5.24</b> x Smaller<td colspan=2> <b>2.26</b> x Faster<td colspan=2> <b>5.30</b> * Compact Code
 <tr><td colspan=6 style="text-align: center;"> databaseOnAChip is <b><big>62.76 x better</big></b>
 </table>
 
@@ -171,14 +171,16 @@ currently in use. </p>
 <p><img src="images/AppaAppsIsPrototypingASiliconChip.jpg">
 
 <p>dataCenters do a lot of database look-ups. Every company has a database
-nowadays and every company spends lots of time and money looking stuff up in
+nowadays and every company spends lots of time and money looking up data up in
 their database, quickly, because their customers demand it.</p>
 
 <p><img src="images/EveryCompanyHasADatabase.jpg">
 
 <p>If we could make database look-ups just a bit more efficient, dataCenter
 operators would save quite a lot of money on their huge electricity bills - a
-saving of perhaps <b>$100 million</b> per year.</p>
+saving of perhaps <b>$100 million</b> per year.</p>   A bit like watt
+increasing the performance of steam engines from <b>1%</b> to <b>2%</b> and
+thereby kicking off the ir .
 
 <h2>This is not a new idea...</h2>
 
@@ -397,7 +399,7 @@ people who are capable of making purchase decisions.
 
 <div id=toc>
   <table cellspacing=10 border=0>
-    <tr><td align=right>1<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#doc"><img id=logo src="https://raw.githubusercontent.com/philiprbrenan/btreeBlock/refs/heads/main/presentation/images/logo.png"> Database on a Chip</a>
+    <tr><td align=right>1<td>&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_1" href="#doc"><img id=logo src="https://raw.githubusercontent.com/philiprbrenan/btreeBlock/refs/heads/main/presentation/images/logo.png">Data Centers:</a>
     <tr><td align=right>2<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#problem">The problem</a>
     <tr><td align=right>3<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#solution">The Solution</a>
     <tr><td align=right>4<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="toc_2" href="#ptr">Prototype Test Results</a>
