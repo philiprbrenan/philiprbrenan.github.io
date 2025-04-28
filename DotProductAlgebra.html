@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalar Dot Product Proof</title>
+    <style>
+       math {background-color: aliceblue;}
+    </style>
+</head>
+<body>
+
+<h1>Scalar dot product of two unit vectors</h2>
+
+<p>Given two unit vectors:
+<math>
+    <mrow><mi>𝐀</mi><mo>=</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow>
+  </math>
+
+and:
+
+<math><mrow><mi>𝐂</mi><mo>=</mo><mo>(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>)</mo></mrow></math>,
+we prove their dot product is:
+<math><mrow><mi>a</mi><mi>c</mi><mo>+</mo><mi>b</mi><mi>d</mi></mrow></math>.
+
+
+<h2>Step 1: Squared Distance</h2>
+
+<p>The squared distance between:
+  <math><mi>𝐀</mi></math> and
+  <math><mi>𝐂</mi></math>
+is:
+<p><math display="block">
+    <mrow>
+      <msup><mrow><mo>∥</mo><mi>𝐂</mi><mo>−</mo><mi>𝐀</mi><mo>∥</mo></mrow><mn>2</mn></msup><mo>=</mo>
+      <msup><mrow><mo>(</mo><mi>a</mi><mo>−</mo><mi>c</mi><mo>)</mo></mrow><mn>2</mn></msup> <mo>+</mo>
+      <msup><mrow><mo>(</mo><mi>b</mi><mo>−</mo><mi>d</mi><mo>)</mo></mrow><mn>2</mn></msup>
+    </mrow>
+  </math>
+
+<p>Multiplying out:
+
+<p><math display="block">
+  <mrow>
+    <msup>
+      <mrow>
+        <mo>∥</mo><mi>𝐂</mi><mo>−</mo><mi>𝐀</mi><mo>∥</mo>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <msup><mi>a</mi><mn>2</mn></msup>
+    <mo>−</mo>
+    <mn>2</mn><mo>⋅</mo><mi>a</mi><mo>⋅</mo><mi>c</mi>
+    <mo>+</mo>
+    <msup><mi>c</mi><mn>2</mn></msup>
+    <mo>+</mo>
+    <msup><mi>b</mi><mn>2</mn></msup>
+    <mo>−</mo>
+    <mn>2</mn><mo>⋅</mo><mi>b</mi><mo>⋅</mo><mi>d</mi>
+    <mo>+</mo>
+    <msup><mi>d</mi><mn>2</mn></msup>
+  </mrow>
+</math>
+
+<p>Using the unit vector property:
+  <math><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math> and
+  <math><mrow><msup><mi>c</mi><mn>2</mn></msup><mo>+</mo><msup><mi>d</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math>:
+
+<p>  <math display="block">
+    <mrow>
+      <msup><mrow><mo>∥</mo><mi>𝐂</mi><mo>−</mo><mi>𝐀</mi><mo>∥</mo></mrow><mn>2</mn></msup>
+      <mo>=</mo>
+      <mn>2</mn>
+      <mo>−</mo>
+      <mn>2</mn>
+      <mrow><mo>(</mo><mi>a</mi><mi>c</mi><mo>+</mo><mi>b</mi><mi>d</mi><mo>)</mo></mrow>
+    </mrow>
+  </math>
+
+<h2>Step 2: Distance and Dot Product</h2>
+<p>The squared distance between:
+<math>
+    <mi mathvariant="bold">A</mi>
+  </math>
+
+and:
+
+  <math>
+    <mi mathvariant="bold">C</mi>
+  </math>
+
+can also be calculated using the dot product as a means of multiplying vectors:
+
+<p><math display="block">
+    <mrow>
+      <msup>
+        <mrow><mo>∥</mo><mi mathvariant="bold">C</mi><mo>−</mo><mi mathvariant="bold">A</mi><mo>∥</mo></mrow>
+        <mn>2</mn>
+      </msup>
+      <mo>=</mo>
+      <mrow>
+        <mo>(</mo><mi mathvariant="bold">C</mi><mo>−</mo><mi mathvariant="bold">A</mi><mo>)</mo>
+      </mrow>
+      <mo>⋅</mo>
+      <mrow>
+        <mo>(</mo><mi mathvariant="bold">C</mi><mo>−</mo><mi mathvariant="bold">A</mi><mo>)</mo>
+      </mrow>
+    </mrow>
+  </math>
+
+<p>Expanding the dot product:
+<p><math display="block">
+    <mrow>
+      <msup><mrow><mo>∥</mo><mi>𝐂</mi><mo>−</mo><mi>𝐀</mi><mo>∥</mo></mrow><mn>2</mn></msup><mo>=</mo>
+      <mi mathvariant="bold">C</mi><mo>⋅</mo><mi mathvariant="bold">C</mi>
+      <mo>−</mo>
+      <mn>2</mn><mi mathvariant="bold">A</mi><mo>⋅</mo><mi mathvariant="bold">C</mi>
+      <mo>+</mo>
+      <mi mathvariant="bold">A</mi><mo>⋅</mo><mi mathvariant="bold">A</mi>
+    </mrow>
+  </math>
+
+<p>Since
+<math>
+    <mi mathvariant="bold">A</mi>
+  </math> and
+  <math>
+    <mi mathvariant="bold">C</mi>
+  </math>
+
+are unit vectors:
+
+<p><math display="block">
+    <mrow>
+      <msup><mrow><mo>∥</mo><mi>𝐂</mi><mo>−</mo><mi>𝐀</mi><mo>∥</mo></mrow><mn>2</mn></msup><mo>=</mo>
+      <mn>1</mn>
+      <mo>−</mo>
+      <mn>2</mn>
+      <mi mathvariant="bold">A</mi><mo>⋅</mo><mi mathvariant="bold">C</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+      <mo>=</mo>
+      <mn>2</mn>
+      <mo>−</mo>
+      <mn>2</mn>
+      <mi mathvariant="bold">A</mi><mo>⋅</mo><mi mathvariant="bold">C</mi>
+    </mrow>
+  </math>
+
+<h2>Final result</h2>
+<p>Equate to Step 1’s distance formula to Step 2’s:
+
+<p><math display="block">
+    <mrow>
+      <msup><mrow><mo>∥</mo><mi>𝐂</mi><mo>−</mo><mi>𝐀</mi><mo>∥</mo></mrow><mn>2</mn></msup><mo>=</mo>
+      <mn>2</mn>
+      <mo>−</mo>
+      <mn>2</mn>
+      <mi mathvariant="bold">A</mi><mo>⋅</mo><mi mathvariant="bold">C</mi>
+      <mo>=</mo>
+      <mn>2</mn>
+      <mo>−</mo>
+      <mn>2</mn>
+      <mrow><mo>(</mo><mi>a</mi><mi>c</mi><mo>+</mo><mi>b</mi><mi>d</mi><mo>)</mo></mrow>
+    </mrow>
+  </math>
+
+So:
+<p><math display="block">
+    <mrow>
+      <mi mathvariant="bold">A</mi><mo>⋅</mo><mi mathvariant="bold">C</mi>
+      <mo>=</mo>
+      <mi>a</mi><mi>c</mi><mo>+</mo><mi>b</mi><mi>d</mi>
+    </mrow>
+  </math> as was to be shown.
+
+</body>
+</html>
